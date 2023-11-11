@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "709192505160",
+    "firebase_url": "https://emotion-3bf81-default-rtdb.firebaseio.com",
+    "project_id": "emotion-3bf81",
+    "storage_bucket": "emotion-3bf81.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:709192505160:android:19d24d2f4920b48d78057d",
+        "android_client_info": {
+          "package_name": "com.example.calendar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkSz_cQZJ3bHCQOrVUwOGTB5nqDe6IjL0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:709192505160:android:edd84c6890be8a3f78057d",
+        "android_client_info": {
+          "package_name": "com.example.emotionku"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkSz_cQZJ3bHCQOrVUwOGTB5nqDe6IjL0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:709192505160:android:b43c7ac3d649592778057d",
+        "android_client_info": {
+          "package_name": "com.example.klab2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkSz_cQZJ3bHCQOrVUwOGTB5nqDe6IjL0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
