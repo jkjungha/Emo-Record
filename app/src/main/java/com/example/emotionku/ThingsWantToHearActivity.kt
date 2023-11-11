@@ -3,13 +3,15 @@ package com.example.emotionku
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.widget.addTextChangedListener
 import com.example.emotionku.databinding.ActivityThingsWantToHearBinding
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.getValue
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 
 class ThingsWantToHearActivity : AppCompatActivity() {
@@ -23,42 +25,37 @@ class ThingsWantToHearActivity : AppCompatActivity() {
     }
 
     fun init() {
-        setTextList()
-
-        binding.oriAddButton.setOnClickListener {
+        setDataAll()
+        binding.oriAddButton.setOnClickListener{
             var Intent = Intent(this, AddThingsWantToHearActivity::class.java)
             startActivity(Intent)
         }
-        binding.oriEditButton.setOnClickListener {
+        binding.oriEditButton.setOnClickListener{
             var Intent = Intent(this, EditThingsWantToHearActivity::class.java)
             startActivity(Intent)
         }
-//        binding.oriSettingsButton.setOnClickListener{
-//            var Intent = Intent(this, SettingsActivity::class.java)
-//            startActivity(Intent)
-//        }
+        binding.oriTimeButton.setOnClickListener{
+            var Intent = Intent(this, CheckEmojiActivity::class.java)
+            startActivity(Intent)
+        }
     }
-    fun setTextList(){
-        val data = getSharedPreferences("data", Context.MODE_PRIVATE)
+    fun setDataAll(){
+        val database = Firebase.database
+        val word = database.getReference("user/word")
+        word.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                binding.textView1.text = dataSnapshot.child("word1").getValue(String::class.java).toString()
+                binding.textView2.text = dataSnapshot.child("word2").getValue(String::class.java).toString()
+                binding.textView3.text = dataSnapshot.child("word3").getValue(String::class.java).toString()
+                binding.textView4.text = dataSnapshot.child("word4").getValue(String::class.java).toString()
+                binding.textView5.text = dataSnapshot.child("word5").getValue(String::class.java).toString()
 
-        val text1 = data.getString("text1", "")
-        val text2 = data.getString("text2", "")
-        val text3 = data.getString("text3", "")
-        val text4 = data.getString("text4", "")
-        val text5 = data.getString("text5", "")
+            }
 
-        Log.d("MAIN PAGE", "PRINT")
-        Log.d("text1", text1.toString())
-        Log.d("text2", text2.toString())
-        Log.d("text3", text3.toString())
-        Log.d("text4", text4.toString())
-        Log.d("text5", text5.toString())
+            override fun onCancelled(databaseError: DatabaseError) {
 
-        binding.textView1.text = text1
-        binding.textView2.text = text2
-        binding.textView3.text = text3
-        binding.textView4.text = text4
-        binding.textView5.text = text5
+            }
+        })
     }
 }
 

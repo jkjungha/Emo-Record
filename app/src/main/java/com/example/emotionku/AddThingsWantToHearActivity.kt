@@ -1,11 +1,15 @@
 package com.example.emotionku
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.emotionku.databinding.ActivityAddThingsWantToHearBinding
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 
 class AddThingsWantToHearActivity : AppCompatActivity() {
@@ -19,36 +23,42 @@ class AddThingsWantToHearActivity : AppCompatActivity() {
     }
 
     fun init() {
-        binding.addDoneButton.setOnClickListener {
-            val data = getSharedPreferences("data", Context.MODE_PRIVATE)
-            var hearText = binding.addTypeText.text.toString()
-            Log.d("HEAR", hearText)
-            val count = data.getString("count", "")
-            Log.d("COUNT", count.toString())
-            val editor = data.edit()
-            if (!hearText.equals("")) {
-                if (count.equals("")) {
-                    editor.putString("text1", hearText)
-                    editor.putString("count", "1")
-                } else if (count.equals("1") ) {
-                    editor.putString("text2", hearText)
-                    editor.putString("count", "2")
-                } else if (count.equals("2")) {
-                    editor.putString("text3", hearText)
-                    editor.putString("count", "3")
-                } else if (count.equals("3")) {
-                    editor.putString("text4", hearText)
-                    editor.putString("count", "4")
-                } else if (count.equals("4")) {
-                    editor.putString("text5", hearText)
-                    editor.putString("count", "5")
-                }
-                editor.commit()
-            }
+        val database = Firebase.database
+        val word = database.getReference("user/word")
+        word.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                binding.addDoneButton.setOnClickListener {
+                    var hearText = binding.addTypeText.text.toString()
+                    var count = dataSnapshot.child("full").getValue(Int::class.java)
+                    if (hearText != "" && count != 5) {
+                        if (count != null) {
+                            count = count!! + 1
+                        }
+                        if (count == 1) {
+                            word.child("word1").setValue(hearText)
+                        } else if (count == 2) {
+                            word.child("word2").setValue(hearText)
+                        } else if (count == 3) {
+                            word.child("word3").setValue(hearText)
+                        } else if (count == 4) {
+                            word.child("word4").setValue(hearText)
+                        } else if (count == 5) {
+                            word.child("word5").setValue(hearText)
+                        }
+                        Log.d("GOT", count.toString())
+                        word.child("full").setValue(count)
+                    }
 
-            var Intent = Intent(this, ThingsWantToHearActivity::class.java)
-            binding.addTypeText.text.clear()
-            startActivity(Intent)
-        }
+                    var Intent =Intent(this@AddThingsWantToHearActivity, ThingsWantToHearActivity::class.java)
+                    binding.addTypeText.text.clear()
+                    startActivity(Intent)
+                }
+            }
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
+
+
     }
 }
