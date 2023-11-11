@@ -13,6 +13,16 @@
         android:theme="@style/Theme.EmotionKU"
         tools:targetApi="31">
         <activity
+            android:name=".AfterWriteDairyPopUpActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Dialog"/>
+        <activity
+            android:name=".WriteDairyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CheckEmojiActivity"
+            android:exported="false" />
+        <activity
             android:name=".EditThingsWantToHearActivity"
             android:exported="false" />
         <activity
