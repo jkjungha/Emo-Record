@@ -11,6 +11,12 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.klab2.R
 import com.example.klab2.LoginActivity
 import com.example.klab2.ResetPasswordActivity
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.getValue
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 // ForgetPasswordActivity.kt
 class ForgetPasswordActivity : AppCompatActivity() {
@@ -35,23 +41,34 @@ class ForgetPasswordActivity : AppCompatActivity() {
         val resetPasswordButton: Button = findViewById(R.id.resetButton)
         val backToLoginButton: Button = findViewById(R.id.backToLoginButton)
 
-        resetPasswordButton.setOnClickListener {
-            val emailOrPhone = resetEmailOrPhoneEditText.text.toString()
+        val database = Firebase.database
+        val user = database.getReference("users")
+        user.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                resetPasswordButton.setOnClickListener {
+                    val emailOrPhone = resetEmailOrPhoneEditText.text.toString()
 
-            // 检查是否匹配
-            val sharedPreferences = getSharedPreferences("user_data", MODE_PRIVATE)
-            val validatedEmailOrPhone = sharedPreferences.getString("validatedEmailOrPhone", "")
+                    for (child in dataSnapshot.children) {
+                        var validatedEmailOrPhone = child.child("private").child("emailorphone").getValue(String::class.java)
+                        if (emailOrPhone == validatedEmailOrPhone) {
+                            // 用户提供的手机号或邮箱与验证成功的匹配
+                            // 执行密码重置逻辑
+                            Toast.makeText(this@ForgetPasswordActivity, "인증 완료", Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this@ForgetPasswordActivity, ResetPasswordActivity::class.java)
+                            startActivity(intent)
+                        } else {
+                            // 用户提供的手机号或邮箱与验证成功的不匹配
+                            Toast.makeText(this@ForgetPasswordActivity, "전화번호 또는 이메일 불일치", Toast.LENGTH_SHORT)
+                                .show()
+                        }
+                    }
+                }
 
-            if (emailOrPhone == validatedEmailOrPhone) {
-                // 用户提供的手机号或邮箱与验证成功的匹配
-                // 执行密码重置逻辑
-                val intent = Intent(this@ForgetPasswordActivity, ResetPasswordActivity::class.java)
-                startActivity(intent)
-            } else {
-                // 用户提供的手机号或邮箱与验证成功的不匹配
-                Toast.makeText(this@ForgetPasswordActivity, "전화번호 또는 이메일 불일치", Toast.LENGTH_SHORT).show()
             }
-        }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+            }
+        })
 
         backToLoginButton.setOnClickListener {
             // 创建一个 Intent 以返回到登录界面
