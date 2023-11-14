@@ -53,6 +53,10 @@ class ForgetPasswordActivity : AppCompatActivity() {
                         if (emailOrPhone == validatedEmailOrPhone) {
                             // 用户提供的手机号或邮箱与验证成功的匹配
                             // 执行密码重置逻辑
+                            val sharedPreferences = getSharedPreferences("live", MODE_PRIVATE)
+                            val editor: SharedPreferences.Editor = sharedPreferences.edit()
+                            editor.putString("liveuser", child.getValue(String::class.java))
+                            editor.apply()
                             Toast.makeText(this@ForgetPasswordActivity, "인증 완료", Toast.LENGTH_SHORT).show()
                             val intent = Intent(this@ForgetPasswordActivity, ResetPasswordActivity::class.java)
                             startActivity(intent)
