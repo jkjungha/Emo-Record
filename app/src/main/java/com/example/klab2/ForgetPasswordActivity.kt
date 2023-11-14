@@ -47,24 +47,35 @@ class ForgetPasswordActivity : AppCompatActivity() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 resetPasswordButton.setOnClickListener {
                     val emailOrPhone = resetEmailOrPhoneEditText.text.toString()
+                    var bool = false
 
                     for (child in dataSnapshot.children) {
-                        var validatedEmailOrPhone = child.child("private").child("emailorphone").getValue(String::class.java)
+                        var validatedEmailOrPhone = child.child("private").child("emailorphone")
+                            .getValue(String::class.java)
                         if (emailOrPhone == validatedEmailOrPhone) {
                             // 用户提供的手机号或邮箱与验证成功的匹配
                             // 执行密码重置逻辑
+                            bool = true
                             val sharedPreferences = getSharedPreferences("live", MODE_PRIVATE)
                             val editor: SharedPreferences.Editor = sharedPreferences.edit()
-                            editor.putString("liveuser", child.getValue(String::class.java))
+                            editor.putString("liveuser", child.toString())
                             editor.apply()
-                            Toast.makeText(this@ForgetPasswordActivity, "인증 완료", Toast.LENGTH_SHORT).show()
-                            val intent = Intent(this@ForgetPasswordActivity, ResetPasswordActivity::class.java)
-                            startActivity(intent)
-                        } else {
-                            // 用户提供的手机号或邮箱与验证成功的不匹配
-                            Toast.makeText(this@ForgetPasswordActivity, "전화번호 또는 이메일 불일치", Toast.LENGTH_SHORT)
+                            Toast.makeText(this@ForgetPasswordActivity, "인증 완료", Toast.LENGTH_SHORT)
                                 .show()
+                            val intent = Intent(
+                                this@ForgetPasswordActivity,
+                                ResetPasswordActivity::class.java
+                            )
+                            startActivity(intent)
                         }
+                    }
+                    if (!bool) {
+                        Toast.makeText(
+                            this@ForgetPasswordActivity,
+                            "전화번호 또는 이메일 불일치",
+                            Toast.LENGTH_SHORT
+                        )
+                            .show()
                     }
                 }
 
