@@ -7,8 +7,13 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.klab2.R
 import com.example.klab2.ForgetPasswordActivity
+import com.example.klab2.R
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 class ResetPasswordActivity : AppCompatActivity() {
     private lateinit var newPasswordEditText: EditText
@@ -24,21 +29,40 @@ class ResetPasswordActivity : AppCompatActivity() {
         val resetButton: Button = findViewById(R.id.resetButton)
         val backToLoginButton: Button = findViewById(R.id.backToLoginButton)
 
-        resetButton.setOnClickListener {
-            // 获取用户输入的新密码和确认密码
-            val newPassword = newPasswordEditText.text.toString()
-            val confirmPassword = confirmPasswordEditText.text.toString()
+        val database = Firebase.database
+        val user = database.getReference("users")
+        user.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                resetButton.setOnClickListener {
+                    // 获取用户输入的新密码和确认密码
+                    val newPassword = newPasswordEditText.text.toString()
+                    val confirmPassword = confirmPasswordEditText.text.toString()
 
-            // 在这里执行密码重置操作
-            if (newPassword == confirmPassword) {
-                // 密码重置成功
-                Toast.makeText(this@ResetPasswordActivity, "비밀번호 재설정 완료", Toast.LENGTH_SHORT).show()
-                // 在这里可以执行其他操作，如返回登录界面
-            } else {
-                // 密码重置失败
-                Toast.makeText(this@ResetPasswordActivity, "비밀번호가 일치하지 않습니다", Toast.LENGTH_SHORT).show()
+                    // 在这里执行密码重置操作
+                    if (newPassword == confirmPassword) {
+                        // 密码重置成功
+                        val sharedPreferences = getSharedPreferences("live", MODE_PRIVATE)
+                        val savedUsername = sharedPreferences.getString("liveuser", "")
+                        if(savedUsername != null){
+                            user.child(savedUsername).child("private").child("password").setValue(newPassword)
+                            Toast.makeText(this@ResetPasswordActivity, "비밀번호 재설정 완료", Toast.LENGTH_SHORT).show()
+                            var Intent = Intent(this@ResetPasswordActivity, LoginActivity::class.java)
+                            startActivity(Intent)
+                        }else{
+                            Toast.makeText(this@ResetPasswordActivity, "예외 발생", Toast.LENGTH_SHORT).show()
+                        }
+                        // 在这里可以执行其他操作，如返回登录界面
+                    } else {
+                        // 密码重置失败
+                        Toast.makeText(this@ResetPasswordActivity, "비밀번호가 일치하지 않습니다", Toast.LENGTH_SHORT)
+                            .show()
+                    }
+                }
             }
-        }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+            }
+        })
 
         backToLoginButton.setOnClickListener {
             // 创建一个 Intent 以返回到登录界面
