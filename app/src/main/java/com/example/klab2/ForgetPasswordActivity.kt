@@ -3,6 +3,7 @@ package com.example.klab2
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -58,7 +59,7 @@ class ForgetPasswordActivity : AppCompatActivity() {
                             bool = true
                             val sharedPreferences = getSharedPreferences("live", MODE_PRIVATE)
                             val editor: SharedPreferences.Editor = sharedPreferences.edit()
-                            editor.putString("liveuser", child.toString())
+                            editor.putString("liveuser", child.key)
                             editor.apply()
                             Toast.makeText(this@ForgetPasswordActivity, "인증 완료", Toast.LENGTH_SHORT)
                                 .show()
