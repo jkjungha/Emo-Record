@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.emotionku'
+    namespace 'com.example.klab2'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.emotionku"
+        applicationId "com.example.klab2"
         minSdk 30
         targetSdk 33
         versionCode 1

@@ -1,4 +1,4 @@
-package com.example.emotionku
+package com.example.klab2
 
 import org.junit.Test
 

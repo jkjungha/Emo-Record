@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.klab2
 
 import android.content.Intent
 import android.content.SharedPreferences
@@ -8,6 +8,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.klab2.ForgetPasswordActivity
+import com.example.klab2.R
+import com.example.klab2.RegisterActivity
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var usernameEditText: EditText
@@ -50,6 +53,8 @@ class LoginActivity : AppCompatActivity() {
             if (enteredUsername == savedUsername && enteredPassword == savedPassword) {
                 // 登录成功
                 Toast.makeText(this@LoginActivity, "로그인 성공", Toast.LENGTH_SHORT).show()
+                var Intent = Intent(this, ThingsWantToHearActivity::class.java)
+                startActivity(Intent)
                 // 在这里可以进行登录后的操作，如跳转到主界面
             } else {
                 // 登录失败

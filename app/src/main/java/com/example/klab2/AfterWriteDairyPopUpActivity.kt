@@ -1,12 +1,11 @@
-package com.example.emotionku
+package com.example.klab2
 
-import android.app.Dialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.Window
-import com.example.emotionku.databinding.ActivityAfterWriteDairyPopUpBinding
+import com.example.klab2.databinding.ActivityAfterWriteDairyPopUpBinding
 
 class AfterWriteDairyPopUpActivity : AppCompatActivity() {
     lateinit var binding: ActivityAfterWriteDairyPopUpBinding

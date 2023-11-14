@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.klab2
 
 import android.content.Intent
 import android.content.SharedPreferences
@@ -8,18 +8,21 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.klab2.R
+import com.example.klab2.LoginActivity
+import com.example.klab2.ResetPasswordActivity
 
 // ForgetPasswordActivity.kt
 class ForgetPasswordActivity : AppCompatActivity() {
     private lateinit var resetEmailOrPhoneEditText: EditText
 
     private fun isEmailValid(email: String): Boolean {
-        val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
+        val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+".toRegex()
         return email.matches(emailPattern)
     }
 
     private fun isPhoneNumberValid(phoneNumber: String): Boolean {
-        val phonePattern = "^[0-9]{11}$"
+        val phonePattern = "^[0-9]{11}$".toRegex()
         return phoneNumber.matches(phonePattern)
     }
 

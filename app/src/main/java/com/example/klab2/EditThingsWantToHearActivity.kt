@@ -1,13 +1,10 @@
-package com.example.emotionku
+package com.example.klab2
 
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import com.example.emotionku.databinding.ActivityEditThingsWantToHearBinding
+import com.example.klab2.databinding.ActivityEditThingsWantToHearBinding
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener

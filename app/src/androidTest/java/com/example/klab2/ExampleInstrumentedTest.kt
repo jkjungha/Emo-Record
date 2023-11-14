@@ -1,4 +1,4 @@
-package com.example.emotionku
+package com.example.klab2
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

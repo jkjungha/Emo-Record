@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.klab2
 
 import android.content.Intent
 import android.content.SharedPreferences
@@ -8,6 +8,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.klab2.LoginActivity
+import com.example.klab2.R
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var emailOrPhoneEditText: EditText
@@ -82,14 +84,14 @@ class RegisterActivity : AppCompatActivity() {
     // 添加输入验证逻辑
     private fun isValidEmailOrPhone(emailOrPhone: String): Boolean {
         // 验证邮箱或手机号格式
-        return android.util.Patterns.EMAIL_ADDRESS.matcher(emailOrPhone).matches() || emailOrPhone.matches("\\d{11}")
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(emailOrPhone).matches() || emailOrPhone.matches("\\d{11}".toRegex())
     }
 
     private fun isValidUsername(username: String): Boolean {
         // 使用正则表达式验证用户名
         // 允许用户名由字母和数字组成，或者是纯字母
-        val regex = "^[a-zA-Z0-9]+$" // 此正则表达式匹配字母和数字的组合
-        val alphaRegex = "^[a-zA-Z]+$" // 此正则表达式匹配纯字母
+        val regex = "^[a-zA-Z0-9]+$".toRegex() // 此正则表达式匹配字母和数字的组合
+        val alphaRegex = "^[a-zA-Z]+$".toRegex() // 此正则表达式匹配纯字母
 
         return username.matches(regex) || username.matches(alphaRegex)
     }

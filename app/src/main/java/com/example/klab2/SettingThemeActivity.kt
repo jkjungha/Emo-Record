@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.klab2
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,8 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
+import com.example.klab2.R
+import com.example.klab2.SettingActivity
 
 class SettingThemeActivity : AppCompatActivity() {
 
@@ -19,7 +21,7 @@ class SettingThemeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         // 初始界面为白色主题
-        setTheme(R.style.AppTheme_Light)
+        setTheme(android.R.style.Theme_Light)
 
         setContentView(R.layout.change_theme)
 
@@ -32,8 +34,8 @@ class SettingThemeActivity : AppCompatActivity() {
 
         themeRadioGroup.setOnCheckedChangeListener { _, checkedId ->
             when (checkedId) {
-                R.id.lightThemeRadioButton -> setTheme(R.style.AppTheme_Light)
-                R.id.darkThemeRadioButton -> setTheme(R.style.AppTheme_Dark)
+                R.id.lightThemeRadioButton -> setTheme(android.R.style.Theme_Light)
+                R.id.darkThemeRadioButton -> setTheme(android.R.style.Theme_Black)
             }
 
             recreate()

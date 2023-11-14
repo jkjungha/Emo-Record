@@ -20,7 +20,7 @@
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:theme="@style/AppTheme.Light"> <!-- 或 "@style/AppTheme.Dark" -->
+        android:theme="@style/Theme.AppCompat.Light"> <!-- 或 "@style/AppTheme.Dark" -->
 
         <!-- 布局中的其他视图元素 -->
 
@@ -28,7 +28,7 @@
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:theme="@style/AppTheme.Dark"> <!-- 或 "@style/AppTheme.Dark" -->
+        android:theme="@style/Theme.AppCompat.DayNight"> <!-- 或 "@style/AppTheme.Dark" -->
 
         <!-- 布局中的其他视图元素 -->
 

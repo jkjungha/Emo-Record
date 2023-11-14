@@ -1,10 +1,14 @@
-package com.example.myapplication
+package com.example.klab2
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import com.example.klab2.ChangePasswordActivity
+import com.example.klab2.ChangeProfileActivity
+import com.example.klab2.R
+import com.example.klab2.SettingThemeActivity
 
 class SettingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
