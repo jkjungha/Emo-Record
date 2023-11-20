@@ -59,7 +59,7 @@ class ForgetPasswordActivity : AppCompatActivity() {
                             bool = true
                             val sharedPreferences = getSharedPreferences("live", MODE_PRIVATE)
                             val editor: SharedPreferences.Editor = sharedPreferences.edit()
-                            editor.putString("liveuser", child.key)
+                            editor.putString("user", child.key)
                             editor.apply()
                             Toast.makeText(this@ForgetPasswordActivity, "인증 완료", Toast.LENGTH_SHORT)
                                 .show()

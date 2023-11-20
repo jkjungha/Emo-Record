@@ -42,19 +42,19 @@ class ResetPasswordActivity : AppCompatActivity() {
                     if (newPassword == confirmPassword) {
                         // 密码重置成功
                         val sharedPreferences = getSharedPreferences("live", MODE_PRIVATE)
-                        val savedUsername = sharedPreferences.getString("liveuser", "")
+                        val savedUsername = sharedPreferences.getString("user", "")
                         if(savedUsername != null){
                             user.child(savedUsername).child("private").child("password").setValue(newPassword)
                             Toast.makeText(this@ResetPasswordActivity, "비밀번호 재설정 완료", Toast.LENGTH_SHORT).show()
                             var Intent = Intent(this@ResetPasswordActivity, LoginActivity::class.java)
                             startActivity(Intent)
                         }else{
-                            Toast.makeText(this@ResetPasswordActivity, "예외 발생", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@ResetPasswordActivity, "사용자 이름 찾을 수 없음", Toast.LENGTH_SHORT).show()
                         }
                         // 在这里可以执行其他操作，如返回登录界面
                     } else {
                         // 密码重置失败
-                        Toast.makeText(this@ResetPasswordActivity, "비밀번호가 일치하지 않습니다", Toast.LENGTH_SHORT)
+                        Toast.makeText(this@ResetPasswordActivity, "비밀번호가 일치하지 않음", Toast.LENGTH_SHORT)
                             .show()
                     }
                 }
