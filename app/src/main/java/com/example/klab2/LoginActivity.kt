@@ -68,7 +68,7 @@ class LoginActivity : AppCompatActivity() {
                             Toast.makeText(this@LoginActivity, "로그인 성공", Toast.LENGTH_SHORT).show()
                             val sharedPreferences = getSharedPreferences("live", MODE_PRIVATE)
                             val editor: SharedPreferences.Editor = sharedPreferences.edit()
-                            editor.putString("liveuser", enteredUsername)
+                            editor.putString("user", enteredUsername)
                             editor.apply()
 
                             var Intent =
