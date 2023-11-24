@@ -1,6 +1,7 @@
 package com.example.klab2
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.klab2.databinding.ActivityThingsWantToHearBinding
@@ -18,11 +19,11 @@ class ThingsWantToHearActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityThingsWantToHearBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setDataAll()
         init()
     }
 
     fun init() {
-        setDataAll()
         binding.oriAddButton.setOnClickListener{
             var Intent = Intent(this, AddThingsWantToHearActivity::class.java)
             startActivity(Intent)
@@ -37,8 +38,10 @@ class ThingsWantToHearActivity : AppCompatActivity() {
         }
     }
     fun setDataAll(){
+        val sharedPreferences = getSharedPreferences("live", MODE_PRIVATE)
+        val userid = sharedPreferences.getString("user", "")
         val database = Firebase.database
-        val word = database.getReference("user/word")
+        val word = database.getReference("users").child(userid!!).child("word")
         word.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 binding.textView1.text = dataSnapshot.child("word1").getValue(String::class.java).toString()
