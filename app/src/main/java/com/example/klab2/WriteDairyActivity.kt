@@ -21,8 +21,11 @@ class WriteDairyActivity : AppCompatActivity() {
         init()
     }
     fun init(){
+        val sharedPreferences = getSharedPreferences("live", MODE_PRIVATE)
+        val userid = sharedPreferences.getString("user", "")
         val database = Firebase.database
-        val day = database.getReference("user/calender/year/month/day")
+        val user = database.getReference("users").child(userid!!)
+        val day = user.child("calender/year/month/day")
         day.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 binding.dariySaveButton.setOnClickListener {

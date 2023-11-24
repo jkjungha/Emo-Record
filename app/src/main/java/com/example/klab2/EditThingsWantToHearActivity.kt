@@ -22,8 +22,10 @@ class EditThingsWantToHearActivity : AppCompatActivity() {
     }
 
     fun init() {
+        val sharedPreferences = getSharedPreferences("live", MODE_PRIVATE)
+        val userid = sharedPreferences.getString("user", "")
         val database = Firebase.database
-        val word = database.getReference("user/word")
+        val word = database.getReference("users").child(userid!!).child("word")
         word.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 //TODO: 정리
