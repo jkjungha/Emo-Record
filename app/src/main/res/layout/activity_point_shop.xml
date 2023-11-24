@@ -1,9 +1,358 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".PointShopActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:text="Point Shop"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/bar_style"
+        android:gravity="center"
+        />
+
+    <ScrollView
+        android:layout_width= "wrap_content"
+        android:layout_height="match_parent"
+        android:contentDescription="pointshop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_weight="9"
+        android:layout_marginTop="30dp">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp">
+
+            <TableRow
+                android:layout_marginBottom="30dp">
+                <LinearLayout
+                    android:id="@+id/exciting_bgm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginRight="25dp">
+
+                    seaBgmImg<ImageView
+                        android:id="@+id/exciting_bgm_img"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="1dp"
+                        android:src="@drawable/bgm1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/exciting_bgm_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="exciting BGM"
+                        app:layout_constraintTop_toBottomOf="@+id/exciting_bgm_img"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/exciting_bgm_point"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10 point"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/exciting_bgm_title"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/sea_bgm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="25dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/sea_bgm_img"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="1dp"
+                        android:src="@drawable/bgm2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/sea_bgm_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="sea BGM"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/sea_bgm_img"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/sea_bgm_point"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10 point"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/sea_bgm_title"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/soft_bgm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/soft_bgm_img"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="1dp"
+                        android:src="@drawable/bgm3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/soft_bgm_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="soft BGM"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/soft_bgm_img"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/soft_bgm_point"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10 point"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/soft_bgm_title"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+            </TableRow>
+            <TableRow
+                android:layout_marginBottom="30dp">
+                <LinearLayout
+                    android:id="@+id/blue_shirt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginRight="25dp">
+
+                    <ImageView
+                        android:id="@+id/blue_shirt_img"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="1dp"
+                        android:src="@drawable/blue_shirt"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/blue_shirt_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="blue shirt"
+                        app:layout_constraintTop_toBottomOf="@+id/blue_shirt_img"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/blue_shirt_point"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20 point"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/blue_shirt_title"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fluff_hat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="25dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/fluff_hat_img"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="1dp"
+                        android:src="@drawable/fluff_hat"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/fluff_hat_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="fluff hat"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/fluff_hat_img"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/fluff_hat_point"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20 point"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/fluff_hat_title"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/green_pants"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/green_pants_img"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="1dp"
+                        android:src="@drawable/green_pants"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/green_pants_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="green pants"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/green_pants_img"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/green_pants_point"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20 point"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/green_pants_title"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+            </TableRow>
+            <TableRow
+                android:layout_marginBottom="30dp">
+                <LinearLayout
+                    android:id="@+id/disco_theme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginRight="25dp">
+
+                    <ImageView
+                        android:id="@+id/disco_theme_img"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="1dp"
+                        android:src="@drawable/disco_theme"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/disco_theme_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="disco theme"
+                        app:layout_constraintTop_toBottomOf="@+id/disco_theme_img"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/disco_theme_point"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20 point"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/disco_theme_title"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/sea_theme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="25dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/sea_theme_img"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="1dp"
+                        android:src="@drawable/sea_theme"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/sea_theme_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="sea theme"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/sea_theme_img"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/sea_theme_point"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20 point"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/sea_theme_title"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/forest_theme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/forest_theme_img"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="1dp"
+                        android:src="@drawable/forest_theme"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/forest_theme_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="forest theme"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/forest_theme_img"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/forest_theme_point"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20 point"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/forest_theme_title"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
+</LinearLayout>
