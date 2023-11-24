@@ -33,18 +33,13 @@ class PointShopActivity : AppCompatActivity() {
 
     fun imageCheck() {
 
-        var name = "userid1"
+//        var user = "userid1"
         val sharedPreferences = getSharedPreferences("live", MODE_PRIVATE)
-        val editor: SharedPreferences.Editor = sharedPreferences.edit()
-        editor.putString("user", name)
-        editor.apply()
-
         val user = sharedPreferences.getString("user", "")
         Log.d("POINT SHOP USER", user!!)
         if (user.isNullOrEmpty()) {
             Toast.makeText(this@PointShopActivity, "유저를 찾을 수 없음", Toast.LENGTH_SHORT).show()
         }
-
 
         val database = Firebase.database
         var db = database.reference
@@ -52,7 +47,7 @@ class PointShopActivity : AppCompatActivity() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 binding.excitingBgmImg.setOnClickListener {
                     if (binding.excitingBgmImg.isEnabled) {
-                        var point = dataSnapshot.child("items").child("exciting_bgm")
+                        var point = dataSnapshot.child("items/exciting_bgm")
                             .getValue(Int::class.java)
                         var total_point = dataSnapshot.child("users").child(user).child("total_point")
                             .getValue(Int::class.java)
