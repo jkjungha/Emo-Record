@@ -8,29 +8,19 @@
        />
 
     <item
+        android:id="@+id/homeFragment"
+        android:title="Main"
+        android:checked="true"
+        android:icon="@drawable/baseline_home_24"
+        />
+
+    <item
         android:id="@+id/calenderFragment"
         android:title="Calendar"
         android:icon="@drawable/baseline_edit_calendar_24"
         />
 
-    <item
-        android:id="@+id/homeFragment"
-        android:title="Main"
-        android:icon="@drawable/baseline_home_24"
-        />
 
-    <item
-        android:id="@+id/pointFragment"
-        android:title="Point"
-        android:icon="@drawable/baseline_attach_money_24"
-        />
-
-
-    <item
-        android:id="@+id/settingFragment"
-        android:title="Setting"
-        android:icon="@drawable/baseline_settings_24"
-        />
 
 
 </menu>

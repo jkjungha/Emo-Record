@@ -1,59 +1,106 @@
 package com.example.klab2
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.klab2.databinding.FragmentHomeBinding
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class HomeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
+
+    private lateinit var adapter: EEMyDataAdapter
+    private val data: ArrayList<EEMyData> = ArrayList()
+    private val db = FirebaseDatabase.getInstance("https://emotion-3bf81-default-rtdb.firebaseio.com/")
+    private var pointResult: Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+    ): View {
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HomeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HomeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        db.getReference("users").child("activity").child("예시1").setValue(1)
+        db.getReference("users").child("activity").child("예시2").setValue(2)
+        db.getReference("users").child("activity").child("예시3").setValue(3)
+        db.getReference("users").child("activity").child("예시4").setValue(4)
+        db.getReference("users").child("activity").child("예시5").setValue(5)
+        db.getReference("users").child("Point").setValue(0)
+
+        val point = db.getReference("users").child("Point")
+            .addValueEventListener(object: ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    pointResult = snapshot.value.toString().toInt()
                 }
+
+                override fun onCancelled(error: DatabaseError) {
+                }
+
+            })
+
+        val adb = db.getReference("users").child("activity")
+        adb.get().addOnSuccessListener {
+            if(it.exists()){
+                for(i in it.children)
+                    adapter.addItem(EEMyData(i.key.toString()))
             }
+        }
+
+        initRecyclerView()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+    private fun initRecyclerView() {
+        binding.recyclerview.layoutManager = LinearLayoutManager(
+            requireContext(),
+            LinearLayoutManager.VERTICAL, false
+        )
+        adapter = EEMyDataAdapter(data)
+        adapter.itemClickListener = object : EEMyDataAdapter.OnItemClickListener {
+            override fun OnItemClick(data: EEMyData, position: Int) {
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setTitle("액티비티").setMessage("액티비티를 완료하시겠습니까?")
+                    .setPositiveButton("완료",
+                        DialogInterface.OnClickListener { dialogInterface, i ->
+                            adapter.removeItem(position)
+                            db.getReference("users").child("activity")
+                                .child(data.act).removeValue()
+                            Toast.makeText(requireContext(), "5포인트가 적립되었습니다.", Toast.LENGTH_SHORT).show()
+                            val point2 = pointResult + 5
+                            db.getReference("users").child("Point").setValue(point2)
+                        })
+                    .setNegativeButton("돌아가기",
+                        DialogInterface.OnClickListener { dialogInterface, i ->
+
+                        })
+
+                builder.show()
+            }
+        }
+        binding.recyclerview.adapter = adapter
+
+
+        // 나머지 Firebase 데이터 로딩 및 설정 등의 코드는 이곳에 추가할 수 있습니다.
     }
 }

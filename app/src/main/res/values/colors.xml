@@ -8,4 +8,13 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="green">#04B486</color>
+    <color name="ex1">#6A0888</color>
+    <color name="ex2">#0174DF</color>
+    <color name="ex3">#31B404</color>
+    <color name="ex4">#FFBF00</color>
+    <color name="ex5">#DF0101</color>
+    <color name="gray">#A4A4A4</color>
+    <color name="dark_green">#607d3b</color>
+    <color name="transparent">#00000000</color>
+    <color name="blue">#5fa3e1</color>
 </resources>

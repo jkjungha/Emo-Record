@@ -1,14 +1,27 @@
 package com.example.klab2
 
+import android.graphics.Point
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import androidx.core.view.get
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import com.example.klab2.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
-private const val TAG_CALENDER = "calender_fragment"
+private const val TAG_CALENDER = "calendar_fragment"
 private const val TAG_HOME = "home_fragment"
-private const val TAG_MY_PAGE = "my_page_fragment"
+private const val TAG_POINT = "point_fragment"
+private const val TAG_SETTING = "setting_fragment"
+private const val TAG_WORD = "word_fragment"
+private const val TAG_ADD= "add_fragment"
+private const val TAG_EDIT= "edit_fragment"
 
-class NaviActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
+    companion object{
+        var select = 0
+    }
 
     private lateinit var binding : ActivityMainBinding
 
@@ -16,15 +29,26 @@ class NaviActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val bottomNavigationViewZ:BottomNavigationView = findViewById(R.id.navigationView)
+        bottomNavigationViewZ.selectedItemId = R.id.homeFragment
 
 
-        setFragment(TAG_HOME, HomeFragment())
+        if(select==0)
+            setFragment(TAG_HOME, HomeFragment())
+        else if(select==1){
+            setFragment(TAG_WORD, WordFragment())
+            binding.navigationView.selectedItemId = R.id.wordFragment
+        }
+        else if(select==2){
+            setFragment(TAG_WORD, CalendarFragment())
+            binding.navigationView.selectedItemId = R.id.calenderFragment
+        }
 
         binding.navigationView.setOnItemSelectedListener { item ->
             when(item.itemId) {
-                R.id.calenderFragment -> setFragment(TAG_CALENDER, CalenderFragment())
+                R.id.calenderFragment -> setFragment(TAG_CALENDER, CalendarFragment())
                 R.id.homeFragment -> setFragment(TAG_HOME, HomeFragment())
-                R.id.myPageFragment-> setFragment(TAG_MY_PAGE, MyPageFragment())
+                R.id.wordFragment-> setFragment(TAG_WORD, WordFragment())
             }
             true
         }
@@ -40,7 +64,7 @@ class NaviActivity : AppCompatActivity() {
 
         val calender = manager.findFragmentByTag(TAG_CALENDER)
         val home = manager.findFragmentByTag(TAG_HOME)
-        val myPage = manager.findFragmentByTag(TAG_MY_PAGE)
+        val word = manager.findFragmentByTag(TAG_WORD)
 
         if (calender != null){
             fragTransaction.hide(calender)
@@ -50,10 +74,9 @@ class NaviActivity : AppCompatActivity() {
             fragTransaction.hide(home)
         }
 
-        if (myPage != null) {
-            fragTransaction.hide(myPage)
+        if (word != null) {
+            fragTransaction.hide(word)
         }
-
         if (tag == TAG_CALENDER) {
             if (calender!=null){
                 fragTransaction.show(calender)
@@ -65,9 +88,9 @@ class NaviActivity : AppCompatActivity() {
             }
         }
 
-        else if (tag == TAG_MY_PAGE){
-            if (myPage != null){
-                fragTransaction.show(myPage)
+        else if (tag == TAG_WORD){
+            if (word != null){
+                fragTransaction.show(word)
             }
         }
 
