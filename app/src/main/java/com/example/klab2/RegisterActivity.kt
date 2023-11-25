@@ -93,6 +93,7 @@ class RegisterActivity : AppCompatActivity() {
                         val word = Word("", "","","","")
                         user.child(username).child("private").setValue(private)
                         user.child(username).child("word").setValue(word)
+                        user.child(username).child("total_point").setValue(0)
 
 
                         Toast.makeText(this@RegisterActivity, "등록 성공", Toast.LENGTH_SHORT).show()
