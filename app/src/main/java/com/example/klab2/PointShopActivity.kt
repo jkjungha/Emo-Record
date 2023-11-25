@@ -33,9 +33,9 @@ class PointShopActivity : AppCompatActivity() {
 
     fun imageCheck() {
 
-//        var user = "userid1"
-        val sharedPreferences = getSharedPreferences("live", MODE_PRIVATE)
-        val user = sharedPreferences.getString("user", "")
+        var user = "userid1"
+//        val sharedPreferences = getSharedPreferences("live", MODE_PRIVATE)
+//        val user = sharedPreferences.getString("user", "")
         Log.d("POINT SHOP USER", user!!)
         if (user.isNullOrEmpty()) {
             Toast.makeText(this@PointShopActivity, "유저를 찾을 수 없음", Toast.LENGTH_SHORT).show()

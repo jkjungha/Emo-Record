@@ -24,30 +24,33 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintVertical_weight="9"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="10dp">
 
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="25dp">
+            android:layout_marginVertical="25dp">
 
             <TableRow
                 android:layout_marginBottom="30dp">
                 <LinearLayout
+                    android:background="@drawable/black_border"
+                    android:padding="10dp"
                     android:id="@+id/exciting_bgm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginRight="25dp">
-
-                    seaBgmImg<ImageView
+                    android:layout_marginRight="15dp">
+                    <ImageView
                         android:id="@+id/exciting_bgm_img"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_margin="1dp"
                         android:src="@drawable/bgm1"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_gravity="center"/>
 
                     <TextView
                         android:id="@+id/exciting_bgm_title"
@@ -69,11 +72,13 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:background="@drawable/black_border"
+                    android:padding="10dp"
                     android:id="@+id/sea_bgm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="25dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_marginRight="15dp">
 
                     <ImageView
                         android:id="@+id/sea_bgm_img"
@@ -82,7 +87,8 @@
                         android:layout_margin="1dp"
                         android:src="@drawable/bgm2"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_gravity="center"/>
 
                     <TextView
                         android:id="@+id/sea_bgm_title"
@@ -105,6 +111,8 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:background="@drawable/black_border"
+                    android:padding="10dp"
                     android:id="@+id/soft_bgm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -117,7 +125,8 @@
                         android:layout_margin="1dp"
                         android:src="@drawable/bgm3"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_gravity="center"/>
 
                     <TextView
                         android:id="@+id/soft_bgm_title"
@@ -142,11 +151,13 @@
             <TableRow
                 android:layout_marginBottom="30dp">
                 <LinearLayout
+                    android:background="@drawable/black_border"
+                    android:padding="10dp"
                     android:id="@+id/blue_shirt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginRight="25dp">
+                    android:layout_marginRight="15dp">
 
                     <ImageView
                         android:id="@+id/blue_shirt_img"
@@ -155,7 +166,8 @@
                         android:layout_margin="1dp"
                         android:src="@drawable/blue_shirt"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_gravity="center"/>
 
                     <TextView
                         android:id="@+id/blue_shirt_title"
@@ -177,11 +189,13 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:background="@drawable/black_border"
+                    android:padding="10dp"
                     android:id="@+id/fluff_hat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="25dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_marginRight="15dp">
 
                     <ImageView
                         android:id="@+id/fluff_hat_img"
@@ -190,7 +204,8 @@
                         android:layout_margin="1dp"
                         android:src="@drawable/fluff_hat"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_gravity="center"/>
 
                     <TextView
                         android:id="@+id/fluff_hat_title"
@@ -213,6 +228,8 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:background="@drawable/black_border"
+                    android:padding="10dp"
                     android:id="@+id/green_pants"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -225,7 +242,8 @@
                         android:layout_margin="1dp"
                         android:src="@drawable/green_pants"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_gravity="center"/>
 
                     <TextView
                         android:id="@+id/green_pants_title"
@@ -249,11 +267,13 @@
             <TableRow
                 android:layout_marginBottom="30dp">
                 <LinearLayout
+                    android:background="@drawable/black_border"
+                    android:padding="10dp"
                     android:id="@+id/disco_theme"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginRight="25dp">
+                    android:layout_marginRight="15dp">
 
                     <ImageView
                         android:id="@+id/disco_theme_img"
@@ -262,7 +282,8 @@
                         android:layout_margin="1dp"
                         android:src="@drawable/disco_theme"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_gravity="center"/>
 
                     <TextView
                         android:id="@+id/disco_theme_title"
@@ -284,11 +305,13 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:background="@drawable/black_border"
+                    android:padding="10dp"
                     android:id="@+id/sea_theme"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="25dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_marginRight="15dp">
 
                     <ImageView
                         android:id="@+id/sea_theme_img"
@@ -297,7 +320,8 @@
                         android:layout_margin="1dp"
                         android:src="@drawable/sea_theme"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_gravity="center"/>
 
                     <TextView
                         android:id="@+id/sea_theme_title"
@@ -320,6 +344,8 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:background="@drawable/black_border"
+                    android:padding="10dp"
                     android:id="@+id/forest_theme"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
