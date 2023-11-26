@@ -223,6 +223,7 @@ class PointShopActivity : AppCompatActivity() {
                         }
                     }
                 }
+
                 binding.forestThemeImg.setOnClickListener {
                     if (binding.forestThemeImg.isEnabled) {
                         var point = dataSnapshot.child("items").child("forest_theme")

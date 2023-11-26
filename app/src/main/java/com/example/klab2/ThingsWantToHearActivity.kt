@@ -49,7 +49,6 @@ class ThingsWantToHearActivity : AppCompatActivity() {
                 binding.textView3.text = dataSnapshot.child("word3").getValue(String::class.java).toString()
                 binding.textView4.text = dataSnapshot.child("word4").getValue(String::class.java).toString()
                 binding.textView5.text = dataSnapshot.child("word5").getValue(String::class.java).toString()
-
             }
 
             override fun onCancelled(databaseError: DatabaseError) {

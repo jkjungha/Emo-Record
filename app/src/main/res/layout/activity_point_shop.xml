@@ -23,7 +23,6 @@
         android:contentDescription="pointshop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_weight="9"
         android:layout_marginTop="30dp"
         android:layout_marginHorizontal="10dp">
 
@@ -41,7 +40,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginRight="15dp">
+                    android:layout_marginRight="12dp">
                     <ImageView
                         android:id="@+id/exciting_bgm_img"
                         android:layout_width="100dp"
@@ -78,7 +77,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginRight="15dp">
+                    android:layout_marginRight="12dp">
 
                     <ImageView
                         android:id="@+id/sea_bgm_img"
@@ -157,7 +156,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginRight="15dp">
+                    android:layout_marginRight="12dp">
 
                     <ImageView
                         android:id="@+id/blue_shirt_img"
@@ -195,7 +194,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginRight="15dp">
+                    android:layout_marginRight="12dp">
 
                     <ImageView
                         android:id="@+id/fluff_hat_img"
@@ -273,7 +272,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginRight="15dp">
+                    android:layout_marginRight="12dp">
 
                     <ImageView
                         android:id="@+id/disco_theme_img"
@@ -311,7 +310,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginRight="15dp">
+                    android:layout_marginRight="12dp">
 
                     <ImageView
                         android:id="@+id/sea_theme_img"
