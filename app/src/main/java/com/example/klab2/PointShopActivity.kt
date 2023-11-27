@@ -46,7 +46,7 @@ class PointShopActivity : AppCompatActivity() {
                     var key = child.key
                     var value = child.child("bought").getValue(Int::class.java)
                     if(key == "exciting_bgm"){
-                        if(value == 0){
+                        if(value == 1){
                             val matrix = ColorMatrix()
                             matrix.setSaturation(0f)
                             val filter = ColorMatrixColorFilter(matrix)
@@ -54,7 +54,7 @@ class PointShopActivity : AppCompatActivity() {
                             binding.excitingBgmImg.isEnabled = false
                         }
                     }else if(key == "sea_bgm"){
-                        if(value == 0){
+                        if(value == 1){
                             val matrix = ColorMatrix()
                             matrix.setSaturation(0f)
                             val filter = ColorMatrixColorFilter(matrix)
@@ -62,7 +62,7 @@ class PointShopActivity : AppCompatActivity() {
                             binding.seaBgmImg.isEnabled = false
                         }
                     }else if(key == "soft_bgm"){
-                        if(value == 0){
+                        if(value == 1){
                             val matrix = ColorMatrix()
                             matrix.setSaturation(0f)
                             val filter = ColorMatrixColorFilter(matrix)
@@ -70,7 +70,7 @@ class PointShopActivity : AppCompatActivity() {
                             binding.softBgmImg.isEnabled = false
                         }
                     }else if(key == "blue_shirt"){
-                        if(value == 0){
+                        if(value == 1){
                             val matrix = ColorMatrix()
                             matrix.setSaturation(0f)
                             val filter = ColorMatrixColorFilter(matrix)
@@ -78,7 +78,7 @@ class PointShopActivity : AppCompatActivity() {
                             binding.blueShirtImg.isEnabled = false
                         }
                     }else if(key == "fluff_hat"){
-                        if(value == 0){
+                        if(value == 1){
                             val matrix = ColorMatrix()
                             matrix.setSaturation(0f)
                             val filter = ColorMatrixColorFilter(matrix)
@@ -86,7 +86,7 @@ class PointShopActivity : AppCompatActivity() {
                             binding.fluffHatImg.isEnabled = false
                         }
                     }else if(key == "green_pants"){
-                        if(value == 0){
+                        if(value == 1){
                             val matrix = ColorMatrix()
                             matrix.setSaturation(0f)
                             val filter = ColorMatrixColorFilter(matrix)
@@ -94,7 +94,7 @@ class PointShopActivity : AppCompatActivity() {
                             binding.greenPantsImg.isEnabled = false
                         }
                     }else if(key == "disco_theme"){
-                        if(value == 0){
+                        if(value == 1){
                             val matrix = ColorMatrix()
                             matrix.setSaturation(0f)
                             val filter = ColorMatrixColorFilter(matrix)
@@ -102,7 +102,7 @@ class PointShopActivity : AppCompatActivity() {
                             binding.discoThemeImg.isEnabled = false
                         }
                     }else if(key == "sea_theme"){
-                        if(value == 0){
+                        if(value == 1){
                             val matrix = ColorMatrix()
                             matrix.setSaturation(0f)
                             val filter = ColorMatrixColorFilter(matrix)
@@ -110,7 +110,7 @@ class PointShopActivity : AppCompatActivity() {
                             binding.seaThemeImg.isEnabled = false
                         }
                     }else if(key == "forest_theme"){
-                        if(value == 0){
+                        if(value == 1){
                             val matrix = ColorMatrix()
                             matrix.setSaturation(0f)
                             val filter = ColorMatrixColorFilter(matrix)
@@ -162,6 +162,7 @@ class PointShopActivity : AppCompatActivity() {
                             val filter = ColorMatrixColorFilter(matrix)
                             binding.excitingBgmImg.setColorFilter(filter)
                             binding.excitingBgmImg.isEnabled = false
+                            db.child("users").child(user!!).child("get_items/exciting_bgm/bought").setValue(1)
                             Toast.makeText(this@PointShopActivity, "구매 완료", Toast.LENGTH_SHORT).show()
                         }else{
                             Toast.makeText(this@PointShopActivity, "구매할 수 없음", Toast.LENGTH_SHORT).show()
@@ -182,6 +183,7 @@ class PointShopActivity : AppCompatActivity() {
                             val filter = ColorMatrixColorFilter(matrix)
                             binding.seaBgmImg.setColorFilter(filter)
                             binding.seaBgmImg.isEnabled = false
+                            db.child("users").child(user!!).child("get_items/sea_bgm/bought").setValue(1)
                             Toast.makeText(this@PointShopActivity, "구매 완료", Toast.LENGTH_SHORT).show()
                         }else{
                             Toast.makeText(this@PointShopActivity, "구매할 수 없음", Toast.LENGTH_SHORT).show()
@@ -205,6 +207,7 @@ class PointShopActivity : AppCompatActivity() {
                             val filter = ColorMatrixColorFilter(matrix)
                             binding.softBgmImg.setColorFilter(filter)
                             binding.softBgmImg.isEnabled = false
+                            db.child("users").child(user!!).child("get_items/soft_bgm/bought").setValue(1)
                             Toast.makeText(this@PointShopActivity, "구매 완료", Toast.LENGTH_SHORT).show()
                         }else{
                             Toast.makeText(this@PointShopActivity, "구매할 수 없음", Toast.LENGTH_SHORT).show()
@@ -228,6 +231,7 @@ class PointShopActivity : AppCompatActivity() {
                             val filter = ColorMatrixColorFilter(matrix)
                             binding.blueShirtImg.setColorFilter(filter)
                             binding.blueShirtImg.isEnabled = false
+                            db.child("users").child(user!!).child("get_items/blue_shirt/bought").setValue(1)
                             Toast.makeText(this@PointShopActivity, "구매 완료", Toast.LENGTH_SHORT).show()
                         }else{
                             Toast.makeText(this@PointShopActivity, "구매할 수 없음", Toast.LENGTH_SHORT).show()
@@ -251,6 +255,7 @@ class PointShopActivity : AppCompatActivity() {
                             val filter = ColorMatrixColorFilter(matrix)
                             binding.fluffHatImg.setColorFilter(filter)
                             binding.fluffHatImg.isEnabled = false
+                            db.child("users").child(user!!).child("get_items/fluff_hat/bought").setValue(1)
                             Toast.makeText(this@PointShopActivity, "구매 완료", Toast.LENGTH_SHORT).show()
                         }else{
                             Toast.makeText(this@PointShopActivity, "구매할 수 없음", Toast.LENGTH_SHORT).show()
@@ -274,6 +279,7 @@ class PointShopActivity : AppCompatActivity() {
                             val filter = ColorMatrixColorFilter(matrix)
                             binding.greenPantsImg.setColorFilter(filter)
                             binding.greenPantsImg.isEnabled = false
+                            db.child("users").child(user!!).child("get_items/green_pants/bought").setValue(1)
                             Toast.makeText(this@PointShopActivity, "구매 완료", Toast.LENGTH_SHORT).show()
                         }else{
                             Toast.makeText(this@PointShopActivity, "구매할 수 없음", Toast.LENGTH_SHORT).show()
@@ -297,6 +303,7 @@ class PointShopActivity : AppCompatActivity() {
                             val filter = ColorMatrixColorFilter(matrix)
                             binding.discoThemeImg.setColorFilter(filter)
                             binding.discoThemeImg.isEnabled = false
+                            db.child("users").child(user!!).child("get_items/disco_theme/bought").setValue(1)
                             Toast.makeText(this@PointShopActivity, "구매 완료", Toast.LENGTH_SHORT).show()
                         }else{
                             Toast.makeText(this@PointShopActivity, "구매할 수 없음", Toast.LENGTH_SHORT).show()
@@ -320,6 +327,7 @@ class PointShopActivity : AppCompatActivity() {
                             val filter = ColorMatrixColorFilter(matrix)
                             binding.seaThemeImg.setColorFilter(filter)
                             binding.seaThemeImg.isEnabled = false
+                            db.child("users").child(user!!).child("get_items/sea_theme/bought").setValue(1)
                             Toast.makeText(this@PointShopActivity, "구매 완료", Toast.LENGTH_SHORT).show()
                         }else{
                             Toast.makeText(this@PointShopActivity, "구매할 수 없음", Toast.LENGTH_SHORT).show()
@@ -329,7 +337,7 @@ class PointShopActivity : AppCompatActivity() {
 
                 binding.forestThemeImg.setOnClickListener {
                     if (binding.forestThemeImg.isEnabled) {
-                        var point = dataSnapshot.child("items"/forest_theme")
+                        var point = dataSnapshot.child("items/forest_theme")
                             .getValue(Int::class.java)
                         Log.d("POINT SHOP POINT", point.toString())
                         var total_point = dataSnapshot.child("users").child(user).child("total_point")
@@ -344,6 +352,7 @@ class PointShopActivity : AppCompatActivity() {
                             val filter = ColorMatrixColorFilter(matrix)
                             binding.forestThemeImg.setColorFilter(filter)
                             binding.forestThemeImg.isEnabled = false
+                            db.child("users").child(user!!).child("get_items/forest_theme/bought").setValue(1)
                             Toast.makeText(this@PointShopActivity, "구매 완료", Toast.LENGTH_SHORT).show()
                         }else{
                             Toast.makeText(this@PointShopActivity, "구매할 수 없음", Toast.LENGTH_SHORT).show()
