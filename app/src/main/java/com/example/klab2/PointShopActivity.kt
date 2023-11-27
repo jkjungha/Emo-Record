@@ -170,7 +170,7 @@ class PointShopActivity : AppCompatActivity() {
                 }
                 binding.seaBgmImg.setOnClickListener {
                     if (binding.seaBgmImg.isEnabled) {
-                        var point = dataSnapshot.child("items").child("sea_bgm")
+                        var point = dataSnapshot.child("items/sea_bgm")
                             .getValue(Int::class.java)
                         var total_point = dataSnapshot.child("users").child(user).child("total_point")
                             .getValue(Int::class.java)
@@ -190,7 +190,7 @@ class PointShopActivity : AppCompatActivity() {
                 }
                 binding.softBgmImg.setOnClickListener {
                     if (binding.softBgmImg.isEnabled) {
-                        var point = dataSnapshot.child("items").child("soft_bgm")
+                        var point = dataSnapshot.child("items/soft_bgm")
                             .getValue(Int::class.java)
                         Log.d("POINT SHOP POINT", point.toString())
                         var total_point = dataSnapshot.child("users").child(user).child("total_point")
@@ -213,7 +213,7 @@ class PointShopActivity : AppCompatActivity() {
                 }
                 binding.blueShirtImg.setOnClickListener {
                     if (binding.blueShirtImg.isEnabled) {
-                        var point = dataSnapshot.child("items").child("blue_shirt")
+                        var point = dataSnapshot.child("items/blue_shirt")
                             .getValue(Int::class.java)
                         Log.d("POINT SHOP POINT", point.toString())
                         var total_point = dataSnapshot.child("users").child(user).child("total_point")
@@ -236,7 +236,7 @@ class PointShopActivity : AppCompatActivity() {
                 }
                 binding.fluffHatImg.setOnClickListener {
                     if (binding.fluffHatImg.isEnabled) {
-                        var point = dataSnapshot.child("items").child("fluff_hat")
+                        var point = dataSnapshot.child("items/fluff_hat")
                             .getValue(Int::class.java)
                         Log.d("POINT SHOP POINT", point.toString())
                         var total_point = dataSnapshot.child("users").child(user).child("total_point")
@@ -259,7 +259,7 @@ class PointShopActivity : AppCompatActivity() {
                 }
                 binding.greenPantsImg.setOnClickListener {
                     if (binding.greenPantsImg.isEnabled) {
-                        var point = dataSnapshot.child("items").child("green_pants")
+                        var point = dataSnapshot.child("items/green_pants")
                             .getValue(Int::class.java)
                         Log.d("POINT SHOP POINT", point.toString())
                         var total_point = dataSnapshot.child("users").child(user).child("total_point")
@@ -282,7 +282,7 @@ class PointShopActivity : AppCompatActivity() {
                 }
                 binding.discoThemeImg.setOnClickListener {
                     if (binding.discoThemeImg.isEnabled) {
-                        var point = dataSnapshot.child("items").child("disco_theme")
+                        var point = dataSnapshot.child("items/disco_theme")
                             .getValue(Int::class.java)
                         Log.d("POINT SHOP POINT", point.toString())
                         var total_point = dataSnapshot.child("users").child(user).child("total_point")
@@ -305,7 +305,7 @@ class PointShopActivity : AppCompatActivity() {
                 }
                 binding.seaThemeImg.setOnClickListener {
                     if (binding.seaThemeImg.isEnabled) {
-                        var point = dataSnapshot.child("items").child("sea_theme")
+                        var point = dataSnapshot.child("items/sea_theme")
                             .getValue(Int::class.java)
                         Log.d("POINT SHOP POINT", point.toString())
                         var total_point = dataSnapshot.child("users").child(user).child("total_point")
@@ -329,7 +329,7 @@ class PointShopActivity : AppCompatActivity() {
 
                 binding.forestThemeImg.setOnClickListener {
                     if (binding.forestThemeImg.isEnabled) {
-                        var point = dataSnapshot.child("items").child("forest_theme")
+                        var point = dataSnapshot.child("items"/forest_theme")
                             .getValue(Int::class.java)
                         Log.d("POINT SHOP POINT", point.toString())
                         var total_point = dataSnapshot.child("users").child(user).child("total_point")

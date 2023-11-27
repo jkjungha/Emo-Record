@@ -1,9 +1,9 @@
 <!-- res/layout/change_theme.xml -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     tools:context=".ChangeThemeActivity">
 
@@ -19,7 +19,7 @@
             android:gravity="center"
             android:text="Settings"
             android:textSize="30sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/back_button"
@@ -31,120 +31,151 @@
             android:layout_marginTop="6dp"
             app:srcCompat="?attr/actionModeCloseDrawable" />
     </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="30dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="BGM settings" />
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingVertical="10dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/black_border">
 
-    <RadioGroup
-        android:id="@+id/bgm_radio_group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BGM settings" />
 
-        <RadioButton
-            android:id="@+id/exciting_bgm_radio_button"
+            <RadioGroup
+                android:id="@+id/bgm_radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/exciting_bgm_radio_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="exciting bgm" />
+
+                <RadioButton
+                    android:id="@+id/sea_bgm_radio_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="sea bgm" />
+
+                <RadioButton
+                    android:id="@+id/soft_bgm_radio_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="soft bgm" />
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingVertical="10dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/black_border">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cloth settings" />
+
+            <RadioGroup
+                android:id="@+id/cloth_radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/blue_shirt_radio_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="blue shirt" />
+
+                <RadioButton
+                    android:id="@+id/fluff_hat_radio_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="fluff hat" />
+
+                <RadioButton
+                    android:id="@+id/green_pants_radio_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="green pants" />
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingVertical="10dp"
+            android:background="@drawable/black_border">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Theme settings" />
+
+            <RadioGroup
+                android:id="@+id/theme_radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/disco_theme_radio_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="disco theme" />
+
+                <RadioButton
+                    android:id="@+id/sea_theme_radio_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="sea theme" />
+
+                <RadioButton
+                    android:id="@+id/forest_theme_radio_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="forest theme" />
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <Button
+            android:layout_gravity="center"
+            android:id="@+id/done_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="exciting bgm" />
-
-        <RadioButton
-            android:id="@+id/sea_bgm_radio_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="sea bgm" />
-
-        <RadioButton
-            android:id="@+id/soft_bgm_radio_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="soft bgm" />
-
-    </RadioGroup>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cloth settings" />
-
-    <RadioGroup
-        android:id="@+id/cloth_radio_group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/blue_shirt_radio_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="blue shirt" />
-
-        <RadioButton
-            android:id="@+id/fluff_hat_radio_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="fluff hat" />
-
-        <RadioButton
-            android:id="@+id/green_pants_radio_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="green pants" />
-
-    </RadioGroup>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Theme settings" />
-
-    <RadioGroup
-        android:id="@+id/theme_radio_group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/disco_theme_radio_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="disco theme" />
-
-        <RadioButton
-            android:id="@+id/sea_theme_radio_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="sea theme" />
-
-        <RadioButton
-            android:id="@+id/forest_theme_radio_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="forest theme" />
-
-    </RadioGroup>
-
-    <Button
-        android:id="@+id/done_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="done" />
+            android:layout_marginTop="16dp"
+            android:text="done" />
 
     </LinearLayout>
 
