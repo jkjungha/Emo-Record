@@ -25,11 +25,106 @@ class PointShopActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityPointShopBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//        init()
+        init()
         imageCheck()
     }
 
     fun init() {
+        var user = "userid1"
+//        val sharedPreferences = getSharedPreferences("live", MODE_PRIVATE)
+//        val user = sharedPreferences.getString("user", "")
+        Log.d("POINT SHOP USER", user!!)
+        if (user.isNullOrEmpty()) {
+            Toast.makeText(this@PointShopActivity, "유저를 찾을 수 없음", Toast.LENGTH_SHORT).show()
+        }
+        val database = Firebase.database
+        var db = database.reference
+        db.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                var get_items = dataSnapshot.child("users").child(user).child("get_items")
+                for(child in get_items.children){
+                    var key = child.key
+                    var value = child.child("bought").getValue(Int::class.java)
+                    if(key == "exciting_bgm"){
+                        if(value == 0){
+                            val matrix = ColorMatrix()
+                            matrix.setSaturation(0f)
+                            val filter = ColorMatrixColorFilter(matrix)
+                            binding.excitingBgmImg.setColorFilter(filter)
+                            binding.excitingBgmImg.isEnabled = false
+                        }
+                    }else if(key == "sea_bgm"){
+                        if(value == 0){
+                            val matrix = ColorMatrix()
+                            matrix.setSaturation(0f)
+                            val filter = ColorMatrixColorFilter(matrix)
+                            binding.seaBgmImg.setColorFilter(filter)
+                            binding.seaBgmImg.isEnabled = false
+                        }
+                    }else if(key == "soft_bgm"){
+                        if(value == 0){
+                            val matrix = ColorMatrix()
+                            matrix.setSaturation(0f)
+                            val filter = ColorMatrixColorFilter(matrix)
+                            binding.softBgmImg.setColorFilter(filter)
+                            binding.softBgmImg.isEnabled = false
+                        }
+                    }else if(key == "blue_shirt"){
+                        if(value == 0){
+                            val matrix = ColorMatrix()
+                            matrix.setSaturation(0f)
+                            val filter = ColorMatrixColorFilter(matrix)
+                            binding.blueShirtImg.setColorFilter(filter)
+                            binding.blueShirtImg.isEnabled = false
+                        }
+                    }else if(key == "fluff_hat"){
+                        if(value == 0){
+                            val matrix = ColorMatrix()
+                            matrix.setSaturation(0f)
+                            val filter = ColorMatrixColorFilter(matrix)
+                            binding.fluffHatImg.setColorFilter(filter)
+                            binding.fluffHatImg.isEnabled = false
+                        }
+                    }else if(key == "green_pants"){
+                        if(value == 0){
+                            val matrix = ColorMatrix()
+                            matrix.setSaturation(0f)
+                            val filter = ColorMatrixColorFilter(matrix)
+                            binding.greenPantsImg.setColorFilter(filter)
+                            binding.greenPantsImg.isEnabled = false
+                        }
+                    }else if(key == "disco_theme"){
+                        if(value == 0){
+                            val matrix = ColorMatrix()
+                            matrix.setSaturation(0f)
+                            val filter = ColorMatrixColorFilter(matrix)
+                            binding.discoThemeImg.setColorFilter(filter)
+                            binding.discoThemeImg.isEnabled = false
+                        }
+                    }else if(key == "sea_theme"){
+                        if(value == 0){
+                            val matrix = ColorMatrix()
+                            matrix.setSaturation(0f)
+                            val filter = ColorMatrixColorFilter(matrix)
+                            binding.seaThemeImg.setColorFilter(filter)
+                            binding.seaThemeImg.isEnabled = false
+                        }
+                    }else if(key == "forest_theme"){
+                        if(value == 0){
+                            val matrix = ColorMatrix()
+                            matrix.setSaturation(0f)
+                            val filter = ColorMatrixColorFilter(matrix)
+                            binding.forestThemeImg.setColorFilter(filter)
+                            binding.forestThemeImg.isEnabled = false
+                        }
+                    }
+                }
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+
+            }
+        })
     }
 
     fun imageCheck() {
@@ -52,7 +147,7 @@ class PointShopActivity : AppCompatActivity() {
         var db = database.reference
         db.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                binding.totalPoint.text = "Total Point : "+dataSnapshot.child("users").child(user).child("total_point").getValue(Int::class.java).toString()
+                binding.totalPoint.text = "Total Point : "+dataSnapshot.child("users").child(user).child("total_point").getValue(Int::class.java).toString() + " points"
                 binding.excitingBgmImg.setOnClickListener {
                     if (binding.excitingBgmImg.isEnabled) {
                         var point = dataSnapshot.child("items/exciting_bgm")

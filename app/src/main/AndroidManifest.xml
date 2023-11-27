@@ -16,10 +16,14 @@
         android:theme="@style/Theme.EmotionKU"
         tools:targetApi="31">
         <activity
+            android:name=".ChangeThemeActivity"
+            android:exported="false" />
+        <activity
             android:name=".PointShopActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -41,32 +45,32 @@
             android:exported="false" />
         <activity
             android:name=".ThingsWantToHearActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".RegisterActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".LoginActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".ForgetPasswordActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".ResetPasswordActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".SettingActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".ChangeProfileActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".ChangePasswordActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".SettingThemeActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light"></activity>
+            android:theme="@style/Theme.AppCompat.Light" />
     </application>
 
 </manifest>

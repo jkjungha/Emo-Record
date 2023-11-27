@@ -25,27 +25,27 @@ class SettingThemeActivity : AppCompatActivity() {
 
         setContentView(R.layout.change_theme)
 
-        themeRadioGroup = findViewById(R.id.themeRadioGroup)
-        lightThemeRadioButton = findViewById(R.id.lightThemeRadioButton)
-        darkThemeRadioButton = findViewById(R.id.darkThemeRadioButton)
-        val backToLoginButton: Button = findViewById(R.id.backToLoginButton)
-
-        themeRadioGroup.check(R.id.lightThemeRadioButton)
-
-        themeRadioGroup.setOnCheckedChangeListener { _, checkedId ->
-            when (checkedId) {
-                R.id.lightThemeRadioButton -> setTheme(android.R.style.Theme_Light)
-                R.id.darkThemeRadioButton -> setTheme(android.R.style.Theme_Black)
-            }
-
-            recreate()
-        }
-
-        backToLoginButton.setOnClickListener {
-            // 创建一个 Intent 以返回到设置界面
-            val intent = Intent(this@SettingThemeActivity, SettingActivity::class.java)
-            startActivity(intent)
-            finish() // 结束当前的修改个人信息界面
-        }
+//        themeRadioGroup = findViewById(R.id.themeRadioGroup)
+//        lightThemeRadioButton = findViewById(R.id.lightThemeRadioButton)
+//        darkThemeRadioButton = findViewById(R.id.darkThemeRadioButton)
+//        val backToLoginButton: Button = findViewById(R.id.backToLoginButton)
+//
+//        themeRadioGroup.check(R.id.lightThemeRadioButton)
+//
+//        themeRadioGroup.setOnCheckedChangeListener { _, checkedId ->
+//            when (checkedId) {
+//                R.id.lightThemeRadioButton -> setTheme(android.R.style.Theme_Light)
+//                R.id.darkThemeRadioButton -> setTheme(android.R.style.Theme_Black)
+//            }
+//
+//            recreate()
+//        }
+//
+//        backToLoginButton.setOnClickListener {
+//            // 创建一个 Intent 以返回到设置界面
+//            val intent = Intent(this@SettingThemeActivity, SettingActivity::class.java)
+//            startActivity(intent)
+//            finish() // 结束当前的修改个人信息界面
+//        }
     }
 }
