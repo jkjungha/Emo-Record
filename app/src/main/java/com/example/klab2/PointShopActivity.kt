@@ -1,6 +1,7 @@
 package com.example.klab2
 
 import android.R
+import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.ColorMatrix
 import android.graphics.ColorMatrixColorFilter
@@ -33,6 +34,12 @@ class PointShopActivity : AppCompatActivity() {
 
     fun imageCheck() {
 
+        binding.backButton.setOnClickListener {
+            TODO("뒤로 가기 버튼")
+//            val intent = Intent(this@PointShopActivity, );
+//            startActivity(intent)
+        }
+
         var user = "userid1"
 //        val sharedPreferences = getSharedPreferences("live", MODE_PRIVATE)
 //        val user = sharedPreferences.getString("user", "")
@@ -45,6 +52,7 @@ class PointShopActivity : AppCompatActivity() {
         var db = database.reference
         db.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
+                binding.totalPoint.text = "Total Point : "+dataSnapshot.child("users").child(user).child("total_point").getValue(Int::class.java).toString()
                 binding.excitingBgmImg.setOnClickListener {
                     if (binding.excitingBgmImg.isEnabled) {
                         var point = dataSnapshot.child("items/exciting_bgm")
