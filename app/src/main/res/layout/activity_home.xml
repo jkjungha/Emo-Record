@@ -1,0 +1,14 @@
+<!-- res/layout/activity_home.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- res/layout/activity_home.xml -->
+    <Button
+        android:id="@+id/recommendButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="활동 추천"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>
