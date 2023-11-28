@@ -5,6 +5,8 @@ import android.widget.Button
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
+import com.example.klab2.R
+import com.example.myapplication.LoadingHelper
 
 class SettingThemeActivity : AppCompatActivity() {
     private lateinit var loadingHelper: LoadingHelper

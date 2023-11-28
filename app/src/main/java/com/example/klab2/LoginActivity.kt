@@ -7,6 +7,8 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityOptionsCompat
+import com.example.klab2.R
+import com.example.myapplication.LoadingHelper
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var loadingHelper: LoadingHelper

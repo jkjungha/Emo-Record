@@ -3,6 +3,8 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import com.example.klab2.R
+import com.example.myapplication.LoadingHelper
 
 class SettingActivity : AppCompatActivity() {
     private lateinit var loadingHelper: LoadingHelper

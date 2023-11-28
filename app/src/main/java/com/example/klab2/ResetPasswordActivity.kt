@@ -6,6 +6,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.klab2.R
+import com.example.myapplication.LoadingHelper
 
 class ResetPasswordActivity : AppCompatActivity() {
     private lateinit var loadingHelper: LoadingHelper

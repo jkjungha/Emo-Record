@@ -7,6 +7,8 @@ import android.widget.EditText
 import android.widget.Toast
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
+import com.example.klab2.R
+import com.example.myapplication.LoadingHelper
 
 class ForgetPasswordActivity : AppCompatActivity() {
     private lateinit var loadingHelper: LoadingHelper
