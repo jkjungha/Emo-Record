@@ -76,6 +76,7 @@ class LoginActivity : AppCompatActivity() {
                             editor.putString("user", enteredUsername)
                             LoginActivity.username = enteredUsername
                             editor.apply()
+                            Log.d("GOT YOU", "LOGIN")
 
                             var Intent =
                                 Intent(this@LoginActivity, MainActivity::class.java)

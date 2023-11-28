@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         val bottomNavigationViewZ:BottomNavigationView = findViewById(R.id.navigationView)
         bottomNavigationViewZ.selectedItemId = R.id.homeFragment
-
+        Log.d("GOT YOU", "MAIN")
 
         if(select==0)
             setFragment(TAG_HOME, HomeFragment())

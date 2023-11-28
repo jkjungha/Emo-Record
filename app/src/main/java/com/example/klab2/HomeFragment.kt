@@ -44,7 +44,7 @@ class HomeFragment : Fragment() {
         db.getReference("users").child(LoginActivity.username).child("activity").child("예시5").setValue(5)
         db.getReference("users").child(LoginActivity.username).child("Point").setValue(0)
 
-        val point = db.getReference("users").child("Point")
+        val point = db.getReference("users").child(LoginActivity.username).child("total_point")
             .addValueEventListener(object: ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     pointResult = snapshot.value.toString().toInt()
