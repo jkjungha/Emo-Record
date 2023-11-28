@@ -1,3 +1,5 @@
+package com.example.klab2
+
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -52,7 +54,7 @@ class SettingActivity : AppCompatActivity() {
                 showLoading()
 
                 // 处理设置主题
-                val intent = Intent(this, SettingThemeActivity::class.java)
+                val intent = Intent(this, ChangeThemeActivity::class.java)
                 startActivity(intent)
 
                 // 隐藏加载动画
