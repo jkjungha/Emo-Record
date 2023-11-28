@@ -38,7 +38,7 @@ class AddThingsWantToHearActivity : AppCompatActivity() {
                 binding.addDoneButton.setOnClickListener {
                     var hearText = binding.addTypeText.text.toString()
                     var count = dataSnapshot.child("full").getValue(Int::class.java)
-                    if (hearText != "" && count != 5) {
+                    if (hearText != "" && count!! < 5) {
                         if (count != null) {
                             count = count!! + 1
                         }
