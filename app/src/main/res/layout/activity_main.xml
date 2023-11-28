@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:id="@+id/act"
+    android:background="@drawable/bg_forest"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
@@ -17,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        app:itemBackground="@color/green"
+        android:background="#9dc183"
         app:itemIconTint="@drawable/menu_click_color"
         app:itemTextColor="@drawable/menu_click_color"
         app:layout_constraintBottom_toBottomOf="parent"
