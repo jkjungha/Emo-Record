@@ -85,7 +85,7 @@
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="25dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/border_layout"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
@@ -96,7 +96,7 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="25dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/border_layout"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
@@ -107,7 +107,7 @@
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="25dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/border_layout"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
@@ -118,7 +118,7 @@
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="25dp"
         android:background="@drawable/border_layout"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toTopOf="@+id/textView5"
@@ -129,7 +129,7 @@
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="25dp"
         android:layout_marginBottom="31dp"
         android:background="@drawable/border_layout"
         app:layout_constraintBottom_toTopOf="@+id/ori_add_button"

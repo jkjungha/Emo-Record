@@ -42,7 +42,6 @@ class HomeFragment : Fragment() {
         db.getReference("users").child(LoginActivity.username).child("activity").child("예시3").setValue(3)
         db.getReference("users").child(LoginActivity.username).child("activity").child("예시4").setValue(4)
         db.getReference("users").child(LoginActivity.username).child("activity").child("예시5").setValue(5)
-        db.getReference("users").child(LoginActivity.username).child("Point").setValue(0)
 
         val point = db.getReference("users").child(LoginActivity.username).child("total_point")
             .addValueEventListener(object: ValueEventListener {
@@ -84,11 +83,11 @@ class HomeFragment : Fragment() {
                     .setPositiveButton("완료",
                         DialogInterface.OnClickListener { dialogInterface, i ->
                             adapter.removeItem(position)
-                            db.getReference("users").child("activity")
+                            db.getReference("users").child(LoginActivity.username).child("activity")
                                 .child(data.act).removeValue()
                             Toast.makeText(requireContext(), "5포인트가 적립되었습니다.", Toast.LENGTH_SHORT).show()
                             val point2 = pointResult + 5
-                            db.getReference("users").child("Point").setValue(point2)
+                            db.getReference("users").child(LoginActivity.username).child("total_point").setValue(point2)
                         })
                     .setNegativeButton("돌아가기",
                         DialogInterface.OnClickListener { dialogInterface, i ->

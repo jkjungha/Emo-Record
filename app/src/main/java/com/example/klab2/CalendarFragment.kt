@@ -108,9 +108,8 @@ class CalendarFragment : Fragment() {
                 val builder = AlertDialog.Builder(requireContext())
                 builder.setTitle("삭제").setMessage("일기를 삭제하시겠습니까?")
                     .setPositiveButton("확인") { _, _ ->
-                        db.getReference("users").child(LoginActivity.username).child("calendar").child(year.toString())
-                            .child((month + 1).toString()).child(dayOfMonth.toString())
-                            .removeValue()
+                        db.getReference("users").child(LoginActivity.username).child("calender").child(year.toString())
+                            .child((month + 1).toString()).child(dayOfMonth.toString()).removeValue()
                     }
                     .setNegativeButton("취소") { _, _ ->
 
