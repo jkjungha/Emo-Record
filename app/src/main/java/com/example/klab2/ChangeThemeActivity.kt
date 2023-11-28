@@ -30,19 +30,12 @@ class ChangeThemeActivity : AppCompatActivity(){
 
     fun init() {
         binding.backButton.setOnClickListener {
-            var intent = Intent(this@ChangeThemeActivity, ThingsWantToHearActivity::class.java)
+            var intent = Intent(this@ChangeThemeActivity, MainActivity::class.java)
             startActivity(intent)
         }
 
-        var user = "userid1"
-//        val sharedPreferences = getSharedPreferences("live", MODE_PRIVATE)
-//        val user = sharedPreferences.getString("user", "")
-        Log.d("POINT SHOP USER", user!!)
-        if (user.isNullOrEmpty()) {
-            Toast.makeText(this@ChangeThemeActivity, "유저를 찾을 수 없음", Toast.LENGTH_SHORT).show()
-        }
         val database = Firebase.database
-        var items = database.getReference("users").child(user).child("get_items")
+        var items = database.getReference("users").child(LoginActivity.username).child("get_items")
         items.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 for (item in dataSnapshot.children) {
