@@ -54,7 +54,16 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false"></activity>
+            android:exported="false">
+        </activity>
+        <receiver android:name="com.example.klab2.AlarmReceiver" />
+        <activity
+            android:name=".MessageActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.MaterialComponents.DayNight"
+            android:excludeFromRecents="true"
+            android:taskAffinity="">
+        </activity>
     </application>
 
 </manifest>

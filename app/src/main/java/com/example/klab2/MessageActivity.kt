@@ -11,5 +11,9 @@ class MessageActivity : AppCompatActivity() {
         binding = ActivityMsgBinding.inflate(layoutInflater)
         setContentView(binding.root)
         super.onCreate(savedInstanceState)
+
+        val word = intent?.getStringExtra("word")
+
+        binding.textMsg.text = word
     }
 }
