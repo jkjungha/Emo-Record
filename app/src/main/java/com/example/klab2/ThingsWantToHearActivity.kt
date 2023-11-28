@@ -46,7 +46,7 @@ class ThingsWantToHearActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("live", MODE_PRIVATE)
         val userid = sharedPreferences.getString("user", "")
         val database = Firebase.database
-        val word = database.getReference("users").child(userid!!).child("word")
+        val word = database.getReference("users").child(LoginActivity.username).child("word")
         word.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 binding.textView1.text = dataSnapshot.child("word1").getValue(String::class.java).toString()

@@ -37,12 +37,12 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        db.getReference("users").child("activity").child("예시1").setValue(1)
-        db.getReference("users").child("activity").child("예시2").setValue(2)
-        db.getReference("users").child("activity").child("예시3").setValue(3)
-        db.getReference("users").child("activity").child("예시4").setValue(4)
-        db.getReference("users").child("activity").child("예시5").setValue(5)
-        db.getReference("users").child("Point").setValue(0)
+        db.getReference("users").child(LoginActivity.username).child("activity").child("예시1").setValue(1)
+        db.getReference("users").child(LoginActivity.username).child("activity").child("예시2").setValue(2)
+        db.getReference("users").child(LoginActivity.username).child("activity").child("예시3").setValue(3)
+        db.getReference("users").child(LoginActivity.username).child("activity").child("예시4").setValue(4)
+        db.getReference("users").child(LoginActivity.username).child("activity").child("예시5").setValue(5)
+        db.getReference("users").child(LoginActivity.username).child("Point").setValue(0)
 
         val point = db.getReference("users").child("Point")
             .addValueEventListener(object: ValueEventListener {
@@ -55,7 +55,7 @@ class HomeFragment : Fragment() {
 
             })
 
-        val adb = db.getReference("users").child("activity")
+        val adb = db.getReference("users").child(LoginActivity.username).child("activity")
         adb.get().addOnSuccessListener {
             if(it.exists()){
                 for(i in it.children)

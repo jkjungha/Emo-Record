@@ -22,7 +22,7 @@ class CheckEmojiActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("live", MODE_PRIVATE)
         val userid = sharedPreferences.getString("user", "")
         val database = Firebase.database
-        val user = database.getReference("users").child(userid!!)
+        val user = database.getReference("users").child(LoginActivity.username)
         val day = user.child("calender").child(CalendarFragment.year1.toString())
             .child((CalendarFragment.month1+1).toString()).child(CalendarFragment.day1.toString())
         day.addValueEventListener(object : ValueEventListener {
