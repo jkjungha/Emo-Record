@@ -37,7 +37,7 @@ class ThingsWantToHearActivity : AppCompatActivity() {
             var Intent = Intent(this, EditThingsWantToHearActivity::class.java)
             startActivity(Intent)
         }
-        binding.oriSettingsButton.setOnClickListener{
+        binding.oriTimeButton.setOnClickListener{
             var Intent = Intent(this, Time::class.java)
             startActivity(Intent)
         }

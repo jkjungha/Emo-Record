@@ -35,7 +35,7 @@ class WriteDairyActivity : AppCompatActivity() {
 
         day.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                binding.dariySaveButton.setOnClickListener {
+                binding.dairySaveButton.setOnClickListener {
                     var title = binding.dairyTitle.text.toString()
                     var content = binding.dairyContent.text.toString()
                     day.child("dairy_title").setValue(title)
@@ -53,7 +53,6 @@ class WriteDairyActivity : AppCompatActivity() {
                 }
             }
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
             }
         })
     }
