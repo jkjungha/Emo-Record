@@ -1,17 +1,17 @@
 package com.example.klab2
 
-import android.R
+import android.content.Context.MODE_PRIVATE
 import android.content.Intent
-import android.content.SharedPreferences
 import android.graphics.ColorMatrix
 import android.graphics.ColorMatrixColorFilter
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
-import android.widget.ImageView
+import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import com.example.klab2.databinding.ActivityPointShopBinding
+import androidx.fragment.app.Fragment
+import com.example.klab2.databinding.FragmentPointShopBinding
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -19,29 +19,29 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
 
-class PointShopActivity : AppCompatActivity() {
-    lateinit var binding: ActivityPointShopBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
+class PointShopFragment : Fragment() {
+    private var _binding: FragmentPointShopBinding? = null
+    private val binding get() = _binding!!
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentPointShopBinding.inflate(inflater, container, false)
         super.onCreate(savedInstanceState)
-        binding = ActivityPointShopBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+
         init()
         imageCheck()
+
+        return binding.root
     }
 
     fun init() {
-//        var user = "userid1"
-        val sharedPreferences = getSharedPreferences("live", MODE_PRIVATE)
-        val user = sharedPreferences.getString("user", "")
-        Log.d("POINT SHOP USER", user!!)
-        if (user.isNullOrEmpty()) {
-            Toast.makeText(this@PointShopActivity, "유저를 찾을 수 없음", Toast.LENGTH_SHORT).show()
-        }
         val database = Firebase.database
         var db = database.reference
         db.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                var get_items = dataSnapshot.child("users").child(user).child("get_items")
+                var get_items = dataSnapshot.child("users").child(LoginActivity.username).child("get_items")
                 for(child in get_items.children){
                     var key = child.key
                     var value = child.child("bought").getValue(Int::class.java)
@@ -130,9 +130,8 @@ class PointShopActivity : AppCompatActivity() {
     fun imageCheck() {
 
         binding.backButton.setOnClickListener {
-            TODO("뒤로 가기 버튼")
-//            val intent = Intent(this@PointShopActivity, );
-//            startActivity(intent)
+            val intent = Intent(context, MainActivity::class.java);
+            startActivity(intent)
         }
 
         var user = "userid1"
@@ -140,7 +139,7 @@ class PointShopActivity : AppCompatActivity() {
 //        val user = sharedPreferences.getString("user", "")
         Log.d("POINT SHOP USER", user!!)
         if (user.isNullOrEmpty()) {
-            Toast.makeText(this@PointShopActivity, "유저를 찾을 수 없음", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(),  "유저를 찾을 수 없음", Toast.LENGTH_SHORT).show()
         }
 
         val database = Firebase.database
@@ -163,9 +162,9 @@ class PointShopActivity : AppCompatActivity() {
                             binding.excitingBgmImg.setColorFilter(filter)
                             binding.excitingBgmImg.isEnabled = false
                             db.child("users").child(user!!).child("get_items/exciting_bgm/bought").setValue(1)
-                            Toast.makeText(this@PointShopActivity, "구매 완료", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(),  "구매 완료", Toast.LENGTH_SHORT).show()
                         }else{
-                            Toast.makeText(this@PointShopActivity, "구매할 수 없음", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(),  "구매할 수 없음", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
@@ -184,9 +183,9 @@ class PointShopActivity : AppCompatActivity() {
                             binding.seaBgmImg.setColorFilter(filter)
                             binding.seaBgmImg.isEnabled = false
                             db.child("users").child(user!!).child("get_items/sea_bgm/bought").setValue(1)
-                            Toast.makeText(this@PointShopActivity, "구매 완료", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT).show()
                         }else{
-                            Toast.makeText(this@PointShopActivity, "구매할 수 없음", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
@@ -208,9 +207,9 @@ class PointShopActivity : AppCompatActivity() {
                             binding.softBgmImg.setColorFilter(filter)
                             binding.softBgmImg.isEnabled = false
                             db.child("users").child(user!!).child("get_items/soft_bgm/bought").setValue(1)
-                            Toast.makeText(this@PointShopActivity, "구매 완료", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT).show()
                         }else{
-                            Toast.makeText(this@PointShopActivity, "구매할 수 없음", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
@@ -232,9 +231,9 @@ class PointShopActivity : AppCompatActivity() {
                             binding.blueShirtImg.setColorFilter(filter)
                             binding.blueShirtImg.isEnabled = false
                             db.child("users").child(user!!).child("get_items/blue_shirt/bought").setValue(1)
-                            Toast.makeText(this@PointShopActivity, "구매 완료", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT).show()
                         }else{
-                            Toast.makeText(this@PointShopActivity, "구매할 수 없음", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
@@ -256,9 +255,9 @@ class PointShopActivity : AppCompatActivity() {
                             binding.fluffHatImg.setColorFilter(filter)
                             binding.fluffHatImg.isEnabled = false
                             db.child("users").child(user!!).child("get_items/fluff_hat/bought").setValue(1)
-                            Toast.makeText(this@PointShopActivity, "구매 완료", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(),"구매 완료", Toast.LENGTH_SHORT).show()
                         }else{
-                            Toast.makeText(this@PointShopActivity, "구매할 수 없음", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
@@ -280,9 +279,9 @@ class PointShopActivity : AppCompatActivity() {
                             binding.greenPantsImg.setColorFilter(filter)
                             binding.greenPantsImg.isEnabled = false
                             db.child("users").child(user!!).child("get_items/green_pants/bought").setValue(1)
-                            Toast.makeText(this@PointShopActivity, "구매 완료", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT).show()
                         }else{
-                            Toast.makeText(this@PointShopActivity, "구매할 수 없음", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
@@ -304,9 +303,9 @@ class PointShopActivity : AppCompatActivity() {
                             binding.discoThemeImg.setColorFilter(filter)
                             binding.discoThemeImg.isEnabled = false
                             db.child("users").child(user!!).child("get_items/disco_theme/bought").setValue(1)
-                            Toast.makeText(this@PointShopActivity, "구매 완료", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(),"구매 완료", Toast.LENGTH_SHORT).show()
                         }else{
-                            Toast.makeText(this@PointShopActivity, "구매할 수 없음", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
@@ -328,9 +327,9 @@ class PointShopActivity : AppCompatActivity() {
                             binding.seaThemeImg.setColorFilter(filter)
                             binding.seaThemeImg.isEnabled = false
                             db.child("users").child(user!!).child("get_items/sea_theme/bought").setValue(1)
-                            Toast.makeText(this@PointShopActivity, "구매 완료", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT).show()
                         }else{
-                            Toast.makeText(this@PointShopActivity, "구매할 수 없음", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
@@ -353,9 +352,9 @@ class PointShopActivity : AppCompatActivity() {
                             binding.forestThemeImg.setColorFilter(filter)
                             binding.forestThemeImg.isEnabled = false
                             db.child("users").child(user!!).child("get_items/forest_theme/bought").setValue(1)
-                            Toast.makeText(this@PointShopActivity, "구매 완료", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT).show()
                         }else{
-                            Toast.makeText(this@PointShopActivity, "구매할 수 없음", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
