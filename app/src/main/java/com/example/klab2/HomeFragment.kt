@@ -42,7 +42,7 @@ class HomeFragment : Fragment() {
         db.getReference("users").child(LoginActivity.username).child("activity").child("예시3").setValue(3)
         db.getReference("users").child(LoginActivity.username).child("activity").child("예시4").setValue(4)
         db.getReference("users").child(LoginActivity.username).child("activity").child("예시5").setValue(5)
-        db.getReference("users").child(LoginActivity.username).child("Point").setValue(0)
+        db.getReference("users").child(LoginActivity.username).child("total_point").setValue(0)
 
         val point = db.getReference("users").child(LoginActivity.username).child("total_point")
             .addValueEventListener(object: ValueEventListener {
