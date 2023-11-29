@@ -60,7 +60,7 @@
         android:layout_gravity="center"
         />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/dairy_save_button"
         android:layout_width="89dp"
         android:layout_height="45dp"
