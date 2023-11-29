@@ -167,7 +167,7 @@
     </LinearLayout>
 
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/edit_done_button"
         android:layout_width="99dp"
         android:layout_height="55dp"
