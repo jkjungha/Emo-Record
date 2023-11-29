@@ -12,7 +12,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 private const val TAG_CALENDER = "calendar_fragment"
 private const val TAG_HOME = "home_fragment"
-private const val TAG_POINT = "point_fragment"
+private const val TAG_POINTSHOP = "pointshop_fragment"
 private const val TAG_SETTING = "setting_fragment"
 private const val TAG_WORD = "word_fragment"
 private const val TAG_ADD= "add_fragment"
@@ -36,11 +36,11 @@ class MainActivity : AppCompatActivity() {
         if(select==0)
             setFragment(TAG_HOME, HomeFragment())
         else if(select==1){
-            setFragment(TAG_WORD, WordFragment())
-            binding.navigationView.selectedItemId = R.id.wordFragment
+            setFragment(TAG_POINTSHOP, PointShopFragment())
+            binding.navigationView.selectedItemId = R.id.pointshopFragment
         }
         else if(select==2){
-            setFragment(TAG_WORD, CalendarFragment())
+            setFragment(TAG_POINTSHOP, CalendarFragment())
             binding.navigationView.selectedItemId = R.id.calenderFragment
         }
 
@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
             when(item.itemId) {
                 R.id.calenderFragment -> setFragment(TAG_CALENDER, CalendarFragment())
                 R.id.homeFragment -> setFragment(TAG_HOME, HomeFragment())
-                R.id.wordFragment-> setFragment(TAG_WORD, WordFragment())
+                R.id.pointshopFragment-> setFragment(TAG_POINTSHOP, PointShopFragment())
             }
             true
         }
@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
 
         val calender = manager.findFragmentByTag(TAG_CALENDER)
         val home = manager.findFragmentByTag(TAG_HOME)
-        val word = manager.findFragmentByTag(TAG_WORD)
+        val pointshop = manager.findFragmentByTag(TAG_POINTSHOP)
 
         if (calender != null){
             fragTransaction.hide(calender)
@@ -74,8 +74,8 @@ class MainActivity : AppCompatActivity() {
             fragTransaction.hide(home)
         }
 
-        if (word != null) {
-            fragTransaction.hide(word)
+        if (pointshop != null) {
+            fragTransaction.hide(pointshop)
         }
         if (tag == TAG_CALENDER) {
             if (calender!=null){
@@ -88,9 +88,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        else if (tag == TAG_WORD){
-            if (word != null){
-                fragTransaction.show(word)
+        else if (tag == TAG_POINTSHOP){
+            if (pointshop != null){
+                fragTransaction.show(pointshop)
             }
         }
 

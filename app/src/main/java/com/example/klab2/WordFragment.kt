@@ -35,7 +35,7 @@ class WordFragment : Fragment() {
     private fun init() {
         binding.wthbut.setOnClickListener {
             activity?.let {
-                var Intent = Intent(context, ThingsWantToHearActivity::class.java)
+                var Intent = Intent(context, PointShopActivity::class.java)
                 startActivity(Intent)
             }
         }
