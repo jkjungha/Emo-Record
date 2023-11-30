@@ -4,6 +4,7 @@ import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.klab2.R
 
 class LoadingHelper(private val activity: Activity) {
     private var loadingView: View

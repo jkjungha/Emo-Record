@@ -6,6 +6,7 @@ import android.os.Handler
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.example.klab2.R
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var loadingHelper: LoadingHelper
