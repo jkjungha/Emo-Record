@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_forest"
     android:orientation="vertical"
     tools:context=".PointShopFragment">
 
@@ -37,6 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="10dp"
+        android:background="#fffee6"
         android:text="Total Point : "
         android:textAlignment="center"
         android:textSize="25sp" />
@@ -46,6 +48,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:layout_marginHorizontal="5dp"
+        android:background="@drawable/border"
         android:contentDescription="pointshop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
