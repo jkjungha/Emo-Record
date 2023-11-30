@@ -1,6 +1,6 @@
 package com.example.klab2
 
-import SettingActivity
+import com.example.klab2.SettingActivity
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -8,7 +8,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myapplication.LoadingHelper
+import com.example.klab2.LoadingHelper
 
 class ChangeProfileActivity : AppCompatActivity() {
     private lateinit var loadingHelper: LoadingHelper
