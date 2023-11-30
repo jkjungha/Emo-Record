@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_spring"
+    tools:context=".WriteDairyActivity">
+
+    <LinearLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginVertical="40dp">
+
+        <TextView
+            android:id="@+id/view_dariy_title"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="Title :"
+            android:background="@drawable/title_spring3"/>
+
+        <EditText
+            android:id="@+id/dairy_title"
+            android:layout_width="209dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="20dp"
+            android:ems="10"
+            android:hint="   title"
+            android:background="@drawable/bg_2_spring"
+            android:inputType="text" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/dairy_content"
+        android:layout_width="311dp"
+        android:layout_height="322dp"
+        android:background="@drawable/bg_2_spring"
+        android:ems="20"
+        android:gravity="top|left"
+        android:hint="Write here"
+        android:inputType="textMultiLine"
+        android:lines="20"
+        android:maxLines="20"
+        android:padding="10dp"
+        android:layout_gravity="center"
+        />
+
+    <Button
+        android:id="@+id/dariy_save_button"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="Save"
+        android:background="@drawable/flower3"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        tools:layout_editor_absoluteX="195dp"
+        tools:layout_editor_absoluteY="631dp" />
+
+
+</LinearLayout>
