@@ -41,11 +41,11 @@
         <LinearLayout
             android:layout_width="350dp"
             android:layout_height="100dp"
-            android:orientation="vertical"
-            android:paddingLeft="15dp"
-            android:paddingVertical="10dp"
             android:layout_marginBottom="15dp"
-            android:background="@drawable/black_border">
+            android:background="@drawable/black_border"
+            android:orientation="vertical"
+            android:paddingVertical="10dp"
+            android:paddingLeft="15dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -85,11 +85,11 @@
         <LinearLayout
             android:layout_width="350dp"
             android:layout_height="100dp"
-            android:orientation="vertical"
-            android:paddingLeft="15dp"
-            android:paddingVertical="10dp"
             android:layout_marginBottom="15dp"
-            android:background="@drawable/black_border">
+            android:background="@drawable/black_border"
+            android:orientation="vertical"
+            android:paddingVertical="10dp"
+            android:paddingLeft="15dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -106,33 +106,33 @@
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/blue_shirt_radio_button"
+                    android:id="@+id/crown_set_radio_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="blue shirt" />
+                    android:text="crown set" />
 
                 <RadioButton
-                    android:id="@+id/fluff_hat_radio_button"
+                    android:id="@+id/hanbok_set_radio_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="fluff hat" />
+                    android:text="hanbok set" />
 
                 <RadioButton
-                    android:id="@+id/green_pants_radio_button"
+                    android:id="@+id/swim_set_radio_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="green pants" />
+                    android:text="swim set" />
 
             </RadioGroup>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="350dp"
-            android:layout_height="100dp"
+            android:layout_height="170dp"
+            android:background="@drawable/black_border"
             android:orientation="vertical"
-            android:paddingLeft="15dp"
             android:paddingVertical="10dp"
-            android:background="@drawable/black_border">
+            android:paddingLeft="15dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -146,34 +146,52 @@
                 android:layout_centerInParent="true"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
-                <RadioButton
-                    android:id="@+id/disco_theme_radio_button"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="disco theme" />
+                    android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/sea_theme_radio_button"
+                    <RadioButton
+                        android:id="@+id/spring_theme_radio_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="spring theme" />
+
+                    <RadioButton
+                        android:id="@+id/summer_theme_radio_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="summer theme" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="sea theme" />
+                    android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/forest_theme_radio_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="forest theme" />
+                    <RadioButton
+                        android:id="@+id/autumn_theme_radio_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="autumn theme" />
+
+                    <RadioButton
+                        android:id="@+id/winter_theme_radio_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="winter theme" />
+                </LinearLayout>
 
             </RadioGroup>
         </LinearLayout>
 
         <Button
-            android:layout_gravity="center"
             android:id="@+id/done_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="16dp"
             android:text="done" />
 

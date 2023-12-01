@@ -31,17 +31,23 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
+
         return binding.root
+    }
+    companion object{
+        var panda:Int = R.drawable.panda
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.imageView.setImageResource(panda)
 
         db.getReference("users").child(LoginActivity.username).child("activity").child("예시1").setValue(1)
         db.getReference("users").child(LoginActivity.username).child("activity").child("예시2").setValue(2)
         db.getReference("users").child(LoginActivity.username).child("activity").child("예시3").setValue(3)
         db.getReference("users").child(LoginActivity.username).child("activity").child("예시4").setValue(4)
         db.getReference("users").child(LoginActivity.username).child("activity").child("예시5").setValue(5)
+//        var panda = intent.getIntExtra("PANDA", 0)
 
         val point = db.getReference("users").child(LoginActivity.username).child("total_point")
             .addValueEventListener(object: ValueEventListener {
@@ -101,5 +107,9 @@ class HomeFragment : Fragment() {
 
 
         // 나머지 Firebase 데이터 로딩 및 설정 등의 코드는 이곳에 추가할 수 있습니다.
+    }
+
+    fun updateImageResource(resourceId: Int) {
+        binding.imageView.setImageResource(resourceId)
     }
 }

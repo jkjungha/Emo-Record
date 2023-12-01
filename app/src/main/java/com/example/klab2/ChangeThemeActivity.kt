@@ -49,18 +49,18 @@ class ChangeThemeActivity : AppCompatActivity(){
                             binding.seaBgmRadioButton.isGone = true
                         } else if (key == "soft_bgm") {
                             binding.softBgmRadioButton.isGone = true
-                        } else if (key == "blue_shirt") {
-                            binding.blueShirtRadioButton.isGone = true
-                        } else if (key == "fluff_hat") {
-                            binding.fluffHatRadioButton.isGone = true
-                        } else if (key == "green_pants") {
-                            binding.greenPantsRadioButton.isGone = true
-                        } else if (key == "disco_theme") {
-                            binding.discoThemeRadioButton.isGone = true
-                        } else if (key == "sea_theme") {
-                            binding.seaThemeRadioButton.isGone = true
-                        } else if (key == "forest_theme") {
-                            binding.forestThemeRadioButton.isGone = true
+                        } else if (key == "crown_set") {
+                            binding.crownSetRadioButton.isGone = true
+                        } else if (key == "hanbok_set") {
+                            binding.hanbokSetRadioButton.isGone = true
+                        } else if (key == "swim_set") {
+                            binding.swimSetRadioButton.isGone = true
+                        } else if (key == "spring_theme") {
+                            binding.springThemeRadioButton.isGone = true
+                        } else if (key == "summer_theme") {
+                            binding.summerThemeRadioButton.isGone = true
+                        } else if (key == "autumn_theme") {
+                            binding.autumnThemeRadioButton.isGone = true
                         }
                     }
                 }
@@ -93,29 +93,38 @@ class ChangeThemeActivity : AppCompatActivity(){
             }
         }
         binding.clothRadioGroup.setOnCheckedChangeListener { buttonView, isChecked ->
-            items.child("blue_shirt/chose").setValue(0)
-            items.child("fluff_hat/chose").setValue(0)
-            items.child("green_pants/chose").setValue(0)
-            if(isChecked == binding.blueShirtRadioButton.id){
-                items.child("blue_shirt/chose").setValue(1)
-            }else if(isChecked == binding.fluffHatRadioButton.id){
-                items.child("fluff_hat/chose").setValue(1)
-            }else if(isChecked == binding.greenPantsRadioButton.id){
-                items.child("green_pants/chose").setValue(1)
+            items.child("crown_set/chose").setValue(0)
+            items.child("hanbok_set/chose").setValue(0)
+            items.child("swim_set/chose").setValue(0)
+            if(isChecked == binding.crownSetRadioButton.id){
+                items.child("crown_set/chose").setValue(1)
+                HomeFragment.panda = R.drawable.panda2
+            }else if(isChecked == binding.hanbokSetRadioButton.id){
+                items.child("hanbok_set/chose").setValue(1)
+                HomeFragment.panda = R.drawable.panda4
+            }else if(isChecked == binding.swimSetRadioButton.id){
+                items.child("swim_set/chose").setValue(1)
+                HomeFragment.panda = R.drawable.panda3
             }
         }
-
         binding.themeRadioGroup.setOnCheckedChangeListener { buttonView, isChecked ->
-            items.child("disco_theme/chose").setValue(0)
-            items.child("sea_theme/chose").setValue(0)
-            items.child("forest_theme/chose").setValue(0)
-            if(isChecked == binding.discoThemeRadioButton.id){
-                items.child("disco_theme/chose").setValue(1)
-            }else if(isChecked == binding.seaThemeRadioButton.id){
-                items.child("sea_theme/chose").setValue(1)
-            }else if(isChecked == binding.forestThemeRadioButton.id){
-                items.child("forest_theme/chose").setValue(1)
-            }
+            items.child("spring_theme/chose").setValue(0)
+            items.child("summer_theme/chose").setValue(0)
+            items.child("autumn_theme/chose").setValue(0)
+//            items.child("winter_theme/chose").setValue(0)
+            if(isChecked == binding.springThemeRadioButton.id){
+                items.child("spring_theme/chose").setValue(1)
+            }else if(isChecked == binding.summerThemeRadioButton.id){
+                items.child("summer_theme/chose").setValue(1)
+            }else if(isChecked == binding.autumnThemeRadioButton.id){
+                items.child("autumn_theme/chose").setValue(1)}
+//            }else if(isChecked == binding.winterThemeRadioButton.id){
+//                items.child("winter_theme/chose").setValue(1)
+//            }
+        }
+        binding.doneButton.setOnClickListener {
+            var intent = Intent(this@ChangeThemeActivity, MainActivity::class.java)
+            startActivity(intent)
         }
 
     }
