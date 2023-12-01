@@ -26,7 +26,7 @@ class ThingsWantToHearActivity : AppCompatActivity() {
     fun init() {
         binding.addBackArrow.setOnClickListener {
             var Intent = Intent(this, MainActivity::class.java)
-            MainActivity.select = 1
+            MainActivity.select = 0
             startActivity(Intent)
         }
         binding.oriAddButton.setOnClickListener{

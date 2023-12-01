@@ -2,18 +2,18 @@ package com.example.klab2
 
 import android.app.AlertDialog
 import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.klab2.databinding.FragmentHomeBinding
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.*
 
 
 class HomeFragment : Fragment() {
@@ -38,11 +38,112 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         db.getReference("users").child(LoginActivity.username).child("activity").child("예시1").setValue(1)
-        db.getReference("users").child(LoginActivity.username).child("activity").child("예시2").setValue(2)
-        db.getReference("users").child(LoginActivity.username).child("activity").child("예시3").setValue(3)
-        db.getReference("users").child(LoginActivity.username).child("activity").child("예시4").setValue(4)
-        db.getReference("users").child(LoginActivity.username).child("activity").child("예시5").setValue(5)
-        db.getReference("users").child(LoginActivity.username).child("total_point").setValue(0)
+        db.getReference("users").child(LoginActivity.username).child("activity").child("예시2").setValue(1)
+        db.getReference("users").child(LoginActivity.username).child("activity").child("예시3").setValue(1)
+        db.getReference("users").child(LoginActivity.username).child("activity").child("예시4").setValue(1)
+        db.getReference("users").child(LoginActivity.username).child("activity").child("예시5").setValue(1)
+
+        val word = db.getReference("users").child(LoginActivity.username).child("word")
+
+        word.addValueEventListener(object: ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val count = snapshot.child("full").value.toString()
+                var text = "안녕! 오늘 하루는 어땠어?"
+                if(count=="1"){
+                    text = snapshot.child("word1").value.toString()
+                    binding.wordHear.text = text
+                }
+                else if(count=="2"){
+                    val range = (1..2).random()
+                    if(range==1){
+                        text = snapshot.child("word1").value.toString()
+                        binding.wordHear.text = text
+                    }
+                    else{
+                        text = snapshot.child("word2").value.toString()
+                        binding.wordHear.text = text
+                    }
+                }
+                else if(count=="3"){
+                    val range = (1..3).random()
+                    if(range==1){
+                        text = snapshot.child("word1").value.toString()
+                        binding.wordHear.text = text
+                    }
+                    else if(range==2){
+                        text = snapshot.child("word2").value.toString()
+                        binding.wordHear.text = text
+                    }
+                    else
+                    {
+                        text = snapshot.child("word3").value.toString()
+                        binding.wordHear.text = text
+                    }
+                }
+                else if(count=="4"){
+                    val range = (1..4).random()
+                    if(range==1){
+                        text = snapshot.child("word1").value.toString()
+                        binding.wordHear.text = text
+                    }
+                    else if(range==2){
+                        text = snapshot.child("word2").value.toString()
+                        binding.wordHear.text = text
+                    }
+                    else if(range==3)
+                    {
+                        text = snapshot.child("word3").value.toString()
+                        binding.wordHear.text = text
+                    }
+                    else
+                    {
+                        text = snapshot.child("word4").value.toString()
+                        binding.wordHear.text = text
+                    }
+                }
+                else if(count=="5"){
+                    val range = (1..5).random()
+                    if(range==1){
+                        text = snapshot.child("word1").value.toString()
+                        binding.wordHear.text = text
+                    }
+                    else if(range==2){
+                        text = snapshot.child("word2").value.toString()
+                        binding.wordHear.text = text
+                    }
+                    else if(range==3)
+                    {
+                        text = snapshot.child("word3").value.toString()
+                        binding.wordHear.text = text
+                    }
+                    else if(range==4)
+                    {
+                        text = snapshot.child("word4").value.toString()
+                        binding.wordHear.text = text
+                    }
+                    else{
+                        text = snapshot.child("word5").value.toString()
+                        binding.wordHear.text = text
+                    }
+                }
+                else
+                    binding.wordHear.text = text
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+            }
+
+        })
+
+        binding.addActivity.setOnClickListener {
+            var Intent = Intent(context, SelectAcitivity::class.java)
+            startActivity(Intent)
+        }
+
+        binding.imageView5.setOnClickListener {
+            var Intent = Intent(context, ThingsWantToHearActivity::class.java)
+            startActivity(Intent)
+        }
 
         val point = db.getReference("users").child(LoginActivity.username).child("total_point")
             .addValueEventListener(object: ValueEventListener {
@@ -84,11 +185,11 @@ class HomeFragment : Fragment() {
                     .setPositiveButton("완료",
                         DialogInterface.OnClickListener { dialogInterface, i ->
                             adapter.removeItem(position)
-                            db.getReference("users").child("activity")
+                            db.getReference("users").child(LoginActivity.username).child("activity")
                                 .child(data.act).removeValue()
                             Toast.makeText(requireContext(), "5포인트가 적립되었습니다.", Toast.LENGTH_SHORT).show()
                             val point2 = pointResult + 5
-                            db.getReference("users").child("Point").setValue(point2)
+                            db.getReference("users").child(LoginActivity.username).child("total_point").setValue(point2)
                         })
                     .setNegativeButton("돌아가기",
                         DialogInterface.OnClickListener { dialogInterface, i ->
@@ -99,8 +200,5 @@ class HomeFragment : Fragment() {
             }
         }
         binding.recyclerview.adapter = adapter
-
-
-        // 나머지 Firebase 데이터 로딩 및 설정 등의 코드는 이곳에 추가할 수 있습니다.
     }
 }
