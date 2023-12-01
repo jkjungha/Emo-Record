@@ -1,0 +1,62 @@
+
+<!-- res/layout/activity_another.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@drawable/bg_spring">
+
+
+    <LinearLayout
+        android:layout_width="394dp"
+        android:layout_height="656dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/border_activity">
+
+        <ImageView
+            android:id="@+id/seoulImageView"
+            android:layout_width="378dp"
+            android:layout_height="177dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/recommendationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/seoulImageView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="활동 상세 정보" />
+
+        <TextView
+            android:id="@+id/introductionTextView"
+            android:layout_width="365dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/recommendationTextView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="경복궁은 대한민국 서울에 위치한 궁전으로, 조선 왕조의 주요 궁궐 중 하나로 꼽힙니다. 이는 조선시대 최대의 궁전으로 알려져 있다. 경복궁은 대한민국의 역사와 문화적 중요성을 상징하는 랜드마크 중 하나로 꼽히며, 방문객들에게 아름다운 정원, 건물, 전통적인 한옥 구조 등을 제공하다.
+
+경복궁은 14세기 말에 세운 조선 왕조의 창건자이자 제 4대 왕, 태조 이성계에 의해 건립되었다. 그 후 여러 차례의 확장과 보수 작업을 거쳐 현재의 규모로 완성되었습니다. 궁전 안에는 다양한 전통 건축물이 위치하며, 특히 광화문에서 시작되는 경복궁 길은 매력적인 산책로로 알려져 있다.
+
+경복궁은 국립고궁박물관과 함께 운영되어 방문객들에게 역사적인 풍경, 전통 문화 체험, 그리고 특별한 행사들을 제공하다. 궁전 내부에는 서울의 현대적인 도시 풍경과 대조되는 조선 시대의 멋진 아름다움을 만날 수 있습니다.
+
+이 궁전은 한국의 국보 117호로 지정되어 있으며, 그 역사적인 중요성과 아름다움으로 많은 이들에게 사랑받고 있다." />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/backButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/back"
+            android:backgroundTint="@color/pink"
+            android:layout_below="@id/introductionTextView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="←" />
+    </LinearLayout>
+
+
+</RelativeLayout>
