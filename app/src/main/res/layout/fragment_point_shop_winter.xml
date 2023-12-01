@@ -84,7 +84,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:text="exciting BGM"
                         app:layout_constraintTop_toBottomOf="@+id/exciting_bgm_img" />
 
@@ -93,7 +93,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:text="10 point"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/exciting_bgm_title" />
@@ -124,7 +124,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:text="sea BGM"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/sea_bgm_img" />
@@ -134,7 +134,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:text="10 point"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/sea_bgm_title" />
@@ -164,7 +164,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:text="soft BGM"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/soft_bgm_img" />
@@ -174,7 +174,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:text="10 point"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/soft_bgm_title" />
@@ -208,7 +208,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:text="blue shirt"
                         app:layout_constraintTop_toBottomOf="@+id/blue_shirt_img" />
 
@@ -217,7 +217,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:text="20 point"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/blue_shirt_title" />
@@ -248,7 +248,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:text="fluff hat"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/fluff_hat_img" />
@@ -258,7 +258,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:text="20 point"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/fluff_hat_title" />
@@ -288,7 +288,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:text="green pants"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/green_pants_img" />
@@ -298,7 +298,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:text="20 point"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/green_pants_title" />
@@ -331,7 +331,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:text="disco theme"
                         app:layout_constraintTop_toBottomOf="@+id/disco_theme_img" />
 
@@ -340,7 +340,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:text="20 point"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/disco_theme_title" />
@@ -371,7 +371,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:text="sea theme"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/sea_theme_img" />
@@ -381,7 +381,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:text="20 point"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/sea_theme_title" />
@@ -410,7 +410,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:text="forest theme"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/forest_theme_img" />
@@ -420,7 +420,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:text="20 point"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/forest_theme_title" />
