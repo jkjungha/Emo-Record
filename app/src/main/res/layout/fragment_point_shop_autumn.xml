@@ -193,7 +193,7 @@
                         android:layout_height="100dp"
                         android:layout_gravity="center"
                         android:layout_margin="1dp"
-                        android:src="@drawable/blue_shirt"
+                        android:src="@drawable/crown"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -202,7 +202,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="blue shirt"
+                        android:text="crown set"
                         app:layout_constraintTop_toBottomOf="@+id/blue_shirt_img" />
 
                     <TextView
@@ -231,7 +231,7 @@
                         android:layout_height="100dp"
                         android:layout_gravity="center"
                         android:layout_margin="1dp"
-                        android:src="@drawable/fluff_hat"
+                        android:src="@drawable/hanbok"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -240,7 +240,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="fluff hat"
+                        android:text="hanbok set"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/fluff_hat_img" />
 
@@ -269,7 +269,7 @@
                         android:layout_height="100dp"
                         android:layout_gravity="center"
                         android:layout_margin="1dp"
-                        android:src="@drawable/green_pants"
+                        android:src="@drawable/swim"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -278,7 +278,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="green pants"
+                        android:text="swim set"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/green_pants_img" />
 
@@ -310,7 +310,7 @@
                         android:layout_height="100dp"
                         android:layout_gravity="center"
                         android:layout_margin="1dp"
-                        android:src="@drawable/disco_theme"
+                        android:src="@drawable/spring"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -319,7 +319,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="disco theme"
+                        android:text="spring theme"
                         app:layout_constraintTop_toBottomOf="@+id/disco_theme_img" />
 
                     <TextView
@@ -348,7 +348,7 @@
                         android:layout_height="100dp"
                         android:layout_gravity="center"
                         android:layout_margin="1dp"
-                        android:src="@drawable/sea_theme"
+                        android:src="@drawable/summer"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -357,7 +357,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="sea theme"
+                        android:text="summer theme"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/sea_theme_img" />
 
@@ -385,7 +385,7 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_margin="1dp"
-                        android:src="@drawable/forest_theme"
+                        android:src="@drawable/autumn"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -394,7 +394,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="forest theme"
+                        android:text="autumn theme"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/forest_theme_img" />
 
