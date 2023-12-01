@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/bg_winter"
-    tools:context=".PointShopActivity">
+    android:background="@drawable/bg_winter">
+<!--    tools:context=".PointShopActivity">-->
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -65,7 +65,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="12dp"
-                    android:background="@drawable/black_border_winter"
+                    android:background="@drawable/white_border"
                     android:orientation="vertical"
                     android:padding="10dp">
 
@@ -105,7 +105,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="12dp"
-                    android:background="@drawable/black_border_winter"
+                    android:background="@drawable/white_border"
                     android:orientation="vertical"
                     android:padding="10dp">
 
@@ -145,7 +145,7 @@
                     android:id="@+id/soft_bgm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/black_border_winter"
+                    android:background="@drawable/white_border"
                     android:orientation="vertical"
                     android:padding="10dp">
 
@@ -189,7 +189,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="12dp"
-                    android:background="@drawable/black_border_winter"
+                    android:background="@drawable/white_border"
                     android:orientation="vertical"
                     android:padding="10dp">
 
@@ -229,7 +229,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="12dp"
-                    android:background="@drawable/black_border_winter"
+                    android:background="@drawable/white_border"
                     android:orientation="vertical"
                     android:padding="10dp">
 
@@ -269,7 +269,7 @@
                     android:id="@+id/green_pants"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/black_border_winter"
+                    android:background="@drawable/white_border"
                     android:orientation="vertical"
                     android:padding="10dp">
 
@@ -312,7 +312,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="12dp"
-                    android:background="@drawable/black_border_winter"
+                    android:background="@drawable/white_border"
                     android:orientation="vertical"
                     android:padding="10dp">
 
@@ -352,7 +352,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="12dp"
-                    android:background="@drawable/black_border_winter"
+                    android:background="@drawable/white_border"
                     android:orientation="vertical"
                     android:padding="10dp">
 
@@ -392,7 +392,7 @@
                     android:id="@+id/forest_theme"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/black_border_winter"
+                    android:background="@drawable/white_border"
                     android:orientation="vertical"
                     android:padding="10dp">
 
