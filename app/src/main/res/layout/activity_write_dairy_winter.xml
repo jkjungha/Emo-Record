@@ -31,7 +31,8 @@
             android:layout_height="55dp"
             android:layout_marginLeft="20dp"
             android:ems="10"
-            android:hint="   title"
+            android:hint="title"
+            android:paddingLeft="10dp"
             android:background="@drawable/bg_2_winter"
             android:inputType="text" />
     </LinearLayout>

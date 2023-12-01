@@ -16,7 +16,8 @@
         android:layout_height="44dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/bg_text"
-        android:hint="  이메일 또는 전화번호" />
+        android:hint="이메일 또는 전화번호"
+        android:paddingLeft="10dp"/>
 
     <Button
         android:id="@+id/verifyButton"
@@ -33,7 +34,8 @@
         android:layout_width="379dp"
         android:layout_height="44dp"
         android:background="@drawable/bg_text"
-        android:hint="  사용자 아이디"
+        android:hint="사용자 아이디"
+        android:paddingLeft="10dp"
         />
     <TextView
         android:layout_width="wrap_content"
@@ -50,7 +52,8 @@
         android:layout_width="379dp"
         android:layout_height="44dp"
         android:background="@drawable/bg_text"
-        android:hint=" 사용자 비밀번호"
+        android:hint="사용자 비밀번호"
+        android:paddingLeft="10dp"
         android:inputType="textPassword"
         />
 
