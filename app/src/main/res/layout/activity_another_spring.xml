@@ -54,8 +54,7 @@
             android:backgroundTint="@color/pink"
             android:layout_below="@id/introductionTextView"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
-            android:text="←" />
+            android:layout_marginTop="16dp" />
     </LinearLayout>
 
 
