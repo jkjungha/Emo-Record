@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ChangeThemeActivity">
+    tools:context=".ChangeThemeActivity"
+    android:background="@drawable/bg_forest">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -36,6 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="@drawable/border"
         android:padding="30dp">
 
         <LinearLayout
@@ -174,6 +176,7 @@
             android:id="@+id/done_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/green"
             android:layout_marginTop="16dp"
             android:text="done" />
 

@@ -69,53 +69,53 @@ class PointShopFragment : Fragment() {
                             binding.softBgmImg.setColorFilter(filter)
                             binding.softBgmImg.isEnabled = false
                         }
-                    }else if(key == "blue_shirt"){
+                    }else if(key == "crown_set"){
                         if(value == 1){
                             val matrix = ColorMatrix()
                             matrix.setSaturation(0f)
                             val filter = ColorMatrixColorFilter(matrix)
-                            binding.blueShirtImg.setColorFilter(filter)
-                            binding.blueShirtImg.isEnabled = false
+                            binding.crownSetImg.setColorFilter(filter)
+                            binding.crownSetImg.isEnabled = false
                         }
-                    }else if(key == "fluff_hat"){
+                    }else if(key == "hanbok_set"){
                         if(value == 1){
                             val matrix = ColorMatrix()
                             matrix.setSaturation(0f)
                             val filter = ColorMatrixColorFilter(matrix)
-                            binding.fluffHatImg.setColorFilter(filter)
-                            binding.fluffHatImg.isEnabled = false
+                            binding.hanbokSetImg.setColorFilter(filter)
+                            binding.hanbokSetImg.isEnabled = false
                         }
-                    }else if(key == "green_pants"){
+                    }else if(key == "swim_set"){
                         if(value == 1){
                             val matrix = ColorMatrix()
                             matrix.setSaturation(0f)
                             val filter = ColorMatrixColorFilter(matrix)
-                            binding.greenPantsImg.setColorFilter(filter)
-                            binding.greenPantsImg.isEnabled = false
+                            binding.swimSetImg.setColorFilter(filter)
+                            binding.swimSetImg.isEnabled = false
                         }
-                    }else if(key == "disco_theme"){
+                    }else if(key == "spring_theme"){
                         if(value == 1){
                             val matrix = ColorMatrix()
                             matrix.setSaturation(0f)
                             val filter = ColorMatrixColorFilter(matrix)
-                            binding.discoThemeImg.setColorFilter(filter)
-                            binding.discoThemeImg.isEnabled = false
+                            binding.springThemeImg.setColorFilter(filter)
+                            binding.springThemeImg.isEnabled = false
                         }
-                    }else if(key == "sea_theme"){
+                    }else if(key == "summer_theme"){
                         if(value == 1){
                             val matrix = ColorMatrix()
                             matrix.setSaturation(0f)
                             val filter = ColorMatrixColorFilter(matrix)
-                            binding.seaThemeImg.setColorFilter(filter)
-                            binding.seaThemeImg.isEnabled = false
+                            binding.summerThemeImg.setColorFilter(filter)
+                            binding.summerThemeImg.isEnabled = false
                         }
-                    }else if(key == "forest_theme"){
+                    }else if(key == "autumn_theme"){
                         if(value == 1){
                             val matrix = ColorMatrix()
                             matrix.setSaturation(0f)
                             val filter = ColorMatrixColorFilter(matrix)
-                            binding.forestThemeImg.setColorFilter(filter)
-                            binding.forestThemeImg.isEnabled = false
+                            binding.autumnThemeImg.setColorFilter(filter)
+                            binding.autumnThemeImg.isEnabled = false
                         }
                     }
                 }
@@ -134,13 +134,7 @@ class PointShopFragment : Fragment() {
             startActivity(intent)
         }
 
-        var user = "userid1"
-//        val sharedPreferences = getSharedPreferences("live", MODE_PRIVATE)
-//        val user = sharedPreferences.getString("user", "")
-        Log.d("POINT SHOP USER", user!!)
-        if (user.isNullOrEmpty()) {
-            Toast.makeText(requireContext(),  "유저를 찾을 수 없음", Toast.LENGTH_SHORT).show()
-        }
+        var user = LoginActivity.username
 
         val database = Firebase.database
         var db = database.reference
@@ -213,9 +207,9 @@ class PointShopFragment : Fragment() {
                         }
                     }
                 }
-                binding.blueShirtImg.setOnClickListener {
-                    if (binding.blueShirtImg.isEnabled) {
-                        var point = dataSnapshot.child("items/blue_shirt")
+                binding.crownSetImg.setOnClickListener {
+                    if (binding.crownSetImg.isEnabled) {
+                        var point = dataSnapshot.child("items/crown_set")
                             .getValue(Int::class.java)
                         Log.d("POINT SHOP POINT", point.toString())
                         var total_point = dataSnapshot.child("users").child(user).child("total_point")
@@ -228,18 +222,18 @@ class PointShopFragment : Fragment() {
                             val matrix = ColorMatrix()
                             matrix.setSaturation(0f)
                             val filter = ColorMatrixColorFilter(matrix)
-                            binding.blueShirtImg.setColorFilter(filter)
-                            binding.blueShirtImg.isEnabled = false
-                            db.child("users").child(user!!).child("get_items/blue_shirt/bought").setValue(1)
+                            binding.crownSetImg.setColorFilter(filter)
+                            binding.crownSetImg.isEnabled = false
+                            db.child("users").child(user!!).child("get_items/crown_set/bought").setValue(1)
                             Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT).show()
                         }else{
                             Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
-                binding.fluffHatImg.setOnClickListener {
-                    if (binding.fluffHatImg.isEnabled) {
-                        var point = dataSnapshot.child("items/fluff_hat")
+                binding.hanbokSetImg.setOnClickListener {
+                    if (binding.hanbokSetImg.isEnabled) {
+                        var point = dataSnapshot.child("items/hanbok_set")
                             .getValue(Int::class.java)
                         Log.d("POINT SHOP POINT", point.toString())
                         var total_point = dataSnapshot.child("users").child(user).child("total_point")
@@ -252,18 +246,18 @@ class PointShopFragment : Fragment() {
                             val matrix = ColorMatrix()
                             matrix.setSaturation(0f)
                             val filter = ColorMatrixColorFilter(matrix)
-                            binding.fluffHatImg.setColorFilter(filter)
-                            binding.fluffHatImg.isEnabled = false
-                            db.child("users").child(user!!).child("get_items/fluff_hat/bought").setValue(1)
+                            binding.hanbokSetImg.setColorFilter(filter)
+                            binding.hanbokSetImg.isEnabled = false
+                            db.child("users").child(user!!).child("get_items/hanbok_set/bought").setValue(1)
                             Toast.makeText(requireContext(),"구매 완료", Toast.LENGTH_SHORT).show()
                         }else{
                             Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
-                binding.greenPantsImg.setOnClickListener {
-                    if (binding.greenPantsImg.isEnabled) {
-                        var point = dataSnapshot.child("items/green_pants")
+                binding.swimSetImg.setOnClickListener {
+                    if (binding.swimSetImg.isEnabled) {
+                        var point = dataSnapshot.child("items/swim_set")
                             .getValue(Int::class.java)
                         Log.d("POINT SHOP POINT", point.toString())
                         var total_point = dataSnapshot.child("users").child(user).child("total_point")
@@ -276,18 +270,18 @@ class PointShopFragment : Fragment() {
                             val matrix = ColorMatrix()
                             matrix.setSaturation(0f)
                             val filter = ColorMatrixColorFilter(matrix)
-                            binding.greenPantsImg.setColorFilter(filter)
-                            binding.greenPantsImg.isEnabled = false
-                            db.child("users").child(user!!).child("get_items/green_pants/bought").setValue(1)
+                            binding.swimSetImg.setColorFilter(filter)
+                            binding.swimSetImg.isEnabled = false
+                            db.child("users").child(user!!).child("get_items/swim_set/bought").setValue(1)
                             Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT).show()
                         }else{
                             Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
-                binding.discoThemeImg.setOnClickListener {
-                    if (binding.discoThemeImg.isEnabled) {
-                        var point = dataSnapshot.child("items/disco_theme")
+                binding.springThemeImg.setOnClickListener {
+                    if (binding.springThemeImg.isEnabled) {
+                        var point = dataSnapshot.child("items/spring_theme")
                             .getValue(Int::class.java)
                         Log.d("POINT SHOP POINT", point.toString())
                         var total_point = dataSnapshot.child("users").child(user).child("total_point")
@@ -300,18 +294,18 @@ class PointShopFragment : Fragment() {
                             val matrix = ColorMatrix()
                             matrix.setSaturation(0f)
                             val filter = ColorMatrixColorFilter(matrix)
-                            binding.discoThemeImg.setColorFilter(filter)
-                            binding.discoThemeImg.isEnabled = false
-                            db.child("users").child(user!!).child("get_items/disco_theme/bought").setValue(1)
+                            binding.springThemeImg.setColorFilter(filter)
+                            binding.springThemeImg.isEnabled = false
+                            db.child("users").child(user!!).child("get_items/spring_theme/bought").setValue(1)
                             Toast.makeText(requireContext(),"구매 완료", Toast.LENGTH_SHORT).show()
                         }else{
                             Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
-                binding.seaThemeImg.setOnClickListener {
-                    if (binding.seaThemeImg.isEnabled) {
-                        var point = dataSnapshot.child("items/sea_theme")
+                binding.summerThemeImg.setOnClickListener {
+                    if (binding.summerThemeImg.isEnabled) {
+                        var point = dataSnapshot.child("items/summer_theme")
                             .getValue(Int::class.java)
                         Log.d("POINT SHOP POINT", point.toString())
                         var total_point = dataSnapshot.child("users").child(user).child("total_point")
@@ -324,19 +318,18 @@ class PointShopFragment : Fragment() {
                             val matrix = ColorMatrix()
                             matrix.setSaturation(0f)
                             val filter = ColorMatrixColorFilter(matrix)
-                            binding.seaThemeImg.setColorFilter(filter)
-                            binding.seaThemeImg.isEnabled = false
-                            db.child("users").child(user!!).child("get_items/sea_theme/bought").setValue(1)
+                            binding.summerThemeImg.setColorFilter(filter)
+                            binding.summerThemeImg.isEnabled = false
+                            db.child("users").child(user!!).child("get_items/summer_theme/bought").setValue(1)
                             Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT).show()
                         }else{
                             Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
-
-                binding.forestThemeImg.setOnClickListener {
-                    if (binding.forestThemeImg.isEnabled) {
-                        var point = dataSnapshot.child("items/forest_theme")
+                binding.autumnThemeImg.setOnClickListener {
+                    if (binding.autumnThemeImg.isEnabled) {
+                        var point = dataSnapshot.child("items/autumn_theme")
                             .getValue(Int::class.java)
                         Log.d("POINT SHOP POINT", point.toString())
                         var total_point = dataSnapshot.child("users").child(user).child("total_point")
@@ -349,9 +342,9 @@ class PointShopFragment : Fragment() {
                             val matrix = ColorMatrix()
                             matrix.setSaturation(0f)
                             val filter = ColorMatrixColorFilter(matrix)
-                            binding.forestThemeImg.setColorFilter(filter)
-                            binding.forestThemeImg.isEnabled = false
-                            db.child("users").child(user!!).child("get_items/forest_theme/bought").setValue(1)
+                            binding.autumnThemeImg.setColorFilter(filter)
+                            binding.autumnThemeImg.isEnabled = false
+                            db.child("users").child(user!!).child("get_items/autumn_theme/bought").setValue(1)
                             Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT).show()
                         }else{
                             Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()

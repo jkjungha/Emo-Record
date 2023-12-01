@@ -1,8 +1,17 @@
 <!-- res/layout/activity_another2.xml -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_forest"
+    android:gravity="center">
 
+    <LinearLayout
+        android:layout_width="394dp"
+        android:layout_height="656dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/border_activity">
+        
     <TextView
         android:id="@+id/recommendationTextView"
         android:layout_width="wrap_content"
@@ -11,14 +20,16 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/backButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="←"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/back"
+        android:backgroundTint="@color/dark_green"
         android:layout_below="@id/recommendationTextView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp" />
+    </LinearLayout>
 
 </RelativeLayout>
 

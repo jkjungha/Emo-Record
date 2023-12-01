@@ -88,12 +88,14 @@ class RegisterActivity : AppCompatActivity() {
                             .show()
                     } else {
                         user.push().child(username)
-                        user.child(username).setValue("private")
                         val private = Private(password, emailOrPhone)
                         val word = Word(0,"", "","","","")
+                        val getItems = GetItems(ItemSet(0,0),ItemSet(0,0),ItemSet(0,0),ItemSet(0,0),ItemSet(0,0),ItemSet(0,0),ItemSet(0,0),ItemSet(0,0),ItemSet(0,0))
                         user.child(username).child("private").setValue(private)
                         user.child(username).child("word").setValue(word)
                         user.child(username).child("total_point").setValue(0)
+                        user.child(username).child("get_items").setValue(getItems)
+
 
 
                         Toast.makeText(this@RegisterActivity, "등록 성공", Toast.LENGTH_SHORT).show()
