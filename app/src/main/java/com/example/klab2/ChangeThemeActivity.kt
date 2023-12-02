@@ -147,9 +147,9 @@ class ChangeThemeActivity : AppCompatActivity(){
             }
         }
         binding.doneButton.setOnClickListener {
-//            var intent = Intent(this@ChangeThemeActivity, MainActivity::class.java)
-//            startActivity(intent)
-            finish()
+            var intent = Intent(this@ChangeThemeActivity, MainActivity::class.java)
+            startActivity(intent)
+            //finish()
         }
 
         binding.bgmRadioDefault.setOnClickListener {
