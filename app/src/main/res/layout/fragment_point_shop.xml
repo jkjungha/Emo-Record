@@ -3,34 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="650dp"
     android:background="@drawable/bg_forest"
     android:orientation="vertical"
     tools:context=".PointShopFragment">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="70dp">
+<!--    <RelativeLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="70dp">-->
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:background="@drawable/bar_style"
-            android:gravity="center"
-            android:text="Point Shop"
-            android:textSize="30sp"
-            android:textStyle="bold"/>
 
-        <ImageView
-            android:id="@+id/back_button"
-            android:layout_width="59dp"
-            android:layout_height="54dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="7dp"
-            app:srcCompat="?attr/actionModeCloseDrawable" />
-    </RelativeLayout>
+<!--&lt;!&ndash;        <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="70dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:background="@drawable/bar_style"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:gravity="center"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:text="Point Shop"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textSize="30sp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textStyle="bold"/>&ndash;&gt;-->
+<!--        <ImageView-->
+<!--            android:id="@+id/back_button"-->
+<!--            android:layout_width="59dp"-->
+<!--            android:layout_height="54dp"-->
+<!--            android:layout_alignParentStart="true"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:layout_marginStart="0dp"-->
+<!--            android:layout_marginTop="7dp"-->
+<!--            app:srcCompat="?attr/actionModeCloseDrawable" />-->
+<!--    </RelativeLayout>-->
 
     <TextView
         android:id="@+id/total_point"
