@@ -32,7 +32,6 @@ class ChangeThemeActivity : AppCompatActivity(){
         init()
     }
 
-    @SuppressLint("ResourceAsColor")
     fun init() {
         binding.backButton.setOnClickListener {
             var intent = Intent(this@ChangeThemeActivity, MainActivity::class.java)

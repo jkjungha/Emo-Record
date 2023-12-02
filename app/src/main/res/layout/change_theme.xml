@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_forest"
     android:orientation="vertical"
-    tools:context=".ChangeThemeActivity"
-    android:background="@drawable/bg_forest">
+    tools:context=".ChangeThemeActivity">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -21,6 +21,7 @@
             android:text="Settings"
             android:textSize="30sp"
             android:textStyle="bold" />
+
 
         <ImageView
             android:id="@+id/back_button"
@@ -50,17 +51,30 @@
             android:paddingVertical="10dp"
             android:paddingLeft="15dp">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="BGM settings" />
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BGM settings"/>
+
+                <Button
+                    android:id="@+id/bgm_radio_default"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:text="default"
+                    android:textSize="8sp"/>
+            </LinearLayout>
 
             <RadioGroup
                 android:id="@+id/bgm_radio_group"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="6dp"
                 android:layout_marginBottom="20dp"
                 android:orientation="horizontal">
 
@@ -93,18 +107,31 @@
             android:orientation="vertical"
             android:paddingVertical="10dp"
             android:paddingLeft="15dp">
-
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cloth settings" />
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cloth settings"/>
+
+                <Button
+                    android:id="@+id/cloth_radio_default"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:text="default"
+                    android:textSize="8sp"/>
+            </LinearLayout>
+
 
             <RadioGroup
                 android:id="@+id/cloth_radio_group"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="6dp"
                 android:layout_marginBottom="20dp"
                 android:orientation="horizontal">
 
@@ -136,18 +163,31 @@
             android:orientation="vertical"
             android:paddingVertical="10dp"
             android:paddingLeft="15dp">
-
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Theme settings" />
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Theme settings"/>
+
+                <Button
+                    android:id="@+id/theme_radio_default"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:text="default"
+                    android:textSize="8sp"/>
+            </LinearLayout>
+
 
             <RadioGroup
                 android:id="@+id/theme_radio_group"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="6dp"
                 android:layout_marginBottom="20dp"
                 android:orientation="vertical">
 
@@ -197,8 +237,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
             android:backgroundTint="@color/green"
-            android:text="done"
-            />
+            android:text="done" />
 
     </LinearLayout>
 
