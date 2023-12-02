@@ -31,11 +31,16 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
+
         return binding.root
+    }
+    companion object{
+        var panda:Int = R.drawable.panda
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.imageView.setImageResource(panda)
 
         val word = db.getReference("users").child(LoginActivity.username).child("word")
 
@@ -194,5 +199,9 @@ class HomeFragment : Fragment() {
             }
         }
         binding.recyclerview.adapter = adapter
+    }
+
+    fun updateImageResource(resourceId: Int) {
+        binding.imageView.setImageResource(resourceId)
     }
 }
