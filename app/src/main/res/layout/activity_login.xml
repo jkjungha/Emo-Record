@@ -8,7 +8,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
         android:translationX="-35dp"
-        app:srcCompat="@drawable/panda_head" />
+        app:srcCompat="@drawable/login" />
 
     <EditText
         android:id="@+id/usernameEditText"
