@@ -42,12 +42,6 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.imageView.setImageResource(panda)
 
-        db.getReference("users").child(LoginActivity.username).child("activity").child("예시1").setValue(1)
-        db.getReference("users").child(LoginActivity.username).child("activity").child("예시2").setValue(1)
-        db.getReference("users").child(LoginActivity.username).child("activity").child("예시3").setValue(1)
-        db.getReference("users").child(LoginActivity.username).child("activity").child("예시4").setValue(1)
-        db.getReference("users").child(LoginActivity.username).child("activity").child("예시5").setValue(1)
-
         val word = db.getReference("users").child(LoginActivity.username).child("word")
 
         word.addValueEventListener(object: ValueEventListener {
