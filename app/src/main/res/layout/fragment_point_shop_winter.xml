@@ -8,10 +8,6 @@
     android:background="@drawable/bg_winter">
 <!--    tools:context=".PointShopActivity">-->
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="70dp">
-
 <!--        <TextView-->
 <!--            android:layout_width="match_parent"-->
 <!--            android:layout_height="70dp"-->
@@ -20,17 +16,6 @@
 <!--            android:text="Point Shop"-->
 <!--            android:textSize="30sp"-->
 <!--            android:textStyle="bold"/>-->
-
-        <ImageView
-            android:id="@+id/back_button"
-            android:layout_width="59dp"
-            android:layout_height="54dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="6dp"
-            app:srcCompat="?attr/actionModeCloseDrawable" />
-    </RelativeLayout>
 
     <TextView
         android:id="@+id/total_point"
@@ -56,9 +41,10 @@
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp">
+            android:layout_marginVertical="5dp"
+            android:layout_marginHorizontal="5dp">
 
-            <TableRow android:layout_marginBottom="30dp">
+            <TableRow android:layout_marginBottom="10dp">
 
                 <LinearLayout
                     android:id="@+id/exciting_bgm"
@@ -182,7 +168,7 @@
                 </LinearLayout>
             </TableRow>
 
-            <TableRow android:layout_marginBottom="30dp">
+            <TableRow android:layout_marginBottom="10dp">
 
                 <LinearLayout
                     android:id="@+id/blue_shirt"
