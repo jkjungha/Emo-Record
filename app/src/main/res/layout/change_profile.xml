@@ -10,7 +10,7 @@
         android:layout_width="379dp"
         android:layout_height="48dp"
         android:background="@drawable/bg_text"
-        android:hint="  Name"
+        android:hint="  ID"
         android:layout_marginTop="16dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp" />
@@ -25,7 +25,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/bg_text"
-        android:hint="  Other Info" />
+        android:hint="  ID Confirm" />
 
     <!-- 添加保存按钮，位于其他个人信息编辑框下方 -->
     <Button
