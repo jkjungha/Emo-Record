@@ -190,44 +190,36 @@
                 android:layout_centerInParent="true"
                 android:layout_marginTop="6dp"
                 android:layout_marginBottom="20dp"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
-                <LinearLayout
+
+                <RadioButton
+                    android:id="@+id/spring_theme_radio_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_marginRight="10dp"
+                    android:text="spring\ntheme" />
 
-                    <RadioButton
-                        android:id="@+id/spring_theme_radio_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="spring theme" />
-
-                    <RadioButton
-                        android:id="@+id/summer_theme_radio_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="summer theme" />
-                </LinearLayout>
-
-                <LinearLayout
+                <RadioButton
+                    android:id="@+id/summer_theme_radio_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_marginRight="10dp"
+                    android:text="summer\ntheme" />
 
-                    <RadioButton
-                        android:id="@+id/autumn_theme_radio_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="autumn theme" />
+                <RadioButton
+                    android:id="@+id/autumn_theme_radio_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="autumn\ntheme" />
 
-                    <RadioButton
-                        android:id="@+id/winter_theme_radio_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="winter theme"
-                        android:visibility="gone"/>
-                </LinearLayout>
+                <RadioButton
+                    android:id="@+id/winter_theme_radio_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="winter\ntheme"
+                    android:visibility="gone"/>
 
             </RadioGroup>
         </LinearLayout>

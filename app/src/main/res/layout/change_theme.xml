@@ -58,15 +58,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="BGM settings"/>
+                    android:text="BGM settings" />
 
                 <Button
                     android:id="@+id/bgm_radio_default"
-                    android:layout_marginHorizontal="20dp"
                     android:layout_width="70dp"
                     android:layout_height="30dp"
+                    android:layout_marginHorizontal="20dp"
                     android:text="default"
-                    android:textSize="8sp"/>
+                    android:textSize="8sp" />
             </LinearLayout>
 
             <RadioGroup
@@ -107,6 +107,7 @@
             android:orientation="vertical"
             android:paddingVertical="10dp"
             android:paddingLeft="15dp">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -114,15 +115,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Cloth settings"/>
+                    android:text="Cloth settings" />
 
                 <Button
                     android:id="@+id/cloth_radio_default"
-                    android:layout_marginHorizontal="20dp"
                     android:layout_width="70dp"
                     android:layout_height="30dp"
+                    android:layout_marginHorizontal="20dp"
                     android:text="default"
-                    android:textSize="8sp"/>
+                    android:textSize="8sp" />
             </LinearLayout>
 
 
@@ -163,6 +164,7 @@
             android:orientation="vertical"
             android:paddingVertical="10dp"
             android:paddingLeft="15dp">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -170,65 +172,58 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Theme settings"/>
+                    android:text="Theme settings" />
 
                 <Button
                     android:id="@+id/theme_radio_default"
-                    android:layout_marginHorizontal="20dp"
                     android:layout_width="70dp"
                     android:layout_height="30dp"
+                    android:layout_marginHorizontal="20dp"
                     android:text="default"
-                    android:textSize="8sp"/>
+                    android:textSize="8sp" />
             </LinearLayout>
 
 
-            <RadioGroup
-                android:id="@+id/theme_radio_group"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="6dp"
-                android:layout_marginBottom="20dp"
-                android:orientation="vertical">
-
-                <LinearLayout
+                <RadioGroup
+                    android:id="@+id/theme_radio_group"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="20dp"
                     android:orientation="horizontal">
+
 
                     <RadioButton
                         android:id="@+id/spring_theme_radio_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="spring theme" />
+                        android:layout_marginRight="10dp"
+                        android:text="spring\ntheme" />
 
                     <RadioButton
                         android:id="@+id/summer_theme_radio_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="summer theme" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                        android:layout_marginRight="10dp"
+                        android:text="summer\ntheme" />
 
                     <RadioButton
                         android:id="@+id/autumn_theme_radio_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="autumn theme" />
+                        android:layout_marginRight="10dp"
+                        android:text="autumn\ntheme" />
 
                     <RadioButton
                         android:id="@+id/winter_theme_radio_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="winter theme"
+                        android:text="winter\ntheme"
                         android:visibility="gone"/>
-                </LinearLayout>
 
-            </RadioGroup>
+                </RadioGroup>
+
         </LinearLayout>
 
         <Button

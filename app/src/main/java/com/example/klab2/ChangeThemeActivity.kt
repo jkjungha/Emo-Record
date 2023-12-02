@@ -154,6 +154,7 @@ class ChangeThemeActivity : AppCompatActivity(){
 
         binding.bgmRadioDefault.setOnClickListener {
 
+
         }
         binding.clothRadioDefault.setOnClickListener {
 
