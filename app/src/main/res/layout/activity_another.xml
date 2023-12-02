@@ -2,12 +2,21 @@
 <!-- res/layout/activity_another.xml -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@drawable/bg_forest">
 
+    <LinearLayout
+        android:layout_width="394dp"
+        android:layout_height="656dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/border_activity">
+        
     <ImageView
         android:id="@+id/seoulImageView"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_width="378dp"
+        android:layout_height="177dp"
         android:src="@drawable/panda"
         android:scaleType="centerCrop"
         android:layout_centerHorizontal="true"
@@ -24,7 +33,7 @@
 
     <TextView
         android:id="@+id/introductionTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="365dp"
         android:layout_height="wrap_content"
         android:text="경복궁은 대한민국 서울에 위치한 궁전으로, 조선 왕조의 주요 궁궐 중 하나로 꼽힙니다. 이는 조선시대 최대의 궁전으로 알려져 있다. 경복궁은 대한민국의 역사와 문화적 중요성을 상징하는 랜드마크 중 하나로 꼽히며, 방문객들에게 아름다운 정원, 건물, 전통적인 한옥 구조 등을 제공하다.
 
@@ -39,11 +48,13 @@
 
     <Button
         android:id="@+id/backButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="←"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/back"
+        android:backgroundTint="@color/dark_green"
         android:layout_below="@id/introductionTextView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp" />
+    </LinearLayout>
 
 </RelativeLayout>
