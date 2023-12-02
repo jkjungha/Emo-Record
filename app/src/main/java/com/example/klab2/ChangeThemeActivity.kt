@@ -1,14 +1,18 @@
 package com.example.klab2
 
+import android.annotation.SuppressLint
 import android.content.ComponentName
 import android.content.Intent
 import android.graphics.ColorMatrix
 import android.graphics.ColorMatrixColorFilter
+import android.graphics.drawable.ColorDrawable
 import android.media.MediaPlayer
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.core.view.isGone
 import com.example.klab2.databinding.ChangeThemeBinding
 import com.google.firebase.database.DataSnapshot
@@ -28,6 +32,7 @@ class ChangeThemeActivity : AppCompatActivity(){
         init()
     }
 
+    @SuppressLint("ResourceAsColor")
     fun init() {
         binding.backButton.setOnClickListener {
             var intent = Intent(this@ChangeThemeActivity, MainActivity::class.java)
@@ -112,20 +117,34 @@ class ChangeThemeActivity : AppCompatActivity(){
                 HomeFragment.panda = R.drawable.panda3
             }
         }
-        binding.themeRadioGroup.setOnCheckedChangeListener { buttonView, isChecked ->
+        binding.themeRadioGroup.setOnCheckedChangeListener { buttonView, checkedId ->
             items.child("spring_theme/chose").setValue(0)
             items.child("summer_theme/chose").setValue(0)
             items.child("autumn_theme/chose").setValue(0)
 //            items.child("winter_theme/chose").setValue(0)
-            if(isChecked == binding.springThemeRadioButton.id){
-                items.child("spring_theme/chose").setValue(1)
-            }else if(isChecked == binding.summerThemeRadioButton.id){
-                items.child("summer_theme/chose").setValue(1)
-            }else if(isChecked == binding.autumnThemeRadioButton.id){
-                items.child("autumn_theme/chose").setValue(1)}
+            val statusBarColor: Int = when (checkedId) {
+                binding.springThemeRadioButton.id -> {
+                    items.child("spring_theme/chose").setValue(1)
+                    R.color.spring_bar
+                }
+                binding.summerThemeRadioButton.id -> {
+                    items.child("summer_theme/chose").setValue(1)
+                    R.color.summer_bar
+                }
+                binding.autumnThemeRadioButton.id -> {
+                    items.child("autumn_theme/chose").setValue(1)
+                    R.color.autumn_bar
+                }
+
+                else -> { R.color.forest_bar}
+            }
 //            }else if(isChecked == binding.winterThemeRadioButton.id){
 //                items.child("winter_theme/chose").setValue(1)
 //            }
+            supportActionBar?.setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(this, statusBarColor)))
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                window.statusBarColor = ContextCompat.getColor(this, statusBarColor)
+            }
         }
         binding.doneButton.setOnClickListener {
             var intent = Intent(this@ChangeThemeActivity, MainActivity::class.java)
