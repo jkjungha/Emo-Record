@@ -10,10 +10,20 @@
         android:backgroundTint="@color/dark_green" />
     <androidx.appcompat.widget.AppCompatButton android:id="@+id/btnSave" android:layout_width="170dp" android:layout_height="69dp" android:textStyle="bold" android:background="@drawable/leave2" android:layout_marginBottom="100dp" android:text="Save" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"/>
     <androidx.appcompat.widget.AppCompatButton android:id="@+id/btnCancel" android:layout_width="170dp" android:layout_height="69dp" android:textStyle="bold" android:background="@drawable/leave2" android:layout_marginBottom="20dp" android:text="Cancel \nAlert" app:layout_constraintBottom_toTopOf="@+id/btnSave" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"/>
-    <TextView android:id="@+id/timeText" android:layout_width="348dp"
+
+    <TextView
+        android:id="@+id/timeText"
+        android:layout_width="348dp"
         android:layout_height="171dp"
         android:layout_marginTop="150dp"
         android:background="@drawable/title5"
-        android:gravity="center" android:text="12 : 00 PM" android:textSize="34sp" app:layout_constraintBottom_toTopOf="@+id/btnTime" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+        android:gravity="center"
+        android:text="12 : 00 PM"
+        android:textSize="34sp"
+        android:translationY="-50dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <androidx.appcompat.widget.AppCompatButton android:id="@+id/btnTime" android:layout_width="170dp" android:layout_height="69dp" android:textStyle="bold" android:background="@drawable/leave2" android:layout_marginBottom="20dp" android:text="EDIT TIME" app:layout_constraintBottom_toTopOf="@+id/btnCancel" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.498" app:layout_constraintStart_toStartOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
