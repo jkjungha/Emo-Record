@@ -56,7 +56,7 @@ class ChangeProfileActivity : AppCompatActivity() {
             Handler().postDelayed({
                 hideLoading()
                 // 创建一个 Intent 以返回到设置界面
-                val intent = Intent(this@ChangeProfileActivity, MainActivity::class.java)
+//                val intent = Intent(this@ChangeProfileActivity, MainActivity::class.java)
                 MainActivity.select = 0
                 finish() // 结束当前的修改个人信息界面
             }, 2000) // 调整延时时间

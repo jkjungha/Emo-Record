@@ -61,9 +61,9 @@ class ChangePasswordActivity : AppCompatActivity() {
                 hideLoading()
 
                 // 创建一个 Intent 以返回到设置界面
-                val intent = Intent(this@ChangePasswordActivity, MainActivity::class.java)
+//                val intent = Intent(this@ChangePasswordActivity, MainActivity::class.java)
                 MainActivity.select = 0
-                startActivity(intent)
+//                startActivity(intent)
                 finish() // 结束当前的修改密码界面
             }, 2000) // 调整延时时间
         }
