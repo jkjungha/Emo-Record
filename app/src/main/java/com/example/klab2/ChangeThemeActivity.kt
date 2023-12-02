@@ -97,9 +97,9 @@ class ChangeThemeActivity : AppCompatActivity(){
             }
 
             if (resourceId != 0) {
-                val player = MediaPlayer.create(applicationContext, resourceId)
-                player.isLooping = true
-                player.start()
+                val bgmIntent = Intent(this, MediaPlayerService::class.java)
+                bgmIntent.putExtra("bgmResource", resourceId)
+                startService(bgmIntent)
             }
         }
         binding.clothRadioGroup.setOnCheckedChangeListener { buttonView, isChecked ->
