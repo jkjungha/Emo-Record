@@ -18,7 +18,7 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
 class ChangeThemeActivity : AppCompatActivity(){
-    internal lateinit var player: MediaPlayer
+//    internal lateinit var player: MediaPlayer
     lateinit var binding: ChangeThemeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,25 +71,30 @@ class ChangeThemeActivity : AppCompatActivity(){
             }
         })
 
-        binding.bgmRadioGroup.setOnCheckedChangeListener { buttonView, isChecked ->
+        binding.bgmRadioGroup.setOnCheckedChangeListener { buttonView, checkedId ->
             items.child("exciting_bgm/chose").setValue(0)
             items.child("sea_bgm/chose").setValue(0)
             items.child("soft_bgm/chose").setValue(0)
-            if(isChecked == binding.excitingBgmRadioButton.id){
-                player = MediaPlayer.create(applicationContext, R.raw.bgm1)
+            val resourceId = when (checkedId) {
+                binding.excitingBgmRadioButton.id -> {
+                    items.child("exciting_bgm/chose").setValue(1)
+                    R.raw.bgm1
+                }
+                binding.seaBgmRadioButton.id -> {
+                    items.child("sea_bgm/chose").setValue(1)
+                    R.raw.bgm2
+                }
+                binding.softBgmRadioButton.id -> {
+                    items.child("soft_bgm/chose").setValue(1)
+                    R.raw.bgm3
+                }
+                else -> 0 // Return 0 or handle the default case accordingly
+            }
+
+            if (resourceId != 0) {
+                val player = MediaPlayer.create(applicationContext, resourceId)
                 player.isLooping = true
                 player.start()
-                items.child("exciting_bgm/chose").setValue(1)
-            }else if(isChecked == binding.seaBgmRadioButton.id){
-                player = MediaPlayer.create(applicationContext, R.raw.bgm2)
-                player.isLooping = true
-                player.start()
-                items.child("sea_bgm/chose").setValue(1)
-            }else if(isChecked == binding.softBgmRadioButton.id){
-                player = MediaPlayer.create(applicationContext, R.raw.bgm3)
-                player.isLooping = true
-                player.start()
-                items.child("soft_bgm/chose").setValue(1)
             }
         }
         binding.clothRadioGroup.setOnCheckedChangeListener { buttonView, isChecked ->
