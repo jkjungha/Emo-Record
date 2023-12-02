@@ -147,7 +147,7 @@ class HomeFragment : Fragment() {
         val point = db.getReference("users").child(LoginActivity.username).child("total_point")
             .addValueEventListener(object: ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
-
+                    pointResult = snapshot.value.toString().toInt()
                 }
 
                 override fun onCancelled(error: DatabaseError) {
