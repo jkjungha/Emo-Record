@@ -22,4 +22,10 @@
     <color name="orange">#c35817</color>
     <color name="pink">#fff48fb1</color>
     <color name="yellow">#fffbc02d</color>
+    <color name="autumn_bar">#f5deb3</color>
+    <color name="spring_bar">#fffce4ec</color>
+    <color name="summer_bar">#d7edff</color>
+    <color name="winter_bar">#f5fcff</color>
+    <color name="forest_bar">#fffee6</color>
+
 </resources>
