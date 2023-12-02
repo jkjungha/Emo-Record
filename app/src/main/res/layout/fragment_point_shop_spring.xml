@@ -8,29 +8,14 @@
     android:orientation="vertical">
     <!--    tools:context=".PointShopActivity">-->
 
-<!--    <RelativeLayout-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="70dp">-->
-
-<!--&lt;!&ndash;        <TextView&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_height="70dp"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:background="@drawable/bar_style_spring"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:gravity="center"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:text="Point Shop"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:textSize="30sp"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:textStyle="bold" />&ndash;&gt;-->
-
-<!--        <ImageView-->
-<!--            android:id="@+id/back_button"-->
-<!--            android:layout_width="59dp"-->
-<!--            android:layout_height="54dp"-->
-<!--            android:layout_alignParentStart="true"-->
-<!--            android:layout_alignParentTop="true"-->
-<!--            android:layout_marginStart="0dp"-->
-<!--            android:layout_marginTop="6dp"-->
-<!--            app:srcCompat="?attr/actionModeCloseDrawable" />-->
-<!--    </RelativeLayout>-->
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="70dp"-->
+<!--            android:background="@drawable/bar_style_spring"-->
+<!--            android:gravity="center"-->
+<!--            android:text="Point Shop"-->
+<!--            android:textSize="30sp"-->
+<!--            android:textStyle="bold" />-->
 
     <TextView
         android:id="@+id/total_point"
@@ -56,9 +41,10 @@
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp">
+            android:layout_marginVertical="5dp"
+            android:layout_marginHorizontal="5dp">
 
-            <TableRow android:layout_marginBottom="30dp">
+            <TableRow android:layout_marginBottom="10dp">
 
                 <LinearLayout
                     android:id="@+id/exciting_bgm"
@@ -176,7 +162,7 @@
                 </LinearLayout>
             </TableRow>
 
-            <TableRow android:layout_marginBottom="30dp">
+            <TableRow android:layout_marginBottom="10dp">
 
                 <LinearLayout
                     android:id="@+id/blue_shirt"

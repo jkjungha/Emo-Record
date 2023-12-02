@@ -24,6 +24,7 @@ private const val TAG_EDIT= "edit_fragment"
 
 class MainActivity : AppCompatActivity() {
     companion object{
+        var layout:Int = R.layout.activity_main
         var select = 0
     }
 
@@ -66,6 +67,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         val bottomNavigationViewZ:BottomNavigationView = findViewById(R.id.navigationView)
         bottomNavigationViewZ.selectedItemId = R.id.homeFragment
         Log.d("GOT YOU", "MAIN")

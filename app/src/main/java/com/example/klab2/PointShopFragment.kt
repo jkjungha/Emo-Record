@@ -129,6 +129,7 @@ class PointShopFragment : Fragment() {
 
     fun imageCheck() {
 
+
 //        binding.backButton.setOnClickListener {
 //            val intent = Intent(context, MainActivity::class.java);
 //            startActivity(intent)
