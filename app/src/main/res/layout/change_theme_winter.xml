@@ -49,17 +49,31 @@
             android:paddingVertical="10dp"
             android:paddingLeft="15dp">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="BGM settings" />
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BGM settings"/>
+
+                <Button
+                    android:id="@+id/bgm_radio_default"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:text="default"
+                    android:textSize="8sp"
+                    android:backgroundTint="@color/dark_blue"/>
+            </LinearLayout>
 
             <RadioGroup
                 android:id="@+id/bgm_radio_group"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="6dp"
                 android:layout_marginBottom="20dp"
                 android:orientation="horizontal">
 
@@ -93,17 +107,31 @@
             android:paddingVertical="10dp"
             android:paddingLeft="15dp">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cloth settings" />
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cloth settings"/>
+
+                <Button
+                    android:id="@+id/cloth_radio_default"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:text="default"
+                    android:textSize="8sp"
+                    android:backgroundTint="@color/dark_blue"/>
+            </LinearLayout>
 
             <RadioGroup
                 android:id="@+id/cloth_radio_group"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="6dp"
                 android:layout_marginBottom="20dp"
                 android:orientation="horizontal">
 
@@ -136,17 +164,31 @@
             android:paddingVertical="10dp"
             android:paddingLeft="15dp">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Theme settings" />
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Theme settings"/>
+
+                <Button
+                    android:id="@+id/theme_radio_default"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:text="default"
+                    android:textSize="8sp"
+                    android:backgroundTint="@color/dark_blue"/>
+            </LinearLayout>
 
             <RadioGroup
                 android:id="@+id/theme_radio_group"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="6dp"
                 android:layout_marginBottom="20dp"
                 android:orientation="vertical">
 
@@ -183,7 +225,8 @@
                         android:id="@+id/winter_theme_radio_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="winter theme" />
+                        android:text="winter theme"
+                        android:visibility="gone"/>
                 </LinearLayout>
 
             </RadioGroup>

@@ -32,11 +32,11 @@ class ChangeThemeActivity : AppCompatActivity(){
         init()
     }
 
-    @SuppressLint("ResourceAsColor")
     fun init() {
         binding.backButton.setOnClickListener {
-            var intent = Intent(this@ChangeThemeActivity, MainActivity::class.java)
-            startActivity(intent)
+//            var intent = Intent(this@ChangeThemeActivity, MainActivity::class.java)
+//            startActivity(intent)
+            finish()
         }
 
         val database = Firebase.database
@@ -147,8 +147,19 @@ class ChangeThemeActivity : AppCompatActivity(){
             }
         }
         binding.doneButton.setOnClickListener {
-            var intent = Intent(this@ChangeThemeActivity, MainActivity::class.java)
-            startActivity(intent)
+//            var intent = Intent(this@ChangeThemeActivity, MainActivity::class.java)
+//            startActivity(intent)
+            finish()
+        }
+
+        binding.bgmRadioDefault.setOnClickListener {
+
+        }
+        binding.clothRadioDefault.setOnClickListener {
+
+        }
+        binding.themeRadioDefault.setOnClickListener {
+
         }
 
     }
