@@ -2,13 +2,13 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="250dp"
+        android:layout_width="400dp"
         android:layout_height="200dp"
         android:layout_above="@+id/usernameEditText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
-        android:translationX="-35dp"
-        app:srcCompat="@drawable/login" />
+        android:translationX="10dp"
+        app:srcCompat="@drawable/panda_head2" />
 
     <EditText
         android:id="@+id/usernameEditText"
@@ -20,7 +20,8 @@
         android:hint="아이디"
         android:paddingLeft="10dp"
         android:textColor="@color/black"
-        android:translationY="-20dp"
+        android:translationX="30dp"
+        android:translationY="-40dp"
         android:visibility="visible" />
 
     <EditText
@@ -34,7 +35,8 @@
         android:hint="비밀번호"
         android:inputType="textPassword"
         android:paddingLeft="10dp"
-        android:translationY="-20dp" />
+        android:translationX="30dp"
+        android:translationY="-40dp" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/loginButton"
@@ -46,18 +48,20 @@
         android:background="@drawable/bg_button"
         android:text="로그인"
         android:textColor="@color/white"
-        android:translationY="-20dp" />
+        android:translationX="30dp"
+        android:translationY="-40dp" />
     <!--  使用水平的 LinearLayout 包裹按钮  -->
     <LinearLayout android:layout_width="288dp" android:layout_height="38dp" android:layout_below="@+id/loginButton" android:layout_marginLeft="10dp" android:orientation="horizontal">
         <!--  忘记密码按钮  -->
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/forgotPasswordButton"
             android:layout_width="16dp"
-            android:layout_height="48dp"
+            android:layout_height="60dp"
             android:layout_weight="0.5"
             android:background="@color/transparent"
             android:text="비밀번호 분실"
             android:textColor="@color/white"
+            android:translationX="30dp"
             android:translationY="-20dp" />
         <!--  注册按钮  -->
         <androidx.appcompat.widget.AppCompatButton
@@ -68,6 +72,7 @@
             android:background="@color/transparent"
             android:text="회원가입"
             android:textColor="@color/white"
+            android:translationX="30dp"
             android:translationY="-20dp" />
     </LinearLayout>
 
