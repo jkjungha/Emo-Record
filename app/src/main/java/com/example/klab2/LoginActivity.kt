@@ -77,7 +77,6 @@ class LoginActivity : AppCompatActivity() {
                             LoginActivity.username = enteredUsername
                             editor.apply()
                             Log.d("GOT YOU", "LOGIN")
-                            database.getReference("users").child(LoginActivity.username).child("total_point").setValue(0)
 
                             var Intent =
                                 Intent(this@LoginActivity, MainActivity::class.java)

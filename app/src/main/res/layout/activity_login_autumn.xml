@@ -10,79 +10,76 @@
     tools:context=".LoginActivity">
 
     <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/usernameEditText"
-        android:layout_marginLeft="85dp"
-        android:layout_marginBottom="10dp"
-        tools:src="@tools:sample/avatars" />
+        android:id="@+id/imageView3"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        android:layout_above="@+id/usernameEditText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:translationX="-35dp"
+        app:srcCompat="@drawable/panda_head" />
 
     <EditText
         android:id="@+id/usernameEditText"
         android:layout_width="269dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="13dp"
         android:background="@drawable/bg_text"
         android:hint="아이디"
         android:paddingLeft="10dp"
-        android:layout_marginLeft="20dp"
         android:textColor="@color/black"
+        android:translationY="-20dp"
         android:visibility="visible" />
 
     <EditText
         android:id="@+id/passwordEditText"
         android:layout_width="269dp"
-        android:layout_height="44dp"
+        android:layout_height="48dp"
+        android:layout_below="@+id/usernameEditText"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/bg_text"
         android:hint="비밀번호"
         android:inputType="textPassword"
         android:paddingLeft="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_below="@+id/usernameEditText"
-        android:layout_marginTop="8dp"/>
+        android:translationY="-20dp" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/loginButton"
         android:layout_width="269dp"
-        android:layout_height="44dp"
-        android:text="로그인"
-        android:layout_marginLeft="20dp"
-        android:background="@drawable/bg_button_autumn"
-        android:textColor="@color/white"
+        android:layout_height="48dp"
         android:layout_below="@+id/passwordEditText"
-        android:layout_marginTop="16dp"/>
-
-    <!-- 使用水平的 LinearLayout 包裹按钮 -->
-
-    <LinearLayout
-        android:layout_width="288dp"
-        android:layout_height="38dp"
-        android:layout_below="@+id/loginButton"
-        android:layout_marginLeft="10dp"
-        android:orientation="horizontal">
-
-        <!-- 忘记密码按钮 -->
-        <Button
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_2_autumn"
+        android:text="로그인"
+        android:textColor="@color/white"
+        android:translationY="-20dp" />
+    <!--  使用水平的 LinearLayout 包裹按钮  -->
+    <LinearLayout android:layout_width="288dp" android:layout_height="38dp" android:layout_below="@+id/loginButton" android:layout_marginLeft="10dp" android:orientation="horizontal">
+        <!--  忘记密码按钮  -->
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/forgotPasswordButton"
             android:layout_width="16dp"
-            android:layout_height="30dp"
+            android:layout_height="48dp"
             android:layout_weight="0.5"
             android:background="@color/transparent"
             android:text="비밀번호 분실"
-            android:textColor="@color/white" />
-
-        <!-- 注册按钮 -->
-        <Button
+            android:textColor="@color/white"
+            android:translationY="-20dp" />
+        <!--  注册按钮  -->
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/registerButton"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_weight="0.5"
             android:background="@color/transparent"
             android:text="회원가입"
-            android:textColor="@color/white" />
-
+            android:textColor="@color/white"
+            android:translationY="-20dp" />
     </LinearLayout>
+
 
 
 </RelativeLayout>
