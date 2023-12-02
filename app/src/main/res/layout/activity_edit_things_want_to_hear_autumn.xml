@@ -167,14 +167,14 @@
     </LinearLayout>
 
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/edit_done_button"
         android:layout_width="85dp"
         android:layout_height="70dp"
         android:insetBottom="10dp"
         android:text="Done"
         android:textStyle="bold"
-        android:background="@drawable/autumn"
+        android:background="@drawable/autumn2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
