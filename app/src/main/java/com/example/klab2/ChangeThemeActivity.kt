@@ -118,20 +118,26 @@ class ChangeThemeActivity : AppCompatActivity(){
             }
         }
         binding.themeRadioGroup.setOnCheckedChangeListener { buttonView, checkedId ->
-            items.child("spring_theme/chose").setValue(0)
-            items.child("summer_theme/chose").setValue(0)
-            items.child("autumn_theme/chose").setValue(0)
+            //items.child("spring_theme/chose").setValue(0)
+            //items.child("summer_theme/chose").setValue(0)
+            //items.child("autumn_theme/chose").setValue(0)
 //            items.child("winter_theme/chose").setValue(0)
             val statusBarColor: Int = when (checkedId) {
                 binding.springThemeRadioButton.id -> {
+                    items.child("summer_theme/chose").setValue(0)
+                    items.child("autumn_theme/chose").setValue(0)
                     items.child("spring_theme/chose").setValue(1)
                     R.color.spring_bar
                 }
                 binding.summerThemeRadioButton.id -> {
+                    items.child("spring_theme/chose").setValue(0)
+                    items.child("autumn_theme/chose").setValue(0)
                     items.child("summer_theme/chose").setValue(1)
                     R.color.summer_bar
                 }
                 binding.autumnThemeRadioButton.id -> {
+                    items.child("spring_theme/chose").setValue(0)
+                    items.child("summer_theme/chose").setValue(0)
                     items.child("autumn_theme/chose").setValue(1)
                     R.color.autumn_bar
                 }
