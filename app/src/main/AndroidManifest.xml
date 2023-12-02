@@ -46,6 +46,10 @@
         <activity
             android:name=".CheckEmojiActivity"
             android:exported="false" />
+        <activity android:name=".ChangeProfileActivity"
+            android:exported="false"/>
+        <activity android:name=".ChangePasswordActivity"
+            android:exported="false"/>
         <activity
             android:name=".EditThingsWantToHearActivity"
             android:exported="false" />
