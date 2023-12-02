@@ -51,12 +51,12 @@
         android:layout_gravity="center"
         />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/dariy_save_button"
         android:layout_width="95dp"
         android:layout_height="80dp"
         android:text="Save"
-        android:background="@drawable/autumn"
+        android:background="@drawable/autumn2"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         tools:layout_editor_absoluteX="195dp"

@@ -1,0 +1,48 @@
+<!-- res/layout/change_profile.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <!-- 添加个人信息编辑框 -->
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="379dp"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_text"
+        android:hint="  Name"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
+
+    <!-- 添加其他个人信息编辑框，位于名称编辑框下方 -->
+    <EditText
+        android:id="@+id/editTextOtherInfo"
+        android:layout_width="379dp"
+        android:layout_height="48dp"
+        android:layout_below="@id/editTextName"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_text"
+        android:hint="  Other Info" />
+
+    <!-- 添加保存按钮，位于其他个人信息编辑框下方 -->
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#1e3f66"
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/editTextOtherInfo" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/backToLoginButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/back"
+        android:backgroundTint="@color/blue"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/saveButton"/>
+</RelativeLayout>

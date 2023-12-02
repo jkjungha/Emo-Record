@@ -9,8 +9,8 @@
         app:layout_constraintTop_toTopOf="parent"
         android:background="@drawable/back"
         android:backgroundTint="@color/white" />
-    <Button android:id="@+id/btnSave" android:layout_width="100dp" android:layout_height="90dp" android:textStyle="bold" android:layout_marginBottom="100dp" android:background="@drawable/snow2" android:text="Save" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"/>
-    <Button android:id="@+id/btnCancel" android:layout_width="100dp" android:layout_height="90dp" android:textStyle="bold" android:background="@drawable/snow2"
+    <androidx.appcompat.widget.AppCompatButton android:id="@+id/btnSave" android:layout_width="100dp" android:layout_height="90dp" android:textStyle="bold" android:layout_marginBottom="100dp" android:background="@drawable/snow2" android:text="Save" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"/>
+    <androidx.appcompat.widget.AppCompatButton android:id="@+id/btnCancel" android:layout_width="100dp" android:layout_height="90dp" android:textStyle="bold" android:background="@drawable/snow2"
          android:layout_marginBottom="20dp" android:text="Cancel \nAlert" app:layout_constraintBottom_toTopOf="@+id/btnSave" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
@@ -27,6 +27,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <Button android:id="@+id/btnTime" android:layout_width="100dp"
+    <androidx.appcompat.widget.AppCompatButton android:id="@+id/btnTime" android:layout_width="100dp"
         android:layout_height="90dp" android:textStyle="bold" android:background="@drawable/snow2" android:layout_marginBottom="20dp" android:text="EDIT TIME" app:layout_constraintBottom_toTopOf="@+id/btnCancel" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.498" app:layout_constraintStart_toStartOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
