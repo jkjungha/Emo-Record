@@ -150,6 +150,16 @@ class ChangeThemeActivity : AppCompatActivity(){
             startActivity(intent)
         }
 
+        binding.bgmRadioDefault.setOnClickListener {
+
+        }
+        binding.clothRadioDefault.setOnClickListener {
+
+        }
+        binding.themeRadioDefault.setOnClickListener {
+
+        }
+
     }
 
 
