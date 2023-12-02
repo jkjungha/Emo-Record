@@ -1,5 +1,6 @@
 package com.example.klab2
 
+import android.app.AlertDialog
 import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.graphics.ColorMatrix
@@ -148,19 +149,29 @@ class PointShopFragment : Fragment() {
                             .getValue(Int::class.java)
                         var total_point = dataSnapshot.child("users").child(user).child("total_point")
                             .getValue(Int::class.java)
-                        if (total_point!! >= point!!) {
-                            total_point -= point
-                            db.child("users").child(user!!).child("total_point").setValue(total_point)
-                            val matrix = ColorMatrix()
-                            matrix.setSaturation(0f)
-                            val filter = ColorMatrixColorFilter(matrix)
-                            binding.excitingBgmImg.setColorFilter(filter)
-                            binding.excitingBgmImg.isEnabled = false
-                            db.child("users").child(user!!).child("get_items/exciting_bgm/bought").setValue(1)
-                            Toast.makeText(requireContext(),  "구매 완료", Toast.LENGTH_SHORT).show()
-                        }else{
-                            Toast.makeText(requireContext(),  "구매할 수 없음", Toast.LENGTH_SHORT).show()
-                        }
+
+                        val builder = AlertDialog.Builder(requireContext())
+                        builder.setTitle("구매").setMessage("아이템을 구매하시겠습니까?")
+                            .setPositiveButton("확인") { _, _ ->
+                                if (total_point!! >= point!!) {
+                                    total_point -= point
+                                    db.child("users").child(user!!).child("total_point").setValue(total_point)
+                                    val matrix = ColorMatrix()
+                                    matrix.setSaturation(0f)
+                                    val filter = ColorMatrixColorFilter(matrix)
+                                    binding.excitingBgmImg.setColorFilter(filter)
+                                    binding.excitingBgmImg.isEnabled = false
+                                    db.child("users").child(user!!).child("get_items/exciting_bgm/bought").setValue(1)
+                                    Toast.makeText(requireContext(),  "구매 완료", Toast.LENGTH_SHORT).show()
+                                }else{
+                                    Toast.makeText(requireContext(),  "구매할 수 없음", Toast.LENGTH_SHORT).show()
+                                }
+                            }
+                            .setNegativeButton("취소") { _, _ ->
+
+                            }
+
+                        builder.show()
                     }
                 }
                 binding.seaBgmImg.setOnClickListener {
@@ -169,19 +180,29 @@ class PointShopFragment : Fragment() {
                             .getValue(Int::class.java)
                         var total_point = dataSnapshot.child("users").child(user).child("total_point")
                             .getValue(Int::class.java)
-                        if (total_point!! >= point!!) {
-                            total_point -= point
-                            db.child("users").child(user!!).child("total_point").setValue(total_point)
-                            val matrix = ColorMatrix()
-                            matrix.setSaturation(0f)
-                            val filter = ColorMatrixColorFilter(matrix)
-                            binding.seaBgmImg.setColorFilter(filter)
-                            binding.seaBgmImg.isEnabled = false
-                            db.child("users").child(user!!).child("get_items/sea_bgm/bought").setValue(1)
-                            Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT).show()
-                        }else{
-                            Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()
-                        }
+
+                        val builder = AlertDialog.Builder(requireContext())
+                        builder.setTitle("구매").setMessage("아이템을 구매하시겠습니까?")
+                            .setPositiveButton("확인") { _, _ ->
+                                if (total_point!! >= point!!) {
+                                    total_point -= point
+                                    db.child("users").child(user!!).child("total_point").setValue(total_point)
+                                    val matrix = ColorMatrix()
+                                    matrix.setSaturation(0f)
+                                    val filter = ColorMatrixColorFilter(matrix)
+                                    binding.seaBgmImg.setColorFilter(filter)
+                                    binding.seaBgmImg.isEnabled = false
+                                    db.child("users").child(user!!).child("get_items/sea_bgm/bought").setValue(1)
+                                    Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT).show()
+                                }else{
+                                    Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()
+                                }
+                            }
+                            .setNegativeButton("취소") { _, _ ->
+
+                            }
+
+                        builder.show()
                     }
                 }
                 binding.softBgmImg.setOnClickListener {
@@ -192,20 +213,30 @@ class PointShopFragment : Fragment() {
                         var total_point = dataSnapshot.child("users").child(user).child("total_point")
                             .getValue(Int::class.java)
                         Log.d("POINT SHOP TOTAL POINT", total_point.toString())
-                        if (total_point!! >= point!!) {
-                            total_point -= point
-                            db.child("users").child(user!!).child("total_point").setValue(total_point)
-                            Log.d("POINT SHOP ADD", total_point.toString())
-                            val matrix = ColorMatrix()
-                            matrix.setSaturation(0f)
-                            val filter = ColorMatrixColorFilter(matrix)
-                            binding.softBgmImg.setColorFilter(filter)
-                            binding.softBgmImg.isEnabled = false
-                            db.child("users").child(user!!).child("get_items/soft_bgm/bought").setValue(1)
-                            Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT).show()
-                        }else{
-                            Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()
-                        }
+
+                        val builder = AlertDialog.Builder(requireContext())
+                        builder.setTitle("구매").setMessage("아이템을 구매하시겠습니까?")
+                            .setPositiveButton("확인") { _, _ ->
+                                if (total_point!! >= point!!) {
+                                    total_point -= point
+                                    db.child("users").child(user!!).child("total_point").setValue(total_point)
+                                    Log.d("POINT SHOP ADD", total_point.toString())
+                                    val matrix = ColorMatrix()
+                                    matrix.setSaturation(0f)
+                                    val filter = ColorMatrixColorFilter(matrix)
+                                    binding.softBgmImg.setColorFilter(filter)
+                                    binding.softBgmImg.isEnabled = false
+                                    db.child("users").child(user!!).child("get_items/soft_bgm/bought").setValue(1)
+                                    Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT).show()
+                                }else{
+                                    Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()
+                                }
+                            }
+                            .setNegativeButton("취소") { _, _ ->
+
+                            }
+
+                        builder.show()
                     }
                 }
                 binding.crownSetImg.setOnClickListener {
@@ -216,20 +247,30 @@ class PointShopFragment : Fragment() {
                         var total_point = dataSnapshot.child("users").child(user).child("total_point")
                             .getValue(Int::class.java)
                         Log.d("POINT SHOP TOTAL POINT", total_point.toString())
-                        if (total_point!! >= point!!) {
-                            total_point -= point
-                            db.child("users").child(user!!).child("total_point").setValue(total_point)
-                            Log.d("POINT SHOP ADD", total_point.toString())
-                            val matrix = ColorMatrix()
-                            matrix.setSaturation(0f)
-                            val filter = ColorMatrixColorFilter(matrix)
-                            binding.crownSetImg.setColorFilter(filter)
-                            binding.crownSetImg.isEnabled = false
-                            db.child("users").child(user!!).child("get_items/crown_set/bought").setValue(1)
-                            Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT).show()
-                        }else{
-                            Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()
-                        }
+
+                        val builder = AlertDialog.Builder(requireContext())
+                        builder.setTitle("구매").setMessage("아이템을 구매하시겠습니까?")
+                            .setPositiveButton("확인") { _, _ ->
+                                if (total_point!! >= point!!) {
+                                    total_point -= point
+                                    db.child("users").child(user!!).child("total_point").setValue(total_point)
+                                    Log.d("POINT SHOP ADD", total_point.toString())
+                                    val matrix = ColorMatrix()
+                                    matrix.setSaturation(0f)
+                                    val filter = ColorMatrixColorFilter(matrix)
+                                    binding.crownSetImg.setColorFilter(filter)
+                                    binding.crownSetImg.isEnabled = false
+                                    db.child("users").child(user!!).child("get_items/crown_set/bought").setValue(1)
+                                    Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT).show()
+                                }else{
+                                    Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()
+                                }
+                            }
+                            .setNegativeButton("취소") { _, _ ->
+
+                            }
+
+                        builder.show()
                     }
                 }
                 binding.hanbokSetImg.setOnClickListener {
@@ -240,20 +281,30 @@ class PointShopFragment : Fragment() {
                         var total_point = dataSnapshot.child("users").child(user).child("total_point")
                             .getValue(Int::class.java)
                         Log.d("POINT SHOP TOTAL POINT", total_point.toString())
-                        if (total_point!! >= point!!) {
-                            total_point -= point
-                            db.child("users").child(user!!).child("total_point").setValue(total_point)
-                            Log.d("POINT SHOP ADD", total_point.toString())
-                            val matrix = ColorMatrix()
-                            matrix.setSaturation(0f)
-                            val filter = ColorMatrixColorFilter(matrix)
-                            binding.hanbokSetImg.setColorFilter(filter)
-                            binding.hanbokSetImg.isEnabled = false
-                            db.child("users").child(user!!).child("get_items/hanbok_set/bought").setValue(1)
-                            Toast.makeText(requireContext(),"구매 완료", Toast.LENGTH_SHORT).show()
-                        }else{
-                            Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()
-                        }
+
+                        val builder = AlertDialog.Builder(requireContext())
+                        builder.setTitle("구매").setMessage("아이템을 구매하시겠습니까?")
+                            .setPositiveButton("확인") { _, _ ->
+                                if (total_point!! >= point!!) {
+                                    total_point -= point
+                                    db.child("users").child(user!!).child("total_point").setValue(total_point)
+                                    Log.d("POINT SHOP ADD", total_point.toString())
+                                    val matrix = ColorMatrix()
+                                    matrix.setSaturation(0f)
+                                    val filter = ColorMatrixColorFilter(matrix)
+                                    binding.hanbokSetImg.setColorFilter(filter)
+                                    binding.hanbokSetImg.isEnabled = false
+                                    db.child("users").child(user!!).child("get_items/hanbok_set/bought").setValue(1)
+                                    Toast.makeText(requireContext(),"구매 완료", Toast.LENGTH_SHORT).show()
+                                }else{
+                                    Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()
+                                }
+                            }
+                            .setNegativeButton("취소") { _, _ ->
+
+                            }
+
+                        builder.show()
                     }
                 }
                 binding.swimSetImg.setOnClickListener {
@@ -264,20 +315,30 @@ class PointShopFragment : Fragment() {
                         var total_point = dataSnapshot.child("users").child(user).child("total_point")
                             .getValue(Int::class.java)
                         Log.d("POINT SHOP TOTAL POINT", total_point.toString())
-                        if (total_point!! >= point!!) {
-                            total_point -= point
-                            db.child("users").child(user!!).child("total_point").setValue(total_point)
-                            Log.d("POINT SHOP ADD", total_point.toString())
-                            val matrix = ColorMatrix()
-                            matrix.setSaturation(0f)
-                            val filter = ColorMatrixColorFilter(matrix)
-                            binding.swimSetImg.setColorFilter(filter)
-                            binding.swimSetImg.isEnabled = false
-                            db.child("users").child(user!!).child("get_items/swim_set/bought").setValue(1)
-                            Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT).show()
-                        }else{
-                            Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()
-                        }
+
+                        val builder = AlertDialog.Builder(requireContext())
+                        builder.setTitle("구매").setMessage("아이템을 구매하시겠습니까?")
+                            .setPositiveButton("확인") { _, _ ->
+                                if (total_point!! >= point!!) {
+                                    total_point -= point
+                                    db.child("users").child(user!!).child("total_point").setValue(total_point)
+                                    Log.d("POINT SHOP ADD", total_point.toString())
+                                    val matrix = ColorMatrix()
+                                    matrix.setSaturation(0f)
+                                    val filter = ColorMatrixColorFilter(matrix)
+                                    binding.swimSetImg.setColorFilter(filter)
+                                    binding.swimSetImg.isEnabled = false
+                                    db.child("users").child(user!!).child("get_items/swim_set/bought").setValue(1)
+                                    Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT).show()
+                                }else{
+                                    Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()
+                                }
+                            }
+                            .setNegativeButton("취소") { _, _ ->
+
+                            }
+
+                        builder.show()
                     }
                 }
                 binding.springThemeImg.setOnClickListener {
@@ -288,20 +349,30 @@ class PointShopFragment : Fragment() {
                         var total_point = dataSnapshot.child("users").child(user).child("total_point")
                             .getValue(Int::class.java)
                         Log.d("POINT SHOP TOTAL POINT", total_point.toString())
-                        if (total_point!! >= point!!) {
-                            total_point -= point
-                            db.child("users").child(user!!).child("total_point").setValue(total_point)
-                            Log.d("POINT SHOP ADD", total_point.toString())
-                            val matrix = ColorMatrix()
-                            matrix.setSaturation(0f)
-                            val filter = ColorMatrixColorFilter(matrix)
-                            binding.springThemeImg.setColorFilter(filter)
-                            binding.springThemeImg.isEnabled = false
-                            db.child("users").child(user!!).child("get_items/spring_theme/bought").setValue(1)
-                            Toast.makeText(requireContext(),"구매 완료", Toast.LENGTH_SHORT).show()
-                        }else{
-                            Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()
-                        }
+
+                        val builder = AlertDialog.Builder(requireContext())
+                        builder.setTitle("구매").setMessage("아이템을 구매하시겠습니까?")
+                            .setPositiveButton("확인") { _, _ ->
+                                if (total_point!! >= point!!) {
+                                    total_point -= point
+                                    db.child("users").child(user!!).child("total_point").setValue(total_point)
+                                    Log.d("POINT SHOP ADD", total_point.toString())
+                                    val matrix = ColorMatrix()
+                                    matrix.setSaturation(0f)
+                                    val filter = ColorMatrixColorFilter(matrix)
+                                    binding.springThemeImg.setColorFilter(filter)
+                                    binding.springThemeImg.isEnabled = false
+                                    db.child("users").child(user!!).child("get_items/spring_theme/bought").setValue(1)
+                                    Toast.makeText(requireContext(),"구매 완료", Toast.LENGTH_SHORT).show()
+                                }else{
+                                    Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()
+                                }
+                            }
+                            .setNegativeButton("취소") { _, _ ->
+
+                            }
+
+                        builder.show()
                     }
                 }
                 binding.summerThemeImg.setOnClickListener {
@@ -312,20 +383,30 @@ class PointShopFragment : Fragment() {
                         var total_point = dataSnapshot.child("users").child(user).child("total_point")
                             .getValue(Int::class.java)
                         Log.d("POINT SHOP TOTAL POINT", total_point.toString())
-                        if (total_point!! >= point!!) {
-                            total_point -= point
-                            db.child("users").child(user!!).child("total_point").setValue(total_point)
-                            Log.d("POINT SHOP ADD", total_point.toString())
-                            val matrix = ColorMatrix()
-                            matrix.setSaturation(0f)
-                            val filter = ColorMatrixColorFilter(matrix)
-                            binding.summerThemeImg.setColorFilter(filter)
-                            binding.summerThemeImg.isEnabled = false
-                            db.child("users").child(user!!).child("get_items/summer_theme/bought").setValue(1)
-                            Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT).show()
-                        }else{
-                            Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()
-                        }
+
+                        val builder = AlertDialog.Builder(requireContext())
+                        builder.setTitle("구매").setMessage("아이템을 구매하시겠습니까?")
+                            .setPositiveButton("확인") { _, _ ->
+                                if (total_point!! >= point!!) {
+                                    total_point -= point
+                                    db.child("users").child(user!!).child("total_point").setValue(total_point)
+                                    Log.d("POINT SHOP ADD", total_point.toString())
+                                    val matrix = ColorMatrix()
+                                    matrix.setSaturation(0f)
+                                    val filter = ColorMatrixColorFilter(matrix)
+                                    binding.summerThemeImg.setColorFilter(filter)
+                                    binding.summerThemeImg.isEnabled = false
+                                    db.child("users").child(user!!).child("get_items/summer_theme/bought").setValue(1)
+                                    Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT).show()
+                                }else{
+                                    Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()
+                                }
+                            }
+                            .setNegativeButton("취소") { _, _ ->
+
+                            }
+
+                        builder.show()
                     }
                 }
                 binding.autumnThemeImg.setOnClickListener {
@@ -336,20 +417,30 @@ class PointShopFragment : Fragment() {
                         var total_point = dataSnapshot.child("users").child(user).child("total_point")
                             .getValue(Int::class.java)
                         Log.d("POINT SHOP TOTAL POINT", total_point.toString())
-                        if (total_point!! >= point!!) {
-                            total_point -= point
-                            db.child("users").child(user!!).child("total_point").setValue(total_point)
-                            Log.d("POINT SHOP ADD", total_point.toString())
-                            val matrix = ColorMatrix()
-                            matrix.setSaturation(0f)
-                            val filter = ColorMatrixColorFilter(matrix)
-                            binding.autumnThemeImg.setColorFilter(filter)
-                            binding.autumnThemeImg.isEnabled = false
-                            db.child("users").child(user!!).child("get_items/autumn_theme/bought").setValue(1)
-                            Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT).show()
-                        }else{
-                            Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()
-                        }
+
+                        val builder = AlertDialog.Builder(requireContext())
+                        builder.setTitle("구매").setMessage("아이템을 구매하시겠습니까?")
+                            .setPositiveButton("확인") { _, _ ->
+                                if (total_point!! >= point!!) {
+                                    total_point -= point
+                                    db.child("users").child(user!!).child("total_point").setValue(total_point)
+                                    Log.d("POINT SHOP ADD", total_point.toString())
+                                    val matrix = ColorMatrix()
+                                    matrix.setSaturation(0f)
+                                    val filter = ColorMatrixColorFilter(matrix)
+                                    binding.autumnThemeImg.setColorFilter(filter)
+                                    binding.autumnThemeImg.isEnabled = false
+                                    db.child("users").child(user!!).child("get_items/autumn_theme/bought").setValue(1)
+                                    Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT).show()
+                                }else{
+                                    Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()
+                                }
+                            }
+                            .setNegativeButton("취소") { _, _ ->
+
+                            }
+
+                        builder.show()
                     }
                 }
             }
