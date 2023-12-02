@@ -62,6 +62,12 @@ class Time : AppCompatActivity() {
         dbRef = FirebaseDatabase.getInstance().getReference("users/$userid/word")
         wordList = mutableListOf<String>() as ArrayList<String>
 
+        binding.timeBackArrow.setOnClickListener {
+            var Intent = Intent(this, ThingsWantToHearActivity::class.java)
+            MainActivity.select = 0
+            startActivity(Intent)
+        }
+
         checkPermission(android.Manifest.permission.USE_EXACT_ALARM, USE_ALARM_PERMISSION)
         checkPermission(android.Manifest.permission.SCHEDULE_EXACT_ALARM, SCHEDULE_ALARM_PERMISSION)
         checkPermission(android.Manifest.permission.POST_NOTIFICATIONS, POST_NOTIFICATIONS_PERMISSION)
