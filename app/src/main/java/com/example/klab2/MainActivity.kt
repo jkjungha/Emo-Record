@@ -1,9 +1,13 @@
 package com.example.klab2
 
+import android.content.Intent
 import android.graphics.Point
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.widget.Toolbar
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -26,6 +30,39 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityMainBinding
 
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.settings_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.change_password ->{
+                //showLoading()
+
+                val intent = Intent(this, ChangePasswordActivity::class.java)
+                startActivity(intent)
+
+                //hideLoading()
+            }
+
+            R.id.change_profile -> {
+                //showLoading()
+
+                val intent = Intent(this, ChangeProfileActivity::class.java)
+                startActivity(intent)
+
+                //hideLoading()
+            }
+            R.id.change_theme -> {
+                val intent = Intent(this, ChangeThemeActivity::class.java)
+                startActivity(intent)
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -34,6 +71,8 @@ class MainActivity : AppCompatActivity() {
         val bottomNavigationViewZ:BottomNavigationView = findViewById(R.id.navigationView)
         bottomNavigationViewZ.selectedItemId = R.id.homeFragment
         Log.d("GOT YOU", "MAIN")
+
+
 
         if(select==0)
             setFragment(TAG_HOME, HomeFragment())

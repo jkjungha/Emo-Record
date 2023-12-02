@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="650dp"
     android:background="@drawable/bg_spring"
     android:orientation="vertical">
     <!--    tools:context=".PointShopActivity">-->
@@ -16,7 +16,6 @@
 <!--            android:text="Point Shop"-->
 <!--            android:textSize="30sp"-->
 <!--            android:textStyle="bold" />-->
-
 
     <TextView
         android:id="@+id/total_point"

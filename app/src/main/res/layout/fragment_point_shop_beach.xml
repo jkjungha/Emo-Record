@@ -3,21 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="650dp"
     android:orientation="vertical"
     android:background="@drawable/bg_beach">
 <!--    tools:context=".PointShopActivity">-->
 
 
-
-<!--        <TextView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="70dp"-->
-<!--            android:background="@drawable/bar_style_beach"-->
-<!--            android:gravity="center"-->
-<!--            android:text="Point Shop"-->
-<!--            android:textSize="30sp"-->
-<!--            android:textStyle="bold"/>-->
+    <!--        <TextView-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="70dp"-->
+    <!--            android:background="@drawable/bar_style_beach"-->
+    <!--            android:gravity="center"-->
+    <!--            android:text="Point Shop"-->
+    <!--            android:textSize="30sp"-->
+    <!--            android:textStyle="bold"/>-->
 
 
     <TextView

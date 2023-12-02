@@ -25,13 +25,11 @@ class ChangeProfileActivity : AppCompatActivity() {
 
         // 添加保存按钮的点击事件处理逻辑
         saveButton.setOnClickListener {
-            // 在这里处理保存个人信息的逻辑，并在保存前显示加载动画
             showLoading()
-
+            // 在这里处理保存个人信息的逻辑，并在保存前显示加载动画
             // 模拟延时，然后隐藏加载动画
             Handler().postDelayed({
                 hideLoading()
-
                 // 这里添加保存个人信息的实际逻辑
             }, 2000) // 调整延时时间
         }
@@ -40,14 +38,12 @@ class ChangeProfileActivity : AppCompatActivity() {
         backToLoginButton.setOnClickListener {
             // 在返回之前显示加载动画
             showLoading()
-
             // 模拟延时，然后返回到设置界面
             Handler().postDelayed({
                 hideLoading()
-
                 // 创建一个 Intent 以返回到设置界面
-                val intent = Intent(this, SettingActivity::class.java)
-                startActivity(intent)
+                val intent = Intent(this@ChangeProfileActivity, MainActivity::class.java)
+                MainActivity.select = 0
                 finish() // 结束当前的修改个人信息界面
             }, 2000) // 调整延时时间
         }

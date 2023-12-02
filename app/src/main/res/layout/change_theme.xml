@@ -4,14 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_forest"
     android:orientation="vertical"
-    tools:context=".ChangeThemeActivity">
+    tools:context=".ChangeThemeActivity"
+    android:background="@drawable/bg_forest">
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="70dp"
         android:layout_marginBottom="50dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/bar_style"
+            android:gravity="center"
+            android:text="Settings"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/back_button"
@@ -26,10 +35,11 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="520dp"
         android:background="@drawable/border"
         android:orientation="vertical"
-        android:padding="30dp">
+        android:padding="30dp"
+        android:translationY="-30dp">
 
         <LinearLayout
             android:layout_width="350dp"
@@ -121,7 +131,7 @@
 
         <LinearLayout
             android:layout_width="350dp"
-            android:layout_height="100dp"
+            android:layout_height="170dp"
             android:background="@drawable/black_border"
             android:orientation="vertical"
             android:paddingVertical="10dp"
@@ -139,29 +149,43 @@
                 android:layout_centerInParent="true"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
-                <RadioButton
-                    android:id="@+id/spring_theme_radio_button"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
-                    android:text="spring\ntheme" />
+                    android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/summer_theme_radio_button"
+                    <RadioButton
+                        android:id="@+id/spring_theme_radio_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="spring theme" />
+
+                    <RadioButton
+                        android:id="@+id/summer_theme_radio_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="summer theme" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="summer\ntheme"
-                    android:layout_marginRight="20dp"
-                    />
+                    android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/autumn_theme_radio_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="autumn\ntheme" />
+                    <RadioButton
+                        android:id="@+id/autumn_theme_radio_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="autumn theme" />
 
+                    <RadioButton
+                        android:id="@+id/winter_theme_radio_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="winter theme" />
+                </LinearLayout>
 
             </RadioGroup>
         </LinearLayout>
@@ -173,7 +197,8 @@
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
             android:backgroundTint="@color/green"
-            android:text="done" />
+            android:text="done"
+            />
 
     </LinearLayout>
 
