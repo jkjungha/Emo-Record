@@ -3,9 +3,12 @@ package com.example.klab2
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.example.klab2.databinding.ActivityAddThingsWantToHearBinding
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -22,6 +25,18 @@ class AddThingsWantToHearActivity : AppCompatActivity() {
         binding = ActivityAddThingsWantToHearBinding.inflate(layoutInflater)
 
         if(MainActivity.season == "forest") {
+            supportActionBar?.setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.forest_bar
+                    )
+                )
+            )
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                window.statusBarColor = ContextCompat.getColor(this, R.color.forest_bar)
+            }
+
             binding.back.setBackgroundResource(R.drawable.bg_forest)
             binding.addWantHear.setBackgroundResource(R.drawable.title5)
             binding.addTypeText.setBackgroundResource(R.drawable.bg_2)
@@ -30,6 +45,18 @@ class AddThingsWantToHearActivity : AppCompatActivity() {
                 ColorStateList.valueOf((Color.parseColor("#04B486")))
         }
         else if(MainActivity.season == "autumn"){
+            supportActionBar?.setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.autumn_bar
+                    )
+                )
+            )
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                window.statusBarColor = ContextCompat.getColor(this,  R.color.autumn_bar)
+            }
+
             binding.back.setBackgroundResource(R.drawable.bg_autumn)
             binding.addWantHear.setBackgroundResource(R.drawable.title_beach2)
             binding.addDoneButton.setBackgroundResource(R.drawable.autumn2)
@@ -38,6 +65,18 @@ class AddThingsWantToHearActivity : AppCompatActivity() {
                 ColorStateList.valueOf((Color.parseColor("#DF013A")))
         }
         else if(MainActivity.season == "summer"){
+            supportActionBar?.setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.summer_bar
+                    )
+                )
+            )
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                window.statusBarColor = ContextCompat.getColor(this, R.color.summer_bar)
+            }
+
             binding.back.setBackgroundResource(R.drawable.bg_beach)
             binding.addWantHear.setBackgroundResource(R.drawable.title_beach2)
             binding.addDoneButton.setBackgroundResource(R.drawable.shell3)
@@ -46,6 +85,18 @@ class AddThingsWantToHearActivity : AppCompatActivity() {
                 ColorStateList.valueOf((Color.parseColor("#2E9AFE")))
         }
         else if(MainActivity.season == "spring"){
+            supportActionBar?.setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.spring_bar
+                    )
+                )
+            )
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                window.statusBarColor = ContextCompat.getColor(this, R.color.spring_bar)
+            }
+
             binding.back.setBackgroundResource(R.drawable.bg_spring)
             binding.addWantHear.setBackgroundResource(R.drawable.title_spring3)
             binding.addDoneButton.setBackgroundResource(R.drawable.flower3)
@@ -54,6 +105,19 @@ class AddThingsWantToHearActivity : AppCompatActivity() {
                 ColorStateList.valueOf((Color.parseColor("#F781D8")))
         }
         else if(MainActivity.season == "winter"){
+            supportActionBar?.setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.winter_bar
+                    )
+                )
+            )
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                window.statusBarColor = ContextCompat.getColor(this, R.color.winter_bar)
+            }
+
+
             binding.back.setBackgroundResource(R.drawable.bg_winter)
             binding.addWantHear.setBackgroundResource(R.drawable.title_winter2)
             binding.addDoneButton.setBackgroundResource(R.drawable.snow2)

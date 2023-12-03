@@ -3,6 +3,8 @@ package com.example.klab2
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
@@ -10,6 +12,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.example.klab2.MainActivity.Companion.select
 import com.google.firebase.database.FirebaseDatabase
 
@@ -23,30 +26,88 @@ class ChangePasswordActivity : AppCompatActivity() {
         setContentView(R.layout.change_password)
 
         if(MainActivity.season == "forest"){
+            supportActionBar?.setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.forest_bar
+                    )
+                )
+            )
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                window.statusBarColor = ContextCompat.getColor(this, R.color.forest_bar  )
+            }
             findViewById<Button>(R.id.savePasswordButton).backgroundTintList =
                 ColorStateList.valueOf((Color.parseColor("#0B6623")))
             findViewById<Button>(R.id.backToLoginButton).backgroundTintList =
                 ColorStateList.valueOf((Color.parseColor("#607d3b")))
         }
         else if(MainActivity.season == "autumn"){
+            supportActionBar?.setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.autumn_bar
+                    )
+                )
+            )
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                window.statusBarColor = ContextCompat.getColor(this, R.color.autumn_bar   )
+            }
+
             findViewById<Button>(R.id.savePasswordButton).backgroundTintList =
                 ColorStateList.valueOf((Color.parseColor("#c35817")))
             findViewById<Button>(R.id.backToLoginButton).backgroundTintList =
                 ColorStateList.valueOf((Color.parseColor("#fffbc02d")))
         }
         else if(MainActivity.season == "summer"){
+            supportActionBar?.setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.summer_bar
+                    )
+                )
+            )
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                window.statusBarColor = ContextCompat.getColor(this, R.color.summer_bar  )
+            }
+
             findViewById<Button>(R.id.savePasswordButton).backgroundTintList =
                 ColorStateList.valueOf((Color.parseColor("#2e5984")))
             findViewById<Button>(R.id.backToLoginButton).backgroundTintList =
                 ColorStateList.valueOf((Color.parseColor("#5fa3e1")))
         }
         else if(MainActivity.season == "spring"){
+            supportActionBar?.setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.spring_bar
+                    )
+                )
+            )
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                window.statusBarColor = ContextCompat.getColor(this, R.color.spring_bar   )
+            }
+
             findViewById<Button>(R.id.savePasswordButton).backgroundTintList =
                 ColorStateList.valueOf((Color.parseColor("#fff06292")))
             findViewById<Button>(R.id.backToLoginButton).backgroundTintList =
                 ColorStateList.valueOf((Color.parseColor("#fff48fb1")))
         }
         else if(MainActivity.season == "winter"){
+            supportActionBar?.setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.winter_bar
+                    )
+                )
+            )
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                window.statusBarColor = ContextCompat.getColor(this, R.color.winter_bar   )
+            }
             findViewById<Button>(R.id.savePasswordButton).backgroundTintList =
                 ColorStateList.valueOf((Color.parseColor("#1e3f66e")))
             findViewById<Button>(R.id.backToLoginButton).backgroundTintList =

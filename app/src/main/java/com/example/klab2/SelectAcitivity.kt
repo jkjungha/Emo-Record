@@ -4,11 +4,14 @@ import android.app.AlertDialog
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.content.ContextCompat
 import com.example.klab2.databinding.ActivityAddThingsWantToHearBinding
 import com.example.klab2.databinding.ActivitySelectAcitivityBinding
 import com.google.firebase.database.*
@@ -23,6 +26,18 @@ class SelectAcitivity : AppCompatActivity() {
         setContentView(binding.root)
 
         if(MainActivity.season == "forest"){
+            supportActionBar?.setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.forest_bar
+                    )
+                )
+            )
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                window.statusBarColor = ContextCompat.getColor(this, R.color.forest_bar  )
+            }
+
             binding.back.setBackgroundResource(R.drawable.bg_forest)
             binding.chkBackArrow.backgroundTintList = ColorStateList.valueOf((Color.parseColor("#04B486")))
             binding.userInput.setBackgroundResource(R.drawable.round)
@@ -34,6 +49,18 @@ class SelectAcitivity : AppCompatActivity() {
             binding.resetBtn.setBackgroundResource(R.drawable.round)
         }
         else if(MainActivity.season == "autumn"){
+            supportActionBar?.setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.autumn_bar
+                    )
+                )
+            )
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                window.statusBarColor = ContextCompat.getColor(this, R.color.autumn_bar   )
+            }
+
             binding.back.setBackgroundResource(R.drawable.bg_autumn)
             binding.chkBackArrow.backgroundTintList = ColorStateList.valueOf((Color.parseColor("#DF013A")))
             binding.userInput.setBackgroundResource(R.drawable.round_autumn)
@@ -45,6 +72,18 @@ class SelectAcitivity : AppCompatActivity() {
             binding.resetBtn.setBackgroundResource(R.drawable.round_autumn)
         }
         else if(MainActivity.season == "summer"){
+            supportActionBar?.setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.summer_bar
+                    )
+                )
+            )
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                window.statusBarColor = ContextCompat.getColor(this, R.color.summer_bar    )
+            }
+
             binding.back.setBackgroundResource(R.drawable.bg_beach)
             binding.chkBackArrow.backgroundTintList = ColorStateList.valueOf((Color.parseColor("#2E9AFE")))
             binding.userInput.setBackgroundResource(R.drawable.round_beach)
@@ -56,6 +95,17 @@ class SelectAcitivity : AppCompatActivity() {
             binding.resetBtn.setBackgroundResource(R.drawable.round_beach)
         }
         else if(MainActivity.season == "spring"){
+            supportActionBar?.setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.spring_bar
+                    )
+                )
+            )
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                window.statusBarColor = ContextCompat.getColor(this, R.color.spring_bar     )
+            }
             binding.back.setBackgroundResource(R.drawable.bg_spring)
             binding.chkBackArrow.backgroundTintList = ColorStateList.valueOf((Color.parseColor("#F781D8")))
             binding.userInput.setBackgroundResource(R.drawable.round_spring)
@@ -67,6 +117,17 @@ class SelectAcitivity : AppCompatActivity() {
             binding.resetBtn.setBackgroundResource(R.drawable.round_spring)
         }
         else if(MainActivity.season == "winter"){
+            supportActionBar?.setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.winter_bar
+                    )
+                )
+            )
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                window.statusBarColor = ContextCompat.getColor(this, R.color.winter_bar  )
+            }
             binding.back.setBackgroundResource(R.drawable.bg_winter)
             binding.chkBackArrow.backgroundTintList = ColorStateList.valueOf((Color.parseColor("#F2F2F2")))
             binding.userInput.setBackgroundResource(R.drawable.round_winter)

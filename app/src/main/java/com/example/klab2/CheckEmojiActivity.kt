@@ -3,8 +3,11 @@ package com.example.klab2
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.content.ContextCompat
 import com.example.klab2.databinding.ActivityCheckEmojiBinding
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -19,30 +22,85 @@ class CheckEmojiActivity : AppCompatActivity() {
         binding = ActivityCheckEmojiBinding.inflate(layoutInflater)
 
         if(MainActivity.season == "forest") {
+            supportActionBar?.setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.forest_bar
+                    )
+                )
+            )
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                window.statusBarColor = ContextCompat.getColor(this, R.color.forest_bar  )
+            }
             binding.back.setBackgroundResource(R.drawable.bg_forest)
             binding.textView6.setBackgroundResource(R.drawable.title5)
             binding.chkBackArrow.backgroundTintList =
                 ColorStateList.valueOf((Color.parseColor("#04B486")))
         }
         else if(MainActivity.season == "autumn"){
+            supportActionBar?.setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.autumn_bar
+                    )
+                )
+            )
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                window.statusBarColor = ContextCompat.getColor(this, R.color.autumn_bar   )
+            }
             binding.back.setBackgroundResource(R.drawable.bg_autumn)
             binding.textView6.setBackgroundResource(R.drawable.title_beach2)
             binding.chkBackArrow.backgroundTintList =
                 ColorStateList.valueOf((Color.parseColor("#DF013A")))
         }
         else if(MainActivity.season == "summer"){
+            supportActionBar?.setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.summer_bar
+                    )
+                )
+            )
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                window.statusBarColor = ContextCompat.getColor(this, R.color.summer_bar    )
+            }
             binding.back.setBackgroundResource(R.drawable.bg_beach)
             binding.textView6.setBackgroundResource(R.drawable.title_beach2)
             binding.chkBackArrow.backgroundTintList =
                 ColorStateList.valueOf((Color.parseColor("#2E9AFE")))
         }
         else if(MainActivity.season == "spring"){
+            supportActionBar?.setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.spring_bar
+                    )
+                )
+            )
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                window.statusBarColor = ContextCompat.getColor(this, R.color.spring_bar)
+            }
             binding.back.setBackgroundResource(R.drawable.bg_spring)
             binding.textView6.setBackgroundResource(R.drawable.title_spring3)
             binding.chkBackArrow.backgroundTintList =
                 ColorStateList.valueOf((Color.parseColor("#F781D8")))
         }
         else if(MainActivity.season == "winter"){
+            supportActionBar?.setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.winter_bar
+                    )
+                )
+            )
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                window.statusBarColor = ContextCompat.getColor(this, R.color.winter_bar  )
+            }
             binding.back.setBackgroundResource(R.drawable.bg_winter)
             binding.textView6.setBackgroundResource(R.drawable.title_winter2)
             binding.chkBackArrow.backgroundTintList =
