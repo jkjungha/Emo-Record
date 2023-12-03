@@ -90,7 +90,7 @@ class RegisterActivity : AppCompatActivity() {
                         user.push().child(username)
                         val private = Private(password, emailOrPhone)
                         val word = Word(0,"", "","","","")
-                        val getItems = GetItems(ItemSet(0,0),ItemSet(0,0),ItemSet(0,0),ItemSet(0,0),ItemSet(0,0),ItemSet(0,0),ItemSet(0,0),ItemSet(0,0),ItemSet(0,0))
+                        val getItems = GetItems(ItemSet(0,0),ItemSet(0,0),ItemSet(0,0),ItemSet(0,0),ItemSet(0,0),ItemSet(0,0),ItemSet(0,0),ItemSet(0,0),ItemSet(0,0),ItemSet(0,0),ItemSet(1,1),ItemSet(1,1),ItemSet(1,1))
                         user.child(username).child("private").setValue(private)
                         user.child(username).child("word").setValue(word)
                         user.child(username).child("total_point").setValue(0)

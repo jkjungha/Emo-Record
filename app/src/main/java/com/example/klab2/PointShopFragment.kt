@@ -118,6 +118,14 @@ class PointShopFragment : Fragment() {
                             binding.autumnThemeImg.setColorFilter(filter)
                             binding.autumnThemeImg.isEnabled = false
                         }
+                    }else if(key == "winter_theme"){
+                        if(value == 1){
+                            val matrix = ColorMatrix()
+                            matrix.setSaturation(0f)
+                            val filter = ColorMatrixColorFilter(matrix)
+                            binding.winterThemeImg.setColorFilter(filter)
+                            binding.winterThemeImg.isEnabled = false
+                        }
                     }
                 }
             }
@@ -431,6 +439,40 @@ class PointShopFragment : Fragment() {
                                     binding.autumnThemeImg.setColorFilter(filter)
                                     binding.autumnThemeImg.isEnabled = false
                                     db.child("users").child(user!!).child("get_items/autumn_theme/bought").setValue(1)
+                                    Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT).show()
+                                }else{
+                                    Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()
+                                }
+                            }
+                            .setNegativeButton("취소") { _, _ ->
+
+                            }
+
+                        builder.show()
+                    }
+                }
+                binding.winterThemeImg.setOnClickListener {
+                    if (binding.winterThemeImg.isEnabled) {
+                        var point = dataSnapshot.child("items/winter_theme")
+                            .getValue(Int::class.java)
+                        Log.d("POINT SHOP POINT", point.toString())
+                        var total_point = dataSnapshot.child("users").child(user).child("total_point")
+                            .getValue(Int::class.java)
+                        Log.d("POINT SHOP TOTAL POINT", total_point.toString())
+
+                        val builder = AlertDialog.Builder(requireContext())
+                        builder.setTitle("구매").setMessage("아이템을 구매하시겠습니까?")
+                            .setPositiveButton("확인") { _, _ ->
+                                if (total_point!! >= point!!) {
+                                    total_point -= point
+                                    db.child("users").child(user!!).child("total_point").setValue(total_point)
+                                    Log.d("POINT SHOP ADD", total_point.toString())
+                                    val matrix = ColorMatrix()
+                                    matrix.setSaturation(0f)
+                                    val filter = ColorMatrixColorFilter(matrix)
+                                    binding.winterThemeImg.setColorFilter(filter)
+                                    binding.winterThemeImg.isEnabled = false
+                                    db.child("users").child(user!!).child("get_items/winter_theme/bought").setValue(1)
                                     Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT).show()
                                 }else{
                                     Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT).show()

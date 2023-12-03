@@ -281,21 +281,22 @@
                 </LinearLayout>
             </TableRow>
 
-            <TableRow android:layout_marginBottom="30dp">
+            <LinearLayout android:layout_marginBottom="30dp"
+                android:layout_gravity="center">
 
                 <LinearLayout
                     android:id="@+id/spring_theme"
-                    android:layout_width="wrap_content"
+                    android:layout_width="95dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="12dp"
+                    android:layout_marginRight="4dp"
                     android:background="@drawable/white_border"
                     android:orientation="vertical"
                     android:padding="10dp">
 
                     <ImageView
                         android:id="@+id/spring_theme_img"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:layout_gravity="center"
                         android:layout_margin="1dp"
                         android:src="@drawable/spring"
@@ -306,7 +307,7 @@
                         android:id="@+id/spring_theme_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:gravity="center"
                         android:text="spring theme"
                         app:layout_constraintTop_toBottomOf="@+id/spring_theme_img" />
 
@@ -323,17 +324,17 @@
 
                 <LinearLayout
                     android:id="@+id/summer_theme"
-                    android:layout_width="wrap_content"
+                    android:layout_width="95dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="12dp"
+                    android:layout_marginRight="4dp"
                     android:background="@drawable/white_border"
                     android:orientation="vertical"
                     android:padding="10dp">
 
                     <ImageView
                         android:id="@+id/summer_theme_img"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:layout_gravity="center"
                         android:layout_margin="1dp"
                         android:src="@drawable/summer"
@@ -344,7 +345,7 @@
                         android:id="@+id/summer_theme_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:gravity="center"
                         android:text="summer theme"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/summer_theme_img" />
@@ -362,17 +363,19 @@
 
                 <LinearLayout
                     android:id="@+id/autumn_theme"
-                    android:layout_width="wrap_content"
+                    android:layout_width="95dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="4dp"
                     android:background="@drawable/white_border"
                     android:orientation="vertical"
                     android:padding="10dp">
 
                     <ImageView
                         android:id="@+id/autumn_theme_img"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:layout_margin="1dp"
+                        android:layout_gravity="center"
                         android:src="@drawable/autumn"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -382,6 +385,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:gravity="center"
                         android:text="autumn theme"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/autumn_theme_img" />
@@ -395,7 +399,43 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/autumn_theme_title" />
                 </LinearLayout>
-            </TableRow>
+                <LinearLayout
+                    android:id="@+id/winter_theme"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/white_border"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:id="@+id/winter_theme_img"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_margin="1dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/bg_winter"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/winter_theme_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="winter theme"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/winter_theme_img" />
+
+                    <TextView
+                        android:id="@+id/winter_theme_point"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="100 point"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/winter_theme_title" />
+                </LinearLayout>
+            </LinearLayout>
         </TableLayout>
     </ScrollView>
 

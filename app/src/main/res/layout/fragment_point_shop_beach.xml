@@ -281,21 +281,22 @@
                 </LinearLayout>
             </TableRow>
 
-            <TableRow android:layout_marginBottom="30dp">
+            <LinearLayout android:layout_marginBottom="30dp"
+                android:layout_gravity="center">
 
                 <LinearLayout
-                    android:id="@+id/disco_theme"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/spring_theme"
+                    android:layout_width="95dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="12dp"
+                    android:layout_marginRight="4dp"
                     android:background="@drawable/white_border"
                     android:orientation="vertical"
                     android:padding="10dp">
 
                     <ImageView
-                        android:id="@+id/disco_theme_img"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:id="@+id/spring_theme_img"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_gravity="center"
                         android:layout_margin="1dp"
                         android:src="@drawable/spring"
@@ -303,37 +304,37 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/disco_theme_title"
+                        android:id="@+id/spring_theme_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:gravity="center"
                         android:text="spring theme"
-                        app:layout_constraintTop_toBottomOf="@+id/disco_theme_img" />
+                        app:layout_constraintTop_toBottomOf="@+id/spring_theme_img" />
 
                     <TextView
-                        android:id="@+id/disco_theme_point"
+                        android:id="@+id/spring_theme_point"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="100 point"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/disco_theme_title" />
+                        app:layout_constraintTop_toBottomOf="@+id/spring_theme_title" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/sea_theme"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/summer_theme"
+                    android:layout_width="95dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="12dp"
+                    android:layout_marginRight="4dp"
                     android:background="@drawable/white_border"
                     android:orientation="vertical"
                     android:padding="10dp">
 
                     <ImageView
-                        android:id="@+id/sea_theme_img"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:id="@+id/summer_theme_img"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_gravity="center"
                         android:layout_margin="1dp"
                         android:src="@drawable/summer"
@@ -341,61 +342,100 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/sea_theme_title"
+                        android:id="@+id/summer_theme_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:gravity="center"
                         android:text="summer theme"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/sea_theme_img" />
+                        app:layout_constraintTop_toBottomOf="@+id/summer_theme_img" />
 
                     <TextView
-                        android:id="@+id/sea_theme_point"
+                        android:id="@+id/summer_theme_point"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="100 point"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/sea_theme_title" />
+                        app:layout_constraintTop_toBottomOf="@+id/summer_theme_title" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/forest_theme"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/autumn_theme"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="4dp"
+                    android:background="@drawable/white_border"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:id="@+id/autumn_theme_img"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="1dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/autumn"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/autumn_theme_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="autumn theme"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/autumn_theme_img" />
+
+                    <TextView
+                        android:id="@+id/autumn_theme_point"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="100 point"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/autumn_theme_title" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/winter_theme"
+                    android:layout_width="95dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/white_border"
                     android:orientation="vertical"
                     android:padding="10dp">
 
                     <ImageView
-                        android:id="@+id/forest_theme_img"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:id="@+id/winter_theme_img"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_margin="1dp"
-                        android:src="@drawable/autumn"
+                        android:layout_gravity="center"
+                        android:src="@drawable/bg_winter"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/forest_theme_title"
+                        android:id="@+id/winter_theme_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="autumn theme"
+                        android:gravity="center"
+                        android:text="winter theme"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/forest_theme_img" />
+                        app:layout_constraintTop_toBottomOf="@id/winter_theme_img" />
 
                     <TextView
-                        android:id="@+id/forest_theme_point"
+                        android:id="@+id/winter_theme_point"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="100 point"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/forest_theme_title" />
+                        app:layout_constraintTop_toBottomOf="@+id/winter_theme_title" />
                 </LinearLayout>
-            </TableRow>
+            </LinearLayout>
         </TableLayout>
     </ScrollView>
 
