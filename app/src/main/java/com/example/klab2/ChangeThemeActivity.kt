@@ -217,42 +217,31 @@ class ChangeThemeActivity : AppCompatActivity() {
                             binding.winterThemeRadioButton.isGone = true
                         }
                     }
-//                    var resourceId:Int = 0
-//                    if (chose == 1) {
-//                        if (key == "exciting_bgm") {
-//                            binding.excitingBgmRadioButton.isChecked = true
-//                            resourceId = R.raw.bgm1
-//                        } else if (key == "sea_bgm") {
-//                            binding.seaBgmRadioButton.isChecked = true
-//                            resourceId = R.raw.bgm2
-//                        } else if (key == "soft_bgm") {
-//                            binding.softBgmRadioButton.isChecked = true
-//                            resourceId = R.raw.bgm3
-//                        } else if (key == "forest_bgm") {
-//                            binding.softBgmRadioButton.isChecked = true
-//                            resourceId = R.raw.bgm
-//                        } else if (key == "crown_set") {
-//                            binding.crownSetRadioButton.isChecked = true
-//                        } else if (key == "hanbok_set") {
-//                            binding.hanbokSetRadioButton.isChecked = true
-//                        } else if (key == "swim_set") {
-//                            binding.swimSetRadioButton.isChecked = true
-//                        } else if (key == "spring_theme") {
-//                            binding.springThemeRadioButton.isChecked = true
-//                        } else if (key == "summer_theme") {
-//                            binding.summerThemeRadioButton.isChecked = true
-//                        } else if (key == "autumn_theme") {
-//                            binding.autumnThemeRadioButton.isChecked = true
-//                        } else if (key == "winter_theme") {
-//                            binding.winterThemeRadioButton.isChecked = true
-//                        }
-//                    }
-//                    if (resourceId != 0) {
-//                        val bgmIntent =
-//                            Intent(this@ChangeThemeActivity, MediaPlayerService::class.java)
-//                        bgmIntent.putExtra("bgmResource", resourceId)
-//                        startService(bgmIntent)
-//                    }
+                    if (chose == 1) {
+                        if (key == "exciting_bgm") {
+                            binding.excitingBgmRadioButton.isChecked = true
+                        } else if (key == "sea_bgm") {
+                            binding.seaBgmRadioButton.isChecked = true
+                        } else if (key == "soft_bgm") {
+                            binding.softBgmRadioButton.isChecked = true
+                        } else if (key == "forest_bgm") {
+                            binding.softBgmRadioButton.isChecked = true
+                        } else if (key == "crown_set") {
+                            binding.crownSetRadioButton.isChecked = true
+                        } else if (key == "hanbok_set") {
+                            binding.hanbokSetRadioButton.isChecked = true
+                        } else if (key == "swim_set") {
+                            binding.swimSetRadioButton.isChecked = true
+                        } else if (key == "spring_theme") {
+                            binding.springThemeRadioButton.isChecked = true
+                        } else if (key == "summer_theme") {
+                            binding.summerThemeRadioButton.isChecked = true
+                        } else if (key == "autumn_theme") {
+                            binding.autumnThemeRadioButton.isChecked = true
+                        } else if (key == "winter_theme") {
+                            binding.winterThemeRadioButton.isChecked = true
+                        }
+                    }
                 }
             }
 
