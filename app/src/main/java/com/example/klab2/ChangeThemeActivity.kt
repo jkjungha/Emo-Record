@@ -303,24 +303,18 @@ class ChangeThemeActivity : AppCompatActivity() {
             val statusBarColor: Int = when (checkedId) {
                 binding.springThemeRadioButton.id -> {
                     MainActivity.season = "spring"
-                    items.child("summer_theme/chose").setValue(0)
-                    items.child("autumn_theme/chose").setValue(0)
                     items.child("spring_theme/chose").setValue(1)
                     R.color.spring_bar
                 }
 
                 binding.summerThemeRadioButton.id -> {
                     MainActivity.season = "summer"
-                    items.child("spring_theme/chose").setValue(0)
-                    items.child("autumn_theme/chose").setValue(0)
                     items.child("summer_theme/chose").setValue(1)
                     R.color.summer_bar
                 }
 
                 binding.autumnThemeRadioButton.id -> {
                     MainActivity.season = "autumn"
-                    items.child("spring_theme/chose").setValue(0)
-                    items.child("summer_theme/chose").setValue(0)
                     items.child("autumn_theme/chose").setValue(1)
                     R.color.autumn_bar
                 }
@@ -328,7 +322,6 @@ class ChangeThemeActivity : AppCompatActivity() {
                 binding.winterThemeRadioButton.id -> {
                     items.child("winter_theme/chose").setValue(1)
                     R.color.winter_bar
-                    R.color.forest_bar
                 }
 
                 else -> {
@@ -348,6 +341,7 @@ class ChangeThemeActivity : AppCompatActivity() {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     window.statusBarColor = ContextCompat.getColor(this, statusBarColor)
                 }
+
             }
         }
         binding.doneButton.setOnClickListener {
