@@ -160,9 +160,9 @@ class ChangeThemeActivity : AppCompatActivity() {
             }
             binding.back.setBackgroundResource(R.drawable.bg_winter)
             binding.set.setBackgroundResource(R.drawable.bar_style_winter)
-            binding.bor1.setBackgroundResource(R.drawable.black_border_winter)
-            binding.bor2.setBackgroundResource(R.drawable.black_border_winter)
-            binding.bor3.setBackgroundResource(R.drawable.black_border_winter)
+            binding.bor1.setBackgroundResource(R.drawable.white_border)
+            binding.bor2.setBackgroundResource(R.drawable.white_border)
+            binding.bor3.setBackgroundResource(R.drawable.white_border)
 
             binding.bgmRadioDefault.backgroundTintList =
                 ColorStateList.valueOf((Color.parseColor("#2e5984")))
