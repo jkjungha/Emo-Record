@@ -364,14 +364,16 @@ class MainActivity : AppCompatActivity() {
                         bottomNavigationViewZ.selectedItemId = R.id.homeFragment
                         Log.d("GOT YOU", "MAIN")
 
-                        if(select==0)
+                        if(select==0){
                             setFragment(TAG_HOME, HomeFragment())
+                            binding.navigationView.selectedItemId = R.id.homeFragment
+                        }
                         else if(select==1){
                             setFragment(TAG_POINTSHOP, PointShopFragment())
                             binding.navigationView.selectedItemId = R.id.pointshopFragment
                         }
                         else if(select==2){
-                            setFragment(TAG_POINTSHOP, CalendarFragment())
+                            setFragment(TAG_CALENDER, CalendarFragment())
                             binding.navigationView.selectedItemId = R.id.calenderFragment
                         }
 
