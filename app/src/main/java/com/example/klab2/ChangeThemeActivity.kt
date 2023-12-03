@@ -14,7 +14,9 @@ import android.util.Log
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.view.isGone
+import androidx.fragment.app.Fragment
 import com.example.klab2.databinding.ChangeThemeBinding
+import com.example.klab2.databinding.FragmentPointShopBinding
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -124,18 +126,21 @@ class ChangeThemeActivity : AppCompatActivity(){
 //            items.child("winter_theme/chose").setValue(0)
             val statusBarColor: Int = when (checkedId) {
                 binding.springThemeRadioButton.id -> {
+                    MainActivity.season = "spring"
                     items.child("summer_theme/chose").setValue(0)
                     items.child("autumn_theme/chose").setValue(0)
                     items.child("spring_theme/chose").setValue(1)
                     R.color.spring_bar
                 }
                 binding.summerThemeRadioButton.id -> {
+                    MainActivity.season = "summer"
                     items.child("spring_theme/chose").setValue(0)
                     items.child("autumn_theme/chose").setValue(0)
                     items.child("summer_theme/chose").setValue(1)
                     R.color.summer_bar
                 }
                 binding.autumnThemeRadioButton.id -> {
+                    MainActivity.season = "autumn"
                     items.child("spring_theme/chose").setValue(0)
                     items.child("summer_theme/chose").setValue(0)
                     items.child("autumn_theme/chose").setValue(1)

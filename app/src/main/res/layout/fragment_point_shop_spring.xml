@@ -189,7 +189,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="crown set"
-                        app:layout_constraintTop_toBottomOf="@+id/blue_shirt_img" />
+                        app:layout_constraintTop_toBottomOf="@+id/crown_set_img" />
 
                     <TextView
                         android:id="@+id/crown_set_point"
@@ -198,7 +198,7 @@
                         android:layout_gravity="center"
                         android:text="100 point"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/blue_shirt_title" />
+                        app:layout_constraintTop_toBottomOf="@+id/crown_set_title" />
 
                 </LinearLayout>
 
@@ -391,7 +391,7 @@
                         android:layout_gravity="center"
                         android:text="100 point"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/forest_theme_title" />
+                        app:layout_constraintTop_toBottomOf="@+id/autumn_theme_title" />
                 </LinearLayout>
             </TableRow>
         </TableLayout>
