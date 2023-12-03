@@ -7,9 +7,6 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.content.res.ColorStateList
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
@@ -25,6 +22,8 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -55,108 +54,6 @@ class Time : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityTimeBinding.inflate(layoutInflater)
-
-        if(MainActivity.season == "forest") {
-            supportActionBar?.setBackgroundDrawable(
-                ColorDrawable(
-                    ContextCompat.getColor(
-                        this,
-                        R.color.forest_bar
-                    )
-                )
-            )
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                window.statusBarColor = ContextCompat.getColor(this, R.color.forest_bar)
-            }
-            binding.back.setBackgroundResource(R.drawable.bg_forest)
-            binding.timeText.setBackgroundResource(R.drawable.title5)
-            binding.btnTime.setBackgroundResource(R.drawable.leave2)
-            binding.btnSave.setBackgroundResource(R.drawable.leave2)
-            binding.btnCancel.setBackgroundResource(R.drawable.leave2)
-            binding.timeBackArrow.backgroundTintList =
-                ColorStateList.valueOf((Color.parseColor("#04B486")))
-        }
-        else if(MainActivity.season == "autumn"){
-            supportActionBar?.setBackgroundDrawable(
-                ColorDrawable(
-                    ContextCompat.getColor(
-                        this,
-                        R.color.autumn_bar
-                    )
-                )
-            )
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                window.statusBarColor = ContextCompat.getColor(this, R.color.autumn_bar )
-            }
-            binding.back.setBackgroundResource(R.drawable.bg_autumn)
-            binding.timeText.setBackgroundResource(R.drawable.title_beach2)
-            binding.btnTime.setBackgroundResource(R.drawable.autumn2)
-            binding.btnSave.setBackgroundResource(R.drawable.autumn2)
-            binding.btnCancel.setBackgroundResource(R.drawable.autumn2)
-            binding.timeBackArrow.backgroundTintList =
-                ColorStateList.valueOf((Color.parseColor("#DF013A")))
-        }
-        else if(MainActivity.season == "summer"){
-            supportActionBar?.setBackgroundDrawable(
-                ColorDrawable(
-                    ContextCompat.getColor(
-                        this,
-                        R.color.summer_bar
-                    )
-                )
-            )
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                window.statusBarColor = ContextCompat.getColor(this, R.color.summer_bar  )
-            }
-            binding.back.setBackgroundResource(R.drawable.bg_beach)
-            binding.timeText.setBackgroundResource(R.drawable.title_beach2)
-            binding.btnTime.setBackgroundResource(R.drawable.shell3)
-            binding.btnSave.setBackgroundResource(R.drawable.shell3)
-            binding.btnCancel.setBackgroundResource(R.drawable.shell3)
-            binding.timeBackArrow.backgroundTintList =
-                ColorStateList.valueOf((Color.parseColor("#2E9AFE")))
-        }
-        else if(MainActivity.season == "spring"){
-            supportActionBar?.setBackgroundDrawable(
-                ColorDrawable(
-                    ContextCompat.getColor(
-                        this,
-                        R.color.spring_bar
-                    )
-                )
-            )
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                window.statusBarColor = ContextCompat.getColor(this, R.color.spring_bar   )
-            }
-            binding.back.setBackgroundResource(R.drawable.bg_spring)
-            binding.timeText.setBackgroundResource(R.drawable.title_spring3)
-            binding.btnTime.setBackgroundResource(R.drawable.flower3)
-            binding.btnSave.setBackgroundResource(R.drawable.flower3)
-            binding.btnCancel.setBackgroundResource(R.drawable.flower3)
-            binding.timeBackArrow.backgroundTintList =
-                ColorStateList.valueOf((Color.parseColor("#F781D8")))
-        }
-        else if(MainActivity.season == "winter"){
-            supportActionBar?.setBackgroundDrawable(
-                ColorDrawable(
-                    ContextCompat.getColor(
-                        this,
-                        R.color.winter_bar
-                    )
-                )
-            )
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                window.statusBarColor = ContextCompat.getColor(this, R.color.winter_bar)
-            }
-            binding.back.setBackgroundResource(R.drawable.bg_winter)
-            binding.timeText.setBackgroundResource(R.drawable.title_winter2)
-            binding.btnTime.setBackgroundResource(R.drawable.snow2)
-            binding.btnSave.setBackgroundResource(R.drawable.snow2)
-            binding.btnCancel.setBackgroundResource(R.drawable.snow2)
-            binding.timeBackArrow.backgroundTintList =
-                ColorStateList.valueOf((Color.parseColor("#F2F2F2")))
-        }
-
         setContentView(binding.root)
         super.onCreate(savedInstanceState)
         createNotiChannel()
@@ -167,14 +64,8 @@ class Time : AppCompatActivity() {
         dbRef = FirebaseDatabase.getInstance().getReference("users/$userid/word")
         wordList = mutableListOf<String>() as ArrayList<String>
 
-        binding.timeBackArrow.setOnClickListener {
-            var Intent = Intent(this, ThingsWantToHearActivity::class.java)
-            MainActivity.select = 0
-            startActivity(Intent)
-        }
-
-        checkPermission(android.Manifest.permission.USE_EXACT_ALARM, USE_ALARM_PERMISSION)
-        checkPermission(android.Manifest.permission.SCHEDULE_EXACT_ALARM, SCHEDULE_ALARM_PERMISSION)
+//        checkPermission(android.Manifest.permission.USE_EXACT_ALARM, USE_ALARM_PERMISSION)
+//        checkPermission(android.Manifest.permission.SCHEDULE_EXACT_ALARM, SCHEDULE_ALARM_PERMISSION)
         checkPermission(android.Manifest.permission.POST_NOTIFICATIONS, POST_NOTIFICATIONS_PERMISSION)
 
         eventListener = dbRef.addValueEventListener(object : ValueEventListener {
@@ -290,7 +181,7 @@ class Time : AppCompatActivity() {
                 val hour = String.format("%02d",picker.hour)
                 binding.timeText.text = "$hour : $minute AM"
             }
-            onTimeSet(picker.hour, picker.minute)
+            onTimeSet(picker.hour, picker.minute);
         }
 
     }

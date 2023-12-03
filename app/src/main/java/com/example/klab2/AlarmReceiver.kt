@@ -18,9 +18,10 @@ class AlarmReceiver: BroadcastReceiver(){
         lateinit var randomWord: String
 
         val wordList = intent?.getStringArrayListExtra("word")
+        var randomIndex = 0
 
         if (wordList is ArrayList<*>) {
-            val randomIndex = Random.nextInt(wordList.size)
+            randomIndex = Random.nextInt(wordList.size);
             if (wordList.size > 0) {
                 randomWord = wordList[randomIndex]
                 println(randomWord)
