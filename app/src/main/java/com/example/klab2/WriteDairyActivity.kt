@@ -60,7 +60,7 @@ class WriteDairyActivity : AppCompatActivity() {
             binding.viewDairyTitle.setBackgroundResource(R.drawable.title_beach2)
             binding.dairyTitle.setBackgroundResource(R.drawable.bg_2_autumn)
             binding.dairyContent.setBackgroundResource(R.drawable.bg_2_autumn)
-            binding.dairySaveButton.setBackgroundResource(R.drawable.leave2)
+            binding.dairySaveButton.setBackgroundResource(R.drawable.autumn2)
             binding.wrtBackArrow.backgroundTintList =
                 ColorStateList.valueOf((Color.parseColor("#DF013A")))
         }
@@ -80,7 +80,7 @@ class WriteDairyActivity : AppCompatActivity() {
             binding.viewDairyTitle.setBackgroundResource(R.drawable.title_beach2)
             binding.dairyTitle.setBackgroundResource(R.drawable.bg_2_beach)
             binding.dairyContent.setBackgroundResource(R.drawable.bg_2_beach)
-            binding.dairySaveButton.setBackgroundResource(R.drawable.leave2)
+            binding.dairySaveButton.setBackgroundResource(R.drawable.shell3)
             binding.wrtBackArrow.backgroundTintList =
                 ColorStateList.valueOf((Color.parseColor("#2E9AFE")))
         }
@@ -100,7 +100,7 @@ class WriteDairyActivity : AppCompatActivity() {
             binding.viewDairyTitle.setBackgroundResource(R.drawable.title_spring3)
             binding.dairyTitle.setBackgroundResource(R.drawable.bg_2_spring)
             binding.dairyContent.setBackgroundResource(R.drawable.bg_2_spring)
-            binding.dairySaveButton.setBackgroundResource(R.drawable.leave2)
+            binding.dairySaveButton.setBackgroundResource(R.drawable.flower3)
             binding.wrtBackArrow.backgroundTintList =
                 ColorStateList.valueOf((Color.parseColor("#F781D8")))
         }
@@ -120,7 +120,7 @@ class WriteDairyActivity : AppCompatActivity() {
             binding.viewDairyTitle.setBackgroundResource(R.drawable.title_winter2)
             binding.dairyTitle.setBackgroundResource(R.drawable.bg_2_winter)
             binding.dairyContent.setBackgroundResource(R.drawable.bg_2_winter)
-            binding.dairySaveButton.setBackgroundResource(R.drawable.leave2)
+            binding.dairySaveButton.setBackgroundResource(R.drawable.snow2)
             binding.wrtBackArrow.backgroundTintList =
                 ColorStateList.valueOf((Color.parseColor("#F2F2F2")))
         }
