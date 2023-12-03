@@ -110,7 +110,7 @@ class MainActivity : AppCompatActivity() {
 
                         if(select==0)
                             setFragment(TAG_HOME, HomeFragment())
-                        else if(select==1 || PointShopFragment.ch==1){
+                        else if(select==1){
                             setFragment(TAG_POINTSHOP, PointShopFragment())
                             binding2.navigationView.selectedItemId = R.id.pointshopFragment
                         }
