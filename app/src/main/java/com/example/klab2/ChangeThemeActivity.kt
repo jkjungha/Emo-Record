@@ -13,6 +13,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.RadioButton
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.view.isGone
@@ -219,34 +220,34 @@ class ChangeThemeActivity : AppCompatActivity() {
                         }
                     }
                 }
-                if(dataSnapshot.child("exciting_bgm/chose").getValue(Int::class.java) == 1 && binding.excitingBgmRadioButton.isChecked == false){
+                if(dataSnapshot.child("exciting_bgm/chose").getValue(Int::class.java) == 1){
                     binding.excitingBgmRadioButton.isChecked = true
                 }
-                if(dataSnapshot.child("sea_bgm/chose").getValue(Int::class.java) == 1 && binding.seaBgmRadioButton.isChecked == false){
+                if(dataSnapshot.child("sea_bgm/chose").getValue(Int::class.java) == 1){
                     binding.seaBgmRadioButton.isChecked = true
                 }
-                if(dataSnapshot.child("soft_bgm/chose").getValue(Int::class.java) == 1 && binding.softBgmRadioButton.isChecked == false){
+                if(dataSnapshot.child("soft_bgm/chose").getValue(Int::class.java) == 1 ){
                     binding.softBgmRadioButton.isChecked = true
                 }
-                if(dataSnapshot.child("crown_set/chose").getValue(Int::class.java) == 1 && binding.crownSetRadioButton.isChecked == false){
+                if(dataSnapshot.child("crown_set/chose").getValue(Int::class.java) == 1){
                     binding.crownSetRadioButton.isChecked = true
                 }
-                if(dataSnapshot.child("hanbok_set/chose").getValue(Int::class.java) == 1 && binding.hanbokSetRadioButton.isChecked == false){
+                if(dataSnapshot.child("hanbok_set/chose").getValue(Int::class.java) == 1 ){
                     binding.hanbokSetRadioButton.isChecked = true
                 }
-                if(dataSnapshot.child("swim_set/chose").getValue(Int::class.java) == 1 && binding.swimSetRadioButton.isChecked == false){
+                if(dataSnapshot.child("swim_set/chose").getValue(Int::class.java) == 1){
                     binding.swimSetRadioButton.isChecked = true
                 }
-                if(dataSnapshot.child("spring_theme/chose").getValue(Int::class.java) == 1 && binding.springThemeRadioButton.isChecked == false){
+                if(dataSnapshot.child("spring_theme/chose").getValue(Int::class.java) == 1){
                     binding.springThemeRadioButton.isChecked = true
                 }
-                if(dataSnapshot.child("summer_theme/chose").getValue(Int::class.java) == 1 && binding.summerThemeRadioButton.isChecked == false){
+                if(dataSnapshot.child("summer_theme/chose").getValue(Int::class.java) == 1 ){
                     binding.summerThemeRadioButton.isChecked = true
                 }
-                if(dataSnapshot.child("autumn_theme/chose").getValue(Int::class.java) == 1 && binding.autumnThemeRadioButton.isChecked == false){
+                if(dataSnapshot.child("autumn_theme/chose").getValue(Int::class.java) == 1 ){
                     binding.autumnThemeRadioButton.isChecked = true
                 }
-                if(dataSnapshot.child("winter_theme/chose").getValue(Int::class.java) == 1 && binding.winterThemeRadioButton.isChecked == false){
+                if(dataSnapshot.child("winter_theme/chose").getValue(Int::class.java) == 1){
                     binding.winterThemeRadioButton.isChecked = true
                 }
             }
@@ -370,40 +371,37 @@ class ChangeThemeActivity : AppCompatActivity() {
         }
 
         binding.bgmRadioDefault.setOnClickListener {
-            binding.bgmRadioGroup.clearCheck()
+//            binding.excitingBgmRadioButton.isChecked = false
+//            binding.seaBgmRadioButton.isChecked = false
+//            binding.softBgmRadioButton.isChecked = false
             items.child("exciting_bgm/chose").setValue(0)
             items.child("sea_bgm/chose").setValue(0)
             items.child("soft_bgm/chose").setValue(0)
             items.child("forest_bgm/chose").setValue(1)
-//            binding.excitingBgmRadioButton.isChecked = false
-//            binding.seaBgmRadioButton.isChecked = false
-//            binding.softBgmRadioButton.isChecked = false
+            bgmIntent =
+                Intent(this@ChangeThemeActivity, MediaPlayerService::class.java)
+            bgmIntent.putExtra("bgmResource", R.raw.bgm)
+            startService(bgmIntent)
         }
         binding.clothRadioDefault.setOnClickListener {
-            binding.clothRadioGroup.clearCheck()
+//            binding.crownSetRadioButton.isChecked = false
+//            binding.hanbokSetRadioButton.isChecked = false
+//            binding.swimSetRadioButton.isChecked = false
             items.child("crown_set/chose").setValue(0)
             items.child("hanbok_set/chose").setValue(0)
             items.child("swim_set/chose").setValue(0)
             items.child("forest_set/chose").setValue(1)
-//            binding.crownSetRadioButton.isChecked = false
-//            binding.hanbokSetRadioButton.isChecked = false
-//            binding.swimSetRadioButton.isChecked = false
         }
         binding.themeRadioDefault.setOnClickListener {
-            binding.themeRadioGroup.clearCheck()
+//            binding.springThemeRadioButton.isChecked = false
+//            binding.summerThemeRadioButton.isChecked = false
+//            binding.autumnThemeRadioButton.isChecked = false
+//            binding.winterThemeRadioButton.isChecked = false
             items.child("spring_theme/chose").setValue(0)
             items.child("summer_theme/chose").setValue(0)
             items.child("autumn_theme/chose").setValue(0)
             items.child("winter_theme/chose").setValue(0)
             items.child("forest_theme/chose").setValue(1)
-//            binding.springThemeRadioButton.isChecked = false
-//            binding.summerThemeRadioButton.isChecked = false
-//            binding.autumnThemeRadioButton.isChecked = false
-//            binding.winterThemeRadioButton.isChecked = false
-            bgmIntent =
-                Intent(this@ChangeThemeActivity, MediaPlayerService::class.java)
-            bgmIntent.putExtra("bgmResource", R.raw.bgm)
-            startService(bgmIntent)
         }
 
     }
