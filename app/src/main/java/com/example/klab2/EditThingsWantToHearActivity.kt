@@ -1,6 +1,8 @@
 package com.example.klab2
 
 import android.content.Intent
+import android.content.res.ColorStateList
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -17,6 +19,43 @@ class EditThingsWantToHearActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEditThingsWantToHearBinding.inflate(layoutInflater)
+
+        if(MainActivity.season == "forest") {
+            binding.back.setBackgroundResource(R.drawable.bg_forest)
+            binding.editWantHer.setBackgroundResource(R.drawable.title5)
+            binding.editDoneButton.setBackgroundResource(R.drawable.leave2)
+            binding.editBackArrow.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#04B486")))
+        }
+        else if(MainActivity.season == "autumn"){
+            binding.back.setBackgroundResource(R.drawable.bg_autumn)
+            binding.editWantHer.setBackgroundResource(R.drawable.title_beach2)
+            binding.editDoneButton.setBackgroundResource(R.drawable.autumn2)
+            binding.editBackArrow.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#DF013A")))
+        }
+        else if(MainActivity.season == "summer"){
+            binding.back.setBackgroundResource(R.drawable.bg_beach)
+            binding.editWantHer.setBackgroundResource(R.drawable.title_beach2)
+            binding.editDoneButton.setBackgroundResource(R.drawable.shell3)
+            binding.editBackArrow.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#2E9AFE")))
+        }
+        else if(MainActivity.season == "spring"){
+            binding.back.setBackgroundResource(R.drawable.bg_spring)
+            binding.editWantHer.setBackgroundResource(R.drawable.title_spring3)
+            binding.editDoneButton.setBackgroundResource(R.drawable.flower3)
+            binding.editBackArrow.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#F781D8")))
+        }
+        else if(MainActivity.season == "winter"){
+            binding.back.setBackgroundResource(R.drawable.bg_winter)
+            binding.editWantHer.setBackgroundResource(R.drawable.title_winter2)
+            binding.editDoneButton.setBackgroundResource(R.drawable.snow2)
+            binding.editBackArrow.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#F2F2F2")))
+        }
+
         setContentView(binding.root)
         init()
     }

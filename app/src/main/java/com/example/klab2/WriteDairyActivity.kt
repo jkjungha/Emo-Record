@@ -2,6 +2,8 @@ package com.example.klab2
 
 import android.content.DialogInterface
 import android.content.Intent
+import android.content.res.ColorStateList
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -18,6 +20,53 @@ class WriteDairyActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityWriteDairyBinding.inflate(layoutInflater)
+
+        if(MainActivity.season == "forest") {
+            binding.back.setBackgroundResource(R.drawable.bg_forest)
+            binding.viewDairyTitle.setBackgroundResource(R.drawable.title5)
+            binding.dairyTitle.setBackgroundResource(R.drawable.bg_2)
+            binding.dairyContent.setBackgroundResource(R.drawable.bg_2)
+            binding.dairySaveButton.setBackgroundResource(R.drawable.leave2)
+            binding.wrtBackArrow.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#04B486")))
+        }
+        else if(MainActivity.season == "autumn"){
+            binding.back.setBackgroundResource(R.drawable.bg_autumn)
+            binding.viewDairyTitle.setBackgroundResource(R.drawable.title_beach2)
+            binding.dairyTitle.setBackgroundResource(R.drawable.bg_2_autumn)
+            binding.dairyContent.setBackgroundResource(R.drawable.bg_2_autumn)
+            binding.dairySaveButton.setBackgroundResource(R.drawable.leave2)
+            binding.wrtBackArrow.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#DF013A")))
+        }
+        else if(MainActivity.season == "summer"){
+            binding.back.setBackgroundResource(R.drawable.bg_beach)
+            binding.viewDairyTitle.setBackgroundResource(R.drawable.title_beach2)
+            binding.dairyTitle.setBackgroundResource(R.drawable.bg_2_beach)
+            binding.dairyContent.setBackgroundResource(R.drawable.bg_2_beach)
+            binding.dairySaveButton.setBackgroundResource(R.drawable.leave2)
+            binding.wrtBackArrow.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#2E9AFE")))
+        }
+        else if(MainActivity.season == "spring"){
+            binding.back.setBackgroundResource(R.drawable.bg_spring)
+            binding.viewDairyTitle.setBackgroundResource(R.drawable.title_spring3)
+            binding.dairyTitle.setBackgroundResource(R.drawable.bg_2_spring)
+            binding.dairyContent.setBackgroundResource(R.drawable.bg_2_spring)
+            binding.dairySaveButton.setBackgroundResource(R.drawable.leave2)
+            binding.wrtBackArrow.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#F781D8")))
+        }
+        else if(MainActivity.season == "winter"){
+            binding.back.setBackgroundResource(R.drawable.bg_winter)
+            binding.viewDairyTitle.setBackgroundResource(R.drawable.title_winter2)
+            binding.dairyTitle.setBackgroundResource(R.drawable.bg_2_winter)
+            binding.dairyContent.setBackgroundResource(R.drawable.bg_2_winter)
+            binding.dairySaveButton.setBackgroundResource(R.drawable.leave2)
+            binding.wrtBackArrow.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#F2F2F2")))
+        }
+
         setContentView(binding.root)
         init()
     }

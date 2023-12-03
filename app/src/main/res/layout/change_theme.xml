@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/back"
     android:layout_height="match_parent"
     android:background="@drawable/bg_forest"
     android:orientation="vertical"
@@ -14,6 +15,7 @@
         android:layout_marginBottom="50dp">
 
         <TextView
+            android:id="@+id/set"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:background="@drawable/bar_style"
@@ -45,6 +47,7 @@
         <LinearLayout
             android:layout_width="350dp"
             android:layout_height="100dp"
+            android:id="@+id/bor1"
             android:layout_marginBottom="15dp"
             android:background="@drawable/black_border"
             android:orientation="vertical"
@@ -102,6 +105,7 @@
         <LinearLayout
             android:layout_width="350dp"
             android:layout_height="100dp"
+            android:id="@+id/bor2"
             android:layout_marginBottom="15dp"
             android:background="@drawable/black_border"
             android:orientation="vertical"
@@ -162,6 +166,7 @@
             android:layout_height="170dp"
             android:background="@drawable/black_border"
             android:orientation="vertical"
+            android:id="@+id/bor3"
             android:paddingVertical="10dp"
             android:paddingLeft="15dp">
 

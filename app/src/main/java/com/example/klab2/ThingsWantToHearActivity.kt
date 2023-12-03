@@ -2,6 +2,8 @@ package com.example.klab2
 
 import android.content.Intent
 import android.content.SharedPreferences
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.klab2.databinding.ActivityThingsWantToHearBinding
@@ -18,6 +20,53 @@ class ThingsWantToHearActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityThingsWantToHearBinding.inflate(layoutInflater)
+
+        if(MainActivity.season == "forest") {
+            binding.back.setBackgroundResource(R.drawable.bg_forest)
+            binding.oriWantHear.setBackgroundResource(R.drawable.title5)
+            binding.oriAddButton.setBackgroundResource(R.drawable.leave2)
+            binding.oriEditButton.setBackgroundResource(R.drawable.leave2)
+            binding.oriTimeButton.setBackgroundResource(R.drawable.leave2)
+            binding.addBackArrow.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#04B486")))
+        }
+        else if(MainActivity.season == "autumn"){
+            binding.back.setBackgroundResource(R.drawable.bg_autumn)
+            binding.oriWantHear.setBackgroundResource(R.drawable.title_beach2)
+            binding.oriAddButton.setBackgroundResource(R.drawable.autumn2)
+            binding.oriEditButton.setBackgroundResource(R.drawable.autumn2)
+            binding.oriTimeButton.setBackgroundResource(R.drawable.autumn2)
+            binding.addBackArrow.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#DF013A")))
+        }
+        else if(MainActivity.season == "summer"){
+            binding.back.setBackgroundResource(R.drawable.bg_beach)
+            binding.oriWantHear.setBackgroundResource(R.drawable.title_beach2)
+            binding.oriAddButton.setBackgroundResource(R.drawable.shell3)
+            binding.oriEditButton.setBackgroundResource(R.drawable.shell3)
+            binding.oriTimeButton.setBackgroundResource(R.drawable.shell3)
+            binding.addBackArrow.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#2E9AFE")))
+        }
+        else if(MainActivity.season == "spring"){
+            binding.back.setBackgroundResource(R.drawable.bg_spring)
+            binding.oriWantHear.setBackgroundResource(R.drawable.title_spring3)
+            binding.oriAddButton.setBackgroundResource(R.drawable.flower3)
+            binding.oriEditButton.setBackgroundResource(R.drawable.flower3)
+            binding.oriTimeButton.setBackgroundResource(R.drawable.flower3)
+            binding.addBackArrow.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#F781D8")))
+        }
+        else if(MainActivity.season == "winter"){
+            binding.back.setBackgroundResource(R.drawable.bg_winter)
+            binding.oriWantHear.setBackgroundResource(R.drawable.title_winter2)
+            binding.oriAddButton.setBackgroundResource(R.drawable.snow2)
+            binding.oriEditButton.setBackgroundResource(R.drawable.snow2)
+            binding.oriTimeButton.setBackgroundResource(R.drawable.snow2)
+            binding.addBackArrow.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#F2F2F2")))
+        }
+
         setContentView(binding.root)
         setDataAll()
         init()

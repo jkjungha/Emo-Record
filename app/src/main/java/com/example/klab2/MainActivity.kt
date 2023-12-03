@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity() {
     companion object{
         var layout:Int = R.layout.activity_main
         var select = 0
+        var season = ""
     }
 
     private val db = FirebaseDatabase.getInstance("https://emotion-3bf81-default-rtdb.firebaseio.com/")
@@ -84,6 +85,7 @@ class MainActivity : AppCompatActivity() {
                     if(snapshot.child("spring_theme").child("chose").value.toString() == "1"){
                         binding2 = ActivityMainSpringBinding.inflate(layoutInflater)
                         setContentView(binding2.root)
+                        season = "spring"
 
                         val bottomNavigationViewZ:BottomNavigationView = findViewById(R.id.navigationView)
                         bottomNavigationViewZ.selectedItemId = R.id.homeFragment
@@ -112,6 +114,7 @@ class MainActivity : AppCompatActivity() {
                     if(snapshot.child("summer_theme").child("chose").value.toString() == "1"){
                         binding4 = ActivityMainBeachBinding.inflate(layoutInflater)
                         setContentView(binding4.root)
+                        season = "summer"
 
                         val bottomNavigationViewZ:BottomNavigationView = findViewById(R.id.navigationView)
                         bottomNavigationViewZ.selectedItemId = R.id.homeFragment
@@ -140,6 +143,7 @@ class MainActivity : AppCompatActivity() {
                     if(snapshot.child("autumn_theme").child("chose").value.toString() == "1"){
                         binding3 = ActivityMainAutumnBinding.inflate(layoutInflater)
                         setContentView(binding3.root)
+                        season = "autumn"
 
                         val bottomNavigationViewZ:BottomNavigationView = findViewById(R.id.navigationView)
                         bottomNavigationViewZ.selectedItemId = R.id.homeFragment
@@ -168,7 +172,7 @@ class MainActivity : AppCompatActivity() {
                     if(snapshot.child("winter_theme").child("chose").value.toString() == "1"){
                         binding5 = ActivityMainWinterBinding.inflate(layoutInflater)
                         setContentView(binding5.root)
-
+                        season = "winter"
                         val bottomNavigationViewZ:BottomNavigationView = findViewById(R.id.navigationView)
                         bottomNavigationViewZ.selectedItemId = R.id.homeFragment
                         Log.d("GOT YOU", "MAIN")
@@ -185,6 +189,34 @@ class MainActivity : AppCompatActivity() {
                         }
 
                         binding5.navigationView.setOnItemSelectedListener { item ->
+                            when(item.itemId) {
+                                R.id.calenderFragment -> setFragment(TAG_CALENDER, CalendarFragment())
+                                R.id.homeFragment -> setFragment(TAG_HOME, HomeFragment())
+                                R.id.pointshopFragment-> setFragment(TAG_POINTSHOP, PointShopFragment())
+                            }
+                            true
+                        }
+                    }
+                    if(snapshot.child("forest_theme").child("chose").value.toString() == "1"){
+                        binding = ActivityMainBinding.inflate(layoutInflater)
+                        setContentView(binding.root)
+                        season = "forest"
+                        val bottomNavigationViewZ:BottomNavigationView = findViewById(R.id.navigationView)
+                        bottomNavigationViewZ.selectedItemId = R.id.homeFragment
+                        Log.d("GOT YOU", "MAIN")
+
+                        if(select==0)
+                            setFragment(TAG_HOME, HomeFragment())
+                        else if(select==1){
+                            setFragment(TAG_POINTSHOP, PointShopFragment())
+                            binding.navigationView.selectedItemId = R.id.pointshopFragment
+                        }
+                        else if(select==2){
+                            setFragment(TAG_POINTSHOP, CalendarFragment())
+                            binding.navigationView.selectedItemId = R.id.calenderFragment
+                        }
+
+                        binding.navigationView.setOnItemSelectedListener { item ->
                             when(item.itemId) {
                                 R.id.calenderFragment -> setFragment(TAG_CALENDER, CalendarFragment())
                                 R.id.homeFragment -> setFragment(TAG_HOME, HomeFragment())

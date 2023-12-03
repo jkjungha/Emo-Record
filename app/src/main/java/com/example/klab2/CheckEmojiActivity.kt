@@ -1,6 +1,8 @@
 package com.example.klab2
 
 import android.content.Intent
+import android.content.res.ColorStateList
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.klab2.databinding.ActivityCheckEmojiBinding
@@ -15,6 +17,38 @@ class CheckEmojiActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCheckEmojiBinding.inflate(layoutInflater)
+
+        if(MainActivity.season == "forest") {
+            binding.back.setBackgroundResource(R.drawable.bg_forest)
+            binding.textView6.setBackgroundResource(R.drawable.title5)
+            binding.chkBackArrow.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#04B486")))
+        }
+        else if(MainActivity.season == "autumn"){
+            binding.back.setBackgroundResource(R.drawable.bg_autumn)
+            binding.textView6.setBackgroundResource(R.drawable.title_beach2)
+            binding.chkBackArrow.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#DF013A")))
+        }
+        else if(MainActivity.season == "summer"){
+            binding.back.setBackgroundResource(R.drawable.bg_beach)
+            binding.textView6.setBackgroundResource(R.drawable.title_beach2)
+            binding.chkBackArrow.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#2E9AFE")))
+        }
+        else if(MainActivity.season == "spring"){
+            binding.back.setBackgroundResource(R.drawable.bg_spring)
+            binding.textView6.setBackgroundResource(R.drawable.title_spring3)
+            binding.chkBackArrow.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#F781D8")))
+        }
+        else if(MainActivity.season == "winter"){
+            binding.back.setBackgroundResource(R.drawable.bg_winter)
+            binding.textView6.setBackgroundResource(R.drawable.title_winter2)
+            binding.chkBackArrow.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#F2F2F2")))
+        }
+
         setContentView(binding.root)
         init()
     }

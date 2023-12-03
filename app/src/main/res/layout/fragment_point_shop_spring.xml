@@ -165,7 +165,7 @@
             <TableRow android:layout_marginBottom="10dp">
 
                 <LinearLayout
-                    android:id="@+id/blue_shirt"
+                    android:id="@+id/crown_set"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="12dp"
@@ -174,7 +174,7 @@
                     android:padding="10dp">
 
                     <ImageView
-                        android:id="@+id/blue_shirt_img"
+                        android:id="@+id/crown_set_img"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_gravity="center"
@@ -184,26 +184,26 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/blue_shirt_title"
+                        android:id="@+id/crown_set_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="crown set"
-                        app:layout_constraintTop_toBottomOf="@+id/blue_shirt_img" />
+                        app:layout_constraintTop_toBottomOf="@+id/crown_set_img" />
 
                     <TextView
-                        android:id="@+id/blue_shirt_point"
+                        android:id="@+id/crown_set_point"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="100 point"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/blue_shirt_title" />
+                        app:layout_constraintTop_toBottomOf="@+id/crown_set_title" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/fluff_hat"
+                    android:id="@+id/hanbok_set"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="12dp"
@@ -212,7 +212,7 @@
                     android:padding="10dp">
 
                     <ImageView
-                        android:id="@+id/fluff_hat_img"
+                        android:id="@+id/hanbok_set_img"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_gravity="center"
@@ -222,27 +222,27 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/fluff_hat_title"
+                        android:id="@+id/hanbok_set_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="hanbok set"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/fluff_hat_img" />
+                        app:layout_constraintTop_toBottomOf="@+id/hanbok_set_img" />
 
                     <TextView
-                        android:id="@+id/fluff_hat_point"
+                        android:id="@+id/hanbok_set_point"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="100 point"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/fluff_hat_title" />
+                        app:layout_constraintTop_toBottomOf="@+id/hanbok_set_title" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/green_pants"
+                    android:id="@+id/swim_set"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/white_border"
@@ -250,7 +250,7 @@
                     android:padding="10dp">
 
                     <ImageView
-                        android:id="@+id/green_pants_img"
+                        android:id="@+id/swim_set_img"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_gravity="center"
@@ -260,22 +260,22 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/green_pants_title"
+                        android:id="@+id/swim_set_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="swim set"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/green_pants_img" />
+                        app:layout_constraintTop_toBottomOf="@id/swim_set_img" />
 
                     <TextView
-                        android:id="@+id/green_pants_point"
+                        android:id="@+id/swim_set_point"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="100 point"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/green_pants_title" />
+                        app:layout_constraintTop_toBottomOf="@+id/swim_set_title" />
                 </LinearLayout>
             </TableRow>
 

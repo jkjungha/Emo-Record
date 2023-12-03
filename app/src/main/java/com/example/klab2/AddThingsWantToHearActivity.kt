@@ -1,6 +1,8 @@
 package com.example.klab2
 
 import android.content.Intent
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +20,48 @@ class AddThingsWantToHearActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddThingsWantToHearBinding.inflate(layoutInflater)
+
+        if(MainActivity.season == "forest") {
+            binding.back.setBackgroundResource(R.drawable.bg_forest)
+            binding.addWantHear.setBackgroundResource(R.drawable.title5)
+            binding.addTypeText.setBackgroundResource(R.drawable.bg_2)
+            binding.addDoneButton.setBackgroundResource(R.drawable.leave2)
+            binding.addBackArrow.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#04B486")))
+        }
+        else if(MainActivity.season == "autumn"){
+            binding.back.setBackgroundResource(R.drawable.bg_autumn)
+            binding.addWantHear.setBackgroundResource(R.drawable.title_beach2)
+            binding.addDoneButton.setBackgroundResource(R.drawable.autumn2)
+            binding.addTypeText.setBackgroundResource(R.drawable.bg_2_autumn)
+            binding.addBackArrow.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#DF013A")))
+        }
+        else if(MainActivity.season == "summer"){
+            binding.back.setBackgroundResource(R.drawable.bg_beach)
+            binding.addWantHear.setBackgroundResource(R.drawable.title_beach2)
+            binding.addDoneButton.setBackgroundResource(R.drawable.shell3)
+            binding.addTypeText.setBackgroundResource(R.drawable.bg_2_beach)
+            binding.addBackArrow.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#2E9AFE")))
+        }
+        else if(MainActivity.season == "spring"){
+            binding.back.setBackgroundResource(R.drawable.bg_spring)
+            binding.addWantHear.setBackgroundResource(R.drawable.title_spring3)
+            binding.addDoneButton.setBackgroundResource(R.drawable.flower3)
+            binding.addTypeText.setBackgroundResource(R.drawable.bg_2_spring)
+            binding.addBackArrow.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#F781D8")))
+        }
+        else if(MainActivity.season == "winter"){
+            binding.back.setBackgroundResource(R.drawable.bg_winter)
+            binding.addWantHear.setBackgroundResource(R.drawable.title_winter2)
+            binding.addDoneButton.setBackgroundResource(R.drawable.snow2)
+            binding.addTypeText.setBackgroundResource(R.drawable.bg_2_winter)
+            binding.addBackArrow.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#F2F2F2")))
+        }
+
         setContentView(binding.root)
         init()
     }
