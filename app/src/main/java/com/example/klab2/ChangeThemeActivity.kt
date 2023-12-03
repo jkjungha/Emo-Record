@@ -28,6 +28,7 @@ import com.google.firebase.ktx.Firebase
 class ChangeThemeActivity : AppCompatActivity() {
     //    internal lateinit var player: MediaPlayer
     lateinit var binding: ChangeThemeBinding
+    private lateinit var bgmIntent:Intent
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ChangeThemeBinding.inflate(layoutInflater)
@@ -159,9 +160,9 @@ class ChangeThemeActivity : AppCompatActivity() {
             }
             binding.back.setBackgroundResource(R.drawable.bg_winter)
             binding.set.setBackgroundResource(R.drawable.bar_style_winter)
-            binding.bor1.setBackgroundResource(R.drawable.black_border_winter)
-            binding.bor2.setBackgroundResource(R.drawable.black_border_winter)
-            binding.bor3.setBackgroundResource(R.drawable.black_border_winter)
+            binding.bor1.setBackgroundResource(R.drawable.white_border)
+            binding.bor2.setBackgroundResource(R.drawable.white_border)
+            binding.bor3.setBackgroundResource(R.drawable.white_border)
 
             binding.bgmRadioDefault.backgroundTintList =
                 ColorStateList.valueOf((Color.parseColor("#2e5984")))
@@ -181,9 +182,9 @@ class ChangeThemeActivity : AppCompatActivity() {
 
     fun init() {
         binding.backButton.setOnClickListener {
-//            var intent = Intent(this@ChangeThemeActivity, MainActivity::class.java)
-//            startActivity(intent)
-            finish()
+            var intent = Intent(this@ChangeThemeActivity, MainActivity::class.java)
+            startActivity(intent)
+//            finish()
         }
 
         val database = Firebase.database
@@ -217,31 +218,36 @@ class ChangeThemeActivity : AppCompatActivity() {
                             binding.winterThemeRadioButton.isGone = true
                         }
                     }
-                    if (chose == 1) {
-                        if (key == "exciting_bgm") {
-                            binding.excitingBgmRadioButton.isChecked = true
-                        } else if (key == "sea_bgm") {
-                            binding.seaBgmRadioButton.isChecked = true
-                        } else if (key == "soft_bgm") {
-                            binding.softBgmRadioButton.isChecked = true
-                        } else if (key == "forest_bgm") {
-                            binding.softBgmRadioButton.isChecked = true
-                        } else if (key == "crown_set") {
-                            binding.crownSetRadioButton.isChecked = true
-                        } else if (key == "hanbok_set") {
-                            binding.hanbokSetRadioButton.isChecked = true
-                        } else if (key == "swim_set") {
-                            binding.swimSetRadioButton.isChecked = true
-                        } else if (key == "spring_theme") {
-                            binding.springThemeRadioButton.isChecked = true
-                        } else if (key == "summer_theme") {
-                            binding.summerThemeRadioButton.isChecked = true
-                        } else if (key == "autumn_theme") {
-                            binding.autumnThemeRadioButton.isChecked = true
-                        } else if (key == "winter_theme") {
-                            binding.winterThemeRadioButton.isChecked = true
-                        }
-                    }
+                }
+                if(dataSnapshot.child("exciting_bgm/chose").getValue(Int::class.java) == 1 && binding.excitingBgmRadioButton.isChecked == false){
+                    binding.excitingBgmRadioButton.isChecked = true
+                }
+                if(dataSnapshot.child("sea_bgm/chose").getValue(Int::class.java) == 1 && binding.seaBgmRadioButton.isChecked == false){
+                    binding.seaBgmRadioButton.isChecked = true
+                }
+                if(dataSnapshot.child("soft_bgm/chose").getValue(Int::class.java) == 1 && binding.softBgmRadioButton.isChecked == false){
+                    binding.softBgmRadioButton.isChecked = true
+                }
+                if(dataSnapshot.child("crown_set/chose").getValue(Int::class.java) == 1 && binding.crownSetRadioButton.isChecked == false){
+                    binding.crownSetRadioButton.isChecked = true
+                }
+                if(dataSnapshot.child("hanbok_set/chose").getValue(Int::class.java) == 1 && binding.hanbokSetRadioButton.isChecked == false){
+                    binding.hanbokSetRadioButton.isChecked = true
+                }
+                if(dataSnapshot.child("swim_set/chose").getValue(Int::class.java) == 1 && binding.swimSetRadioButton.isChecked == false){
+                    binding.swimSetRadioButton.isChecked = true
+                }
+                if(dataSnapshot.child("spring_theme/chose").getValue(Int::class.java) == 1 && binding.springThemeRadioButton.isChecked == false){
+                    binding.springThemeRadioButton.isChecked = true
+                }
+                if(dataSnapshot.child("summer_theme/chose").getValue(Int::class.java) == 1 && binding.summerThemeRadioButton.isChecked == false){
+                    binding.summerThemeRadioButton.isChecked = true
+                }
+                if(dataSnapshot.child("autumn_theme/chose").getValue(Int::class.java) == 1 && binding.autumnThemeRadioButton.isChecked == false){
+                    binding.autumnThemeRadioButton.isChecked = true
+                }
+                if(dataSnapshot.child("winter_theme/chose").getValue(Int::class.java) == 1 && binding.winterThemeRadioButton.isChecked == false){
+                    binding.winterThemeRadioButton.isChecked = true
                 }
             }
 
@@ -256,20 +262,37 @@ class ChangeThemeActivity : AppCompatActivity() {
             items.child("soft_bgm/chose").setValue(0)
             items.child("forest_bgm/chose").setValue(0)
 
-            when (checkedId) {
+            var resourceId: Int = when (checkedId) {
                 binding.excitingBgmRadioButton.id -> {
                     items.child("exciting_bgm/chose").setValue(1)
+                   MainActivity.bgm = R.raw.bgm1
+                    R.raw.bgm1
                 }
 
                 binding.seaBgmRadioButton.id -> {
                     items.child("sea_bgm/chose").setValue(1)
+                    MainActivity.bgm = R.raw.bgm2
+                    R.raw.bgm2
                 }
 
                 binding.softBgmRadioButton.id -> {
                     items.child("soft_bgm/chose").setValue(1)
+                    MainActivity.bgm = R.raw.bgm3
+                    R.raw.bgm3
+                }
+                else ->{
+                    0
                 }
 
             }
+            if (resourceId != 0) {
+                bgmIntent =
+                    Intent(this@ChangeThemeActivity, MediaPlayerService::class.java)
+                bgmIntent.putExtra("bgmResource", resourceId)
+                startService(bgmIntent)
+            }
+
+
         }
         binding.clothRadioGroup.setOnCheckedChangeListener { buttonView, checkedId ->
             items.child("crown_set/chose").setValue(0)
@@ -300,7 +323,7 @@ class ChangeThemeActivity : AppCompatActivity() {
             items.child("winter_theme/chose").setValue(0)
             items.child("forest_theme/chose").setValue(0)
 
-            val statusBarColor: Int = when (checkedId) {
+            when (checkedId) {
                 binding.springThemeRadioButton.id -> {
                     MainActivity.season = "spring"
                     items.child("spring_theme/chose").setValue(1)
@@ -324,25 +347,21 @@ class ChangeThemeActivity : AppCompatActivity() {
                     R.color.winter_bar
                 }
 
-                else -> {
-                    0
-                }
-
             }
-            if (statusBarColor != 0) {
-                supportActionBar?.setBackgroundDrawable(
-                    ColorDrawable(
-                        ContextCompat.getColor(
-                            this,
-                            statusBarColor
-                        )
-                    )
-                )
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    window.statusBarColor = ContextCompat.getColor(this, statusBarColor)
-                }
-
-            }
+//            if (statusBarColor != 0) {
+//                supportActionBar?.setBackgroundDrawable(
+//                    ColorDrawable(
+//                        ContextCompat.getColor(
+//                            this,
+//                            statusBarColor
+//                        )
+//                    )
+//                )
+//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//                    window.statusBarColor = ContextCompat.getColor(this, statusBarColor)
+//                }
+//
+//            }
         }
         binding.doneButton.setOnClickListener {
             var intent = Intent(this@ChangeThemeActivity, MainActivity::class.java)
@@ -351,33 +370,40 @@ class ChangeThemeActivity : AppCompatActivity() {
         }
 
         binding.bgmRadioDefault.setOnClickListener {
+            binding.bgmRadioGroup.clearCheck()
             items.child("exciting_bgm/chose").setValue(0)
             items.child("sea_bgm/chose").setValue(0)
             items.child("soft_bgm/chose").setValue(0)
             items.child("forest_bgm/chose").setValue(1)
-            binding.excitingBgmRadioButton.isChecked = false
-            binding.seaBgmRadioButton.isChecked = false
-            binding.softBgmRadioButton.isChecked = false
+//            binding.excitingBgmRadioButton.isChecked = false
+//            binding.seaBgmRadioButton.isChecked = false
+//            binding.softBgmRadioButton.isChecked = false
         }
         binding.clothRadioDefault.setOnClickListener {
+            binding.clothRadioGroup.clearCheck()
             items.child("crown_set/chose").setValue(0)
             items.child("hanbok_set/chose").setValue(0)
             items.child("swim_set/chose").setValue(0)
             items.child("forest_set/chose").setValue(1)
-            binding.crownSetRadioButton.isChecked = false
-            binding.hanbokSetRadioButton.isChecked = false
-            binding.swimSetRadioButton.isChecked = false
+//            binding.crownSetRadioButton.isChecked = false
+//            binding.hanbokSetRadioButton.isChecked = false
+//            binding.swimSetRadioButton.isChecked = false
         }
         binding.themeRadioDefault.setOnClickListener {
+            binding.themeRadioGroup.clearCheck()
             items.child("spring_theme/chose").setValue(0)
             items.child("summer_theme/chose").setValue(0)
             items.child("autumn_theme/chose").setValue(0)
             items.child("winter_theme/chose").setValue(0)
             items.child("forest_theme/chose").setValue(1)
-            binding.springThemeRadioButton.isChecked = false
-            binding.summerThemeRadioButton.isChecked = false
-            binding.autumnThemeRadioButton.isChecked = false
-            binding.winterThemeRadioButton.isChecked = false
+//            binding.springThemeRadioButton.isChecked = false
+//            binding.summerThemeRadioButton.isChecked = false
+//            binding.autumnThemeRadioButton.isChecked = false
+//            binding.winterThemeRadioButton.isChecked = false
+            bgmIntent =
+                Intent(this@ChangeThemeActivity, MediaPlayerService::class.java)
+            bgmIntent.putExtra("bgmResource", R.raw.bgm)
+            startService(bgmIntent)
         }
 
     }
