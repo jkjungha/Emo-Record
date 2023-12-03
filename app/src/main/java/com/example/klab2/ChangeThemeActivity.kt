@@ -33,6 +33,18 @@ class ChangeThemeActivity : AppCompatActivity() {
         binding = ChangeThemeBinding.inflate(layoutInflater)
 
         if(MainActivity.season == "forest"){
+            supportActionBar?.setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.forest_bar
+                    )
+                )
+            )
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                window.statusBarColor = ContextCompat.getColor(this, R.color.forest_bar)
+            }
+
             binding.back.setBackgroundResource(R.drawable.bg_forest)
             binding.set.setBackgroundResource(R.drawable.bar_style)
 
@@ -50,6 +62,18 @@ class ChangeThemeActivity : AppCompatActivity() {
                 ColorStateList.valueOf((Color.parseColor("@color/green")))
         }
         else if(MainActivity.season == "autumn"){
+            supportActionBar?.setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.autumn_bar
+                    )
+                )
+            )
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                window.statusBarColor = ContextCompat.getColor(this, R.color.autumn_bar )
+            }
+
             binding.back.setBackgroundResource(R.drawable.bg_autumn)
             binding.set.setBackgroundResource(R.drawable.bar_style_autumn)
             binding.bor1.setBackgroundResource(R.drawable.black_border_autumn)
@@ -67,6 +91,18 @@ class ChangeThemeActivity : AppCompatActivity() {
 
         }
         else if(MainActivity.season == "summer"){
+            supportActionBar?.setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.summer_bar
+                    )
+                )
+            )
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                window.statusBarColor = ContextCompat.getColor(this, R.color.summer_bar )
+            }
+
             binding.back.setBackgroundResource(R.drawable.bg_beach)
             binding.set.setBackgroundResource(R.drawable.bar_style_beach)
             binding.bor1.setBackgroundResource(R.drawable.black_border_beach)
@@ -83,6 +119,17 @@ class ChangeThemeActivity : AppCompatActivity() {
                 ColorStateList.valueOf((Color.parseColor("#5fa3e1")))
         }
         else if(MainActivity.season == "spring"){
+            supportActionBar?.setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.spring_bar
+                    )
+                )
+            )
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                window.statusBarColor = ContextCompat.getColor(this, R.color.spring_bar  )
+            }
             binding.back.setBackgroundResource(R.drawable.bg_spring)
             binding.set.setBackgroundResource(R.drawable.bar_style_spring)
             binding.bor1.setBackgroundResource(R.drawable.black_border_spring)
@@ -99,6 +146,17 @@ class ChangeThemeActivity : AppCompatActivity() {
                 ColorStateList.valueOf((Color.parseColor("#fff06292")))
         }
         else if(MainActivity.season == "winter"){
+            supportActionBar?.setBackgroundDrawable(
+                ColorDrawable(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.winter_bar
+                    )
+                )
+            )
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                window.statusBarColor = ContextCompat.getColor(this, R.color.winter_bar  )
+            }
             binding.back.setBackgroundResource(R.drawable.bg_winter)
             binding.set.setBackgroundResource(R.drawable.bar_style_winter)
             binding.bor1.setBackgroundResource(R.drawable.black_border_winter)

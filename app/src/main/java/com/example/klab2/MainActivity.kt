@@ -2,12 +2,15 @@ package com.example.klab2
 
 import android.content.Intent
 import android.graphics.Point
+import android.graphics.drawable.ColorDrawable
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import androidx.core.content.ContextCompat
 import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -87,6 +90,18 @@ class MainActivity : AppCompatActivity() {
                         setContentView(binding2.root)
                         season = "spring"
 
+                        supportActionBar?.setBackgroundDrawable(
+                            ColorDrawable(
+                                ContextCompat.getColor(
+                                    this@MainActivity,
+                                    R.color.spring_bar
+                                )
+                            )
+                        )
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            window.statusBarColor = ContextCompat.getColor(this@MainActivity, R.color.spring_bar)
+                        }
+
                         val bottomNavigationViewZ:BottomNavigationView = findViewById(R.id.navigationView)
                         bottomNavigationViewZ.selectedItemId = R.id.homeFragment
                         Log.d("GOT YOU", "MAIN")
@@ -115,6 +130,18 @@ class MainActivity : AppCompatActivity() {
                         binding4 = ActivityMainBeachBinding.inflate(layoutInflater)
                         setContentView(binding4.root)
                         season = "summer"
+
+                        supportActionBar?.setBackgroundDrawable(
+                            ColorDrawable(
+                                ContextCompat.getColor(
+                                    this@MainActivity,
+                                    R.color.summer_bar
+                                )
+                            )
+                        )
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            window.statusBarColor = ContextCompat.getColor(this@MainActivity, R.color.summer_bar )
+                        }
 
                         val bottomNavigationViewZ:BottomNavigationView = findViewById(R.id.navigationView)
                         bottomNavigationViewZ.selectedItemId = R.id.homeFragment
@@ -145,6 +172,18 @@ class MainActivity : AppCompatActivity() {
                         setContentView(binding3.root)
                         season = "autumn"
 
+                        supportActionBar?.setBackgroundDrawable(
+                            ColorDrawable(
+                                ContextCompat.getColor(
+                                    this@MainActivity,
+                                    R.color.autumn_bar
+                                )
+                            )
+                        )
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            window.statusBarColor = ContextCompat.getColor(this@MainActivity, R.color.autumn_bar  )
+                        }
+
                         val bottomNavigationViewZ:BottomNavigationView = findViewById(R.id.navigationView)
                         bottomNavigationViewZ.selectedItemId = R.id.homeFragment
                         Log.d("GOT YOU", "MAIN")
@@ -173,6 +212,19 @@ class MainActivity : AppCompatActivity() {
                         binding5 = ActivityMainWinterBinding.inflate(layoutInflater)
                         setContentView(binding5.root)
                         season = "winter"
+
+                        supportActionBar?.setBackgroundDrawable(
+                            ColorDrawable(
+                                ContextCompat.getColor(
+                                    this@MainActivity,
+                                    R.color.winter_bar
+                                )
+                            )
+                        )
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            window.statusBarColor = ContextCompat.getColor(this@MainActivity, R.color.winter_bar  )
+                        }
+
                         val bottomNavigationViewZ:BottomNavigationView = findViewById(R.id.navigationView)
                         bottomNavigationViewZ.selectedItemId = R.id.homeFragment
                         Log.d("GOT YOU", "MAIN")
@@ -201,6 +253,19 @@ class MainActivity : AppCompatActivity() {
                         binding = ActivityMainBinding.inflate(layoutInflater)
                         setContentView(binding.root)
                         season = "forest"
+
+                        supportActionBar?.setBackgroundDrawable(
+                            ColorDrawable(
+                                ContextCompat.getColor(
+                                    this@MainActivity,
+                                    R.color.forest_bar
+                                )
+                            )
+                        )
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            window.statusBarColor = ContextCompat.getColor(this@MainActivity, R.color.forest_bar  )
+                        }
+
                         val bottomNavigationViewZ:BottomNavigationView = findViewById(R.id.navigationView)
                         bottomNavigationViewZ.selectedItemId = R.id.homeFragment
                         Log.d("GOT YOU", "MAIN")
