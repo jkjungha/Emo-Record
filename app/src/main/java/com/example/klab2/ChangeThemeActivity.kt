@@ -354,6 +354,7 @@ class ChangeThemeActivity : AppCompatActivity() {
                     }
 
                     binding.winterThemeRadioButton.id -> {
+                        MainActivity.season = "winter"
                         items.child("winter_theme/chose").setValue(1)
                         R.color.winter_bar
                     }
@@ -392,6 +393,8 @@ class ChangeThemeActivity : AppCompatActivity() {
             items.child("hanbok_set/chose").setValue(0)
             items.child("swim_set/chose").setValue(0)
             items.child("forest_set/chose").setValue(1)
+            HomeFragment.panda = R.drawable.panda
+
         }
         binding.themeRadioDefault.setOnClickListener {
             themeGG = true
@@ -405,6 +408,7 @@ class ChangeThemeActivity : AppCompatActivity() {
             items.child("autumn_theme/chose").setValue(0)
             items.child("winter_theme/chose").setValue(0)
             items.child("forest_theme/chose").setValue(1)
+            MainActivity.season = "forest"
         }
 
     }
