@@ -84,12 +84,33 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        bgmIntent = Intent(this, MediaPlayerService::class.java)
-        bgmIntent.putExtra("bgmResource", bgm)
-        startService(bgmIntent)
         val theme = db.getReference("users").child(LoginActivity.username)
             .child("get_items").addValueEventListener(object: ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
+                    if(snapshot.child("exciting_bgm/chose").getValue(Int::class.java) == 1){
+                        bgmIntent =
+                            Intent(this@MainActivity, MediaPlayerService::class.java)
+                        bgmIntent.putExtra("bgmResource", R.raw.bgm1)
+                        startService(bgmIntent)
+                    }
+                    if(snapshot.child("sea_bgm/chose").getValue(Int::class.java) == 1){
+                        bgmIntent =
+                            Intent(this@MainActivity, MediaPlayerService::class.java)
+                        bgmIntent.putExtra("bgmResource", R.raw.bgm2)
+                        startService(bgmIntent)
+                    }
+                    if(snapshot.child("soft_bgm/chose").getValue(Int::class.java) == 1){
+                        bgmIntent =
+                            Intent(this@MainActivity, MediaPlayerService::class.java)
+                        bgmIntent.putExtra("bgmResource", R.raw.bgm3)
+                        startService(bgmIntent)
+                    }
+                    if(snapshot.child("forest_bgm/chose").getValue(Int::class.java) == 1){
+                        bgmIntent =
+                            Intent(this@MainActivity, MediaPlayerService::class.java)
+                        bgmIntent.putExtra("bgmResource", R.raw.bgm)
+                        startService(bgmIntent)
+                    }
                     if(snapshot.child("spring_theme").child("chose").value.toString() == "1"){
                         binding2 = ActivityMainSpringBinding.inflate(layoutInflater)
                         setContentView(binding2.root)
