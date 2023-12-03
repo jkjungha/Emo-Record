@@ -414,7 +414,7 @@
                         android:layout_height="70dp"
                         android:layout_margin="1dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/bg_winter"
+                        android:src="@drawable/winter"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
