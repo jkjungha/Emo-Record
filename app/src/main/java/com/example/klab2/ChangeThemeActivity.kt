@@ -219,34 +219,34 @@ class ChangeThemeActivity : AppCompatActivity() {
                         }
                     }
                 }
-                if(dataSnapshot.child("exciting/chose").value == 1){
+                if(dataSnapshot.child("exciting_bgm/chose").getValue(Int::class.java) == 1){
                     binding.excitingBgmRadioButton.isChecked = true
                 }
-                if(dataSnapshot.child("sea_bgm/chose").value == 1){
+                if(dataSnapshot.child("sea_bgm/chose").getValue(Int::class.java) == 1){
                     binding.seaBgmRadioButton.isChecked = true
                 }
-                if(dataSnapshot.child("soft_bgm/chose").value == 1){
+                if(dataSnapshot.child("soft_bgm/chose").getValue(Int::class.java) == 1){
                     binding.softBgmRadioButton.isChecked = true
                 }
-                if(dataSnapshot.child("crown_set/chose").value == 1){
+                if(dataSnapshot.child("crown_set/chose").getValue(Int::class.java) == 1){
                     binding.crownSetRadioButton.isChecked = true
                 }
-                if(dataSnapshot.child("hanbok_set/chose").value == 1){
+                if(dataSnapshot.child("hanbok_set/chose").getValue(Int::class.java) == 1){
                     binding.hanbokSetRadioButton.isChecked = true
                 }
-                if(dataSnapshot.child("swim_set/chose").value == 1){
+                if(dataSnapshot.child("swim_set/chose").getValue(Int::class.java) == 1){
                     binding.swimSetRadioButton.isChecked = true
                 }
-                if(dataSnapshot.child("spring_theme/chose").value == 1){
+                if(dataSnapshot.child("spring_theme/chose").getValue(Int::class.java) == 1){
                     binding.springThemeRadioButton.isChecked = true
                 }
-                if(dataSnapshot.child("summer_theme/chose").value == 1){
+                if(dataSnapshot.child("summer_theme/chose").getValue(Int::class.java) == 1){
                     binding.summerThemeRadioButton.isChecked = true
                 }
-                if(dataSnapshot.child("autumn_theme/chose").value == 1){
+                if(dataSnapshot.child("autumn_theme/chose").getValue(Int::class.java) == 1){
                     binding.autumnThemeRadioButton.isChecked = true
                 }
-                if(dataSnapshot.child("winter_theme/chose").value == 1){
+                if(dataSnapshot.child("winter_theme/chose").getValue(Int::class.java) == 1){
                     binding.winterThemeRadioButton.isChecked = true
                 }
             }
