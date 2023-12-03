@@ -1,25 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="700dp"
-    android:background="@drawable/bg_autumn"
-    android:orientation="vertical" >
-
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="700dp" android:background="@drawable/bg_autumn" android:orientation="vertical">
 
     <CalendarView
         android:id="@+id/calendarView"
         android:layout_width="385dp"
         android:layout_height="321dp"
-
+        android:layout_marginTop="-25dp"
+        android:background="@drawable/border_layout_autumn"
         app:layout_constraintBottom_toTopOf="@+id/diaryTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/border_layout_autumn"
-
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
@@ -27,7 +19,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="3dp"
         android:layout_marginEnd="8dp"
         android:gravity="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -42,7 +34,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="7dp"
         android:layout_marginEnd="8dp"
         android:gravity="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -50,30 +41,33 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/diaryTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/diaryTextView"/>
+
     <TextView
+        android:id="@+id/contextEditText"
         android:layout_width="0dp"
         android:layout_height="116dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/border_layout_autumn"
         android:inputType="textMultiLine"
         android:textSize="20sp"
-        android:id="@+id/contextEditText"
-        android:background="@drawable/border_layout_autumn"
-        app:layout_constraintTop_toBottomOf="@+id/diaryTextView" android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginRight="8dp" android:layout_marginStart="8dp"
-        app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
-        android:visibility="invisible"/>
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/diaryTextView" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="18dp"
         android:layout_marginEnd="8dp"
-        android:visibility="invisible"
         android:background="@drawable/border_layout_autumn"
         android:textSize="16sp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/contextEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -84,7 +78,7 @@
     <TextView
         android:id="@+id/textView3"
         android:layout_width="241dp"
-        android:layout_height="72dp"
+        android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="8dp"
@@ -99,33 +93,30 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/del_Btn"
         android:layout_width="89dp"
-        android:layout_height="66dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginBottom="100dp"
-        android:background="@drawable/autumn"
-        android:gravity="center"
+        android:layout_height="45dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginBottom="130dp"
+        android:background="@drawable/autumn2"
         android:text="삭제"
         android:textStyle="bold"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"></androidx.appcompat.widget.AppCompatButton>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/cha_Btn"
         android:layout_width="89dp"
-        android:layout_height="66dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="104dp"
-        android:background="@drawable/autumn"
+        android:layout_height="45dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="130dp"
+        android:background="@drawable/autumn2"
         android:text="수정"
-        android:gravity="center"
         android:textStyle="bold"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -138,483 +129,56 @@
         android:layout_width="44dp"
         android:layout_height="42dp"
         android:layout_marginStart="-50dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toTopOf="@+id/contextEditText"
         app:layout_constraintStart_toEndOf="@+id/diaryTextView"
         app:layout_constraintTop_toBottomOf="@+id/diaryTextView"
         app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-
-    <ImageView
-        android:id="@+id/c1"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-357dp"
-        android:layout_marginTop="-220dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c8"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-357dp"
-        android:layout_marginTop="-177dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c9"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-308dp"
-        android:layout_marginTop="-177dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-
-
-    <ImageView
-        android:id="@+id/c2"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-308dp"
-        android:layout_marginTop="-220dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c3"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-260dp"
-        android:layout_marginTop="-220dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c5"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-161dp"
-        android:layout_marginTop="-220dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c6"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-114dp"
-        android:layout_marginTop="-220dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c7"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-63dp"
-        android:layout_marginTop="-220dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c4"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-211dp"
-        android:layout_marginTop="-220dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c11"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-211dp"
-        android:layout_marginTop="-177dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-
-    <ImageView
-        android:id="@+id/c10"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-260dp"
-        android:layout_marginTop="-177dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c12"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-161dp"
-        android:layout_marginTop="-177dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c13"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-114dp"
-        android:layout_marginTop="-177dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c14"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-63dp"
-        android:layout_marginTop="-177dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <!-- 3번째 줄 -->
-    <ImageView
-        android:id="@+id/c15"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-357dp"
-        android:layout_marginTop="-137dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c16"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-308dp"
-        android:layout_marginTop="-137dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c17"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-260dp"
-        android:layout_marginTop="-137dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c18"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-211dp"
-        android:layout_marginTop="-137dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c19"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-161dp"
-        android:layout_marginTop="-137dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c20"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-114dp"
-        android:layout_marginTop="-137dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c21"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-63dp"
-        android:layout_marginTop="-137dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <!-- 4번째 줄 -->
-    <ImageView
-        android:id="@+id/c22"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-357dp"
-        android:layout_marginTop="-97dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c23"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-308dp"
-        android:layout_marginTop="-97dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c24"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-260dp"
-        android:layout_marginTop="-97dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c25"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-211dp"
-        android:layout_marginTop="-97dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c26"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-161dp"
-        android:layout_marginTop="-97dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c27"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-114dp"
-        android:layout_marginTop="-97dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c28"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-63dp"
-        android:layout_marginTop="-97dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <!-- 5번째 줄 -->
-    <ImageView
-        android:id="@+id/c29"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-357dp"
-        android:layout_marginTop="-57dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c30"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-308dp"
-        android:layout_marginTop="-57dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c31"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-260dp"
-        android:layout_marginTop="-57dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c32"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-211dp"
-        android:layout_marginTop="-57dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c33"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-161dp"
-        android:layout_marginTop="-57dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c34"
-        android:layout_width="33dp"
-        android:visibility="invisible"
-        android:layout_height="28dp"
-        android:layout_marginStart="-114dp"
-        android:layout_marginTop="-57dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c35"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-63dp"
-        android:layout_marginTop="-57dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <!-- 6번째 줄 -->
-    <ImageView
-        android:id="@+id/c36"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-357dp"
-        android:layout_marginTop="-17dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c37"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-308dp"
-        android:layout_marginTop="-17dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c38"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-260dp"
-        android:layout_marginTop="-17dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c39"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-211dp"
-        android:layout_marginTop="-17dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c40"
-        android:visibility="invisible"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="-161dp"
-        android:layout_marginTop="-17dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c41"
-        android:layout_width="33dp"
-        android:visibility="invisible"
-        android:layout_height="28dp"
-        android:layout_marginStart="-114dp"
-        android:layout_marginTop="-17dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-    <ImageView
-        android:id="@+id/c42"
-        android:layout_width="33dp"
-        android:visibility="invisible"
-        android:layout_height="28dp"
-        android:layout_marginStart="-63dp"
-        android:layout_marginTop="-17dp"
-        app:layout_constraintStart_toEndOf="@+id/calendarView"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:srcCompat="@drawable/baseline_add_reaction_24" />
-
-
-
+    <ImageView android:id="@+id/c1" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-357dp" android:layout_marginTop="-220dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c8" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-357dp" android:layout_marginTop="-177dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c9" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-308dp" android:layout_marginTop="-177dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c2" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-308dp" android:layout_marginTop="-220dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c3" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-260dp" android:layout_marginTop="-220dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c5" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-161dp" android:layout_marginTop="-220dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c6" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-114dp" android:layout_marginTop="-220dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c7" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-63dp" android:layout_marginTop="-220dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c4" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-211dp" android:layout_marginTop="-220dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c11" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-211dp" android:layout_marginTop="-177dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c10" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-260dp" android:layout_marginTop="-177dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c12" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-161dp" android:layout_marginTop="-177dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c13" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-114dp" android:layout_marginTop="-177dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c14" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-63dp" android:layout_marginTop="-177dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <!--  3번째 줄  -->
+    <ImageView android:id="@+id/c15" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-357dp" android:layout_marginTop="-137dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c16" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-308dp" android:layout_marginTop="-137dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c17" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-260dp" android:layout_marginTop="-137dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c18" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-211dp" android:layout_marginTop="-137dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c19" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-161dp" android:layout_marginTop="-137dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c20" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-114dp" android:layout_marginTop="-137dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c21" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-63dp" android:layout_marginTop="-137dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <!--  4번째 줄  -->
+    <ImageView android:id="@+id/c22" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-357dp" android:layout_marginTop="-97dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c23" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-308dp" android:layout_marginTop="-97dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c24" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-260dp" android:layout_marginTop="-97dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c25" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-211dp" android:layout_marginTop="-97dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c26" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-161dp" android:layout_marginTop="-97dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c27" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-114dp" android:layout_marginTop="-97dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c28" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-63dp" android:layout_marginTop="-97dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <!--  5번째 줄  -->
+    <ImageView android:id="@+id/c29" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-357dp" android:layout_marginTop="-57dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c30" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-308dp" android:layout_marginTop="-57dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c31" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-260dp" android:layout_marginTop="-57dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c32" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-211dp" android:layout_marginTop="-57dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c33" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-161dp" android:layout_marginTop="-57dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c34" android:layout_width="33dp" android:visibility="invisible" android:layout_height="28dp" android:layout_marginStart="-114dp" android:layout_marginTop="-57dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c35" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-63dp" android:layout_marginTop="-57dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <!--  6번째 줄  -->
+    <ImageView android:id="@+id/c36" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-357dp" android:layout_marginTop="-17dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c37" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-308dp" android:layout_marginTop="-17dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c38" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-260dp" android:layout_marginTop="-17dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c39" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-211dp" android:layout_marginTop="-17dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c40" android:visibility="invisible" android:layout_width="33dp" android:layout_height="28dp" android:layout_marginStart="-161dp" android:layout_marginTop="-17dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c41" android:layout_width="33dp" android:visibility="invisible" android:layout_height="28dp" android:layout_marginStart="-114dp" android:layout_marginTop="-17dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
+    <ImageView android:id="@+id/c42" android:layout_width="33dp" android:visibility="invisible" android:layout_height="28dp" android:layout_marginStart="-63dp" android:layout_marginTop="-17dp" app:layout_constraintStart_toEndOf="@+id/calendarView" app:layout_constraintTop_toBottomOf="@+id/calendarView" app:srcCompat="@drawable/baseline_add_reaction_24"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
