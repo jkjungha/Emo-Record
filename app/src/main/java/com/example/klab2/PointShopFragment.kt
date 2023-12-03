@@ -1,5 +1,6 @@
 package com.example.klab2
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context.MODE_PRIVATE
 import android.content.Intent
@@ -67,6 +68,7 @@ class PointShopFragment : Fragment() {
         _binding = null
     }
 
+    @SuppressLint("SuspiciousIndentation")
     fun init() {
         val database = Firebase.database
         var db = database.reference

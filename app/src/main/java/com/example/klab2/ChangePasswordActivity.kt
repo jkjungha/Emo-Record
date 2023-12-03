@@ -1,6 +1,8 @@
 package com.example.klab2
 
 import android.content.Intent
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
@@ -19,6 +21,37 @@ class ChangePasswordActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.change_password)
+
+        if(MainActivity.season == "forest"){
+            findViewById<Button>(R.id.savePasswordButton).backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#0B6623")))
+            findViewById<Button>(R.id.backToLoginButton).backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#607d3b")))
+        }
+        else if(MainActivity.season == "autumn"){
+            findViewById<Button>(R.id.savePasswordButton).backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#c35817")))
+            findViewById<Button>(R.id.backToLoginButton).backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#fffbc02d")))
+        }
+        else if(MainActivity.season == "summer"){
+            findViewById<Button>(R.id.savePasswordButton).backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#2e5984")))
+            findViewById<Button>(R.id.backToLoginButton).backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#5fa3e1")))
+        }
+        else if(MainActivity.season == "spring"){
+            findViewById<Button>(R.id.savePasswordButton).backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#fff06292")))
+            findViewById<Button>(R.id.backToLoginButton).backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#fff48fb1")))
+        }
+        else if(MainActivity.season == "winter"){
+            findViewById<Button>(R.id.savePasswordButton).backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#1e3f66e")))
+            findViewById<Button>(R.id.backToLoginButton).backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#5fa3e1")))
+        }
 
         loadingHelper = LoadingHelper(this)
 

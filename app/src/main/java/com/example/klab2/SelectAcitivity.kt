@@ -2,6 +2,8 @@ package com.example.klab2
 
 import android.app.AlertDialog
 import android.content.Intent
+import android.content.res.ColorStateList
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -20,6 +22,61 @@ class SelectAcitivity : AppCompatActivity() {
         binding = ActivitySelectAcitivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        if(MainActivity.season == "forest"){
+            binding.back.setBackgroundResource(R.drawable.bg_forest)
+            binding.chkBackArrow.backgroundTintList = ColorStateList.valueOf((Color.parseColor("#04B486")))
+            binding.userInput.setBackgroundResource(R.drawable.round)
+            binding.ActBut.setBackgroundResource(R.drawable.round)
+            binding.ActBut1.setBackgroundResource(R.drawable.round)
+            binding.ActBut2.setBackgroundResource(R.drawable.round)
+            binding.ActBut3.setBackgroundResource(R.drawable.round)
+            binding.ActBut5.setBackgroundResource(R.drawable.round)
+            binding.resetBtn.setBackgroundResource(R.drawable.round)
+        }
+        else if(MainActivity.season == "autumn"){
+            binding.back.setBackgroundResource(R.drawable.bg_autumn)
+            binding.chkBackArrow.backgroundTintList = ColorStateList.valueOf((Color.parseColor("#DF013A")))
+            binding.userInput.setBackgroundResource(R.drawable.round_autumn)
+            binding.ActBut.setBackgroundResource(R.drawable.round_autumn)
+            binding.ActBut1.setBackgroundResource(R.drawable.round_autumn)
+            binding.ActBut2.setBackgroundResource(R.drawable.round_autumn)
+            binding.ActBut3.setBackgroundResource(R.drawable.round_autumn)
+            binding.ActBut5.setBackgroundResource(R.drawable.round_autumn)
+            binding.resetBtn.setBackgroundResource(R.drawable.round_autumn)
+        }
+        else if(MainActivity.season == "summer"){
+            binding.back.setBackgroundResource(R.drawable.bg_beach)
+            binding.chkBackArrow.backgroundTintList = ColorStateList.valueOf((Color.parseColor("#2E9AFE")))
+            binding.userInput.setBackgroundResource(R.drawable.round_beach)
+            binding.ActBut.setBackgroundResource(R.drawable.round_beach)
+            binding.ActBut1.setBackgroundResource(R.drawable.round_beach)
+            binding.ActBut2.setBackgroundResource(R.drawable.round_beach)
+            binding.ActBut3.setBackgroundResource(R.drawable.round_beach)
+            binding.ActBut5.setBackgroundResource(R.drawable.round_beach)
+            binding.resetBtn.setBackgroundResource(R.drawable.round_beach)
+        }
+        else if(MainActivity.season == "spring"){
+            binding.back.setBackgroundResource(R.drawable.bg_spring)
+            binding.chkBackArrow.backgroundTintList = ColorStateList.valueOf((Color.parseColor("#F781D8")))
+            binding.userInput.setBackgroundResource(R.drawable.round_spring)
+            binding.ActBut.setBackgroundResource(R.drawable.round_spring)
+            binding.ActBut1.setBackgroundResource(R.drawable.round_spring)
+            binding.ActBut2.setBackgroundResource(R.drawable.round_spring)
+            binding.ActBut3.setBackgroundResource(R.drawable.round_spring)
+            binding.ActBut5.setBackgroundResource(R.drawable.round_spring)
+            binding.resetBtn.setBackgroundResource(R.drawable.round_spring)
+        }
+        else if(MainActivity.season == "winter"){
+            binding.back.setBackgroundResource(R.drawable.bg_winter)
+            binding.chkBackArrow.backgroundTintList = ColorStateList.valueOf((Color.parseColor("#F2F2F2")))
+            binding.userInput.setBackgroundResource(R.drawable.round_winter)
+            binding.ActBut.setBackgroundResource(R.drawable.round_winter)
+            binding.ActBut1.setBackgroundResource(R.drawable.round_winter)
+            binding.ActBut2.setBackgroundResource(R.drawable.round_winter)
+            binding.ActBut3.setBackgroundResource(R.drawable.round_winter)
+            binding.ActBut5.setBackgroundResource(R.drawable.round_winter)
+            binding.resetBtn.setBackgroundResource(R.drawable.round_winter)
+        }
         binding.chkBackArrow.setOnClickListener {
             var Intent = Intent(this, MainActivity::class.java)
             MainActivity.select = 0

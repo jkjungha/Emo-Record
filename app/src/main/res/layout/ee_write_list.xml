@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     android:padding="16dp"
     android:layout_margin="16dp"
+    android:id="@+id/back"
     android:background="@drawable/back_round"
     android:orientation="vertical">
 

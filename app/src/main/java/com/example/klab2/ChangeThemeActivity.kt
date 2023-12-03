@@ -3,6 +3,8 @@ package com.example.klab2
 import android.annotation.SuppressLint
 import android.content.ComponentName
 import android.content.Intent
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.graphics.ColorMatrix
 import android.graphics.ColorMatrixColorFilter
 import android.graphics.drawable.ColorDrawable
@@ -29,7 +31,92 @@ class ChangeThemeActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ChangeThemeBinding.inflate(layoutInflater)
+
+        if(MainActivity.season == "forest"){
+            binding.back.setBackgroundResource(R.drawable.bg_forest)
+            binding.set.setBackgroundResource(R.drawable.bar_style)
+
+            binding.bor1.setBackgroundResource(R.drawable.black_border)
+            binding.bor2.setBackgroundResource(R.drawable.black_border)
+            binding.bor3.setBackgroundResource(R.drawable.black_border)
+
+            binding.bgmRadioDefault.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("@color/green")))
+            binding.clothRadioDefault.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("@color/green")))
+            binding.themeRadioDefault.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("@color/green")))
+            binding.doneButton.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("@color/green")))
+        }
+        else if(MainActivity.season == "autumn"){
+            binding.back.setBackgroundResource(R.drawable.bg_autumn)
+            binding.set.setBackgroundResource(R.drawable.bar_style_autumn)
+            binding.bor1.setBackgroundResource(R.drawable.black_border_autumn)
+            binding.bor2.setBackgroundResource(R.drawable.black_border_autumn)
+            binding.bor3.setBackgroundResource(R.drawable.black_border_autumn)
+
+            binding.bgmRadioDefault.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("@color/orange")))
+            binding.clothRadioDefault.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("@color/orange")))
+            binding.themeRadioDefault.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("@color/orange")))
+            binding.doneButton.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("@color/orange")))
+
+        }
+        else if(MainActivity.season == "summer"){
+            binding.back.setBackgroundResource(R.drawable.bg_beach)
+            binding.set.setBackgroundResource(R.drawable.bar_style_beach)
+            binding.bor1.setBackgroundResource(R.drawable.black_border_beach)
+            binding.bor2.setBackgroundResource(R.drawable.black_border_beach)
+            binding.bor3.setBackgroundResource(R.drawable.black_border_beach)
+
+            binding.bgmRadioDefault.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#5fa3e1")))
+            binding.clothRadioDefault.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#5fa3e1")))
+            binding.themeRadioDefault.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#5fa3e1")))
+            binding.doneButton.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#5fa3e1")))
+        }
+        else if(MainActivity.season == "spring"){
+            binding.back.setBackgroundResource(R.drawable.bg_spring)
+            binding.set.setBackgroundResource(R.drawable.bar_style_spring)
+            binding.bor1.setBackgroundResource(R.drawable.black_border_spring)
+            binding.bor2.setBackgroundResource(R.drawable.black_border_spring)
+            binding.bor3.setBackgroundResource(R.drawable.black_border_spring)
+
+            binding.bgmRadioDefault.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#fff06292")))
+            binding.clothRadioDefault.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#fff06292")))
+            binding.themeRadioDefault.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#fff06292")))
+            binding.doneButton.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#fff06292")))
+        }
+        else if(MainActivity.season == "winter"){
+            binding.back.setBackgroundResource(R.drawable.bg_winter)
+            binding.set.setBackgroundResource(R.drawable.bar_style_winter)
+            binding.bor1.setBackgroundResource(R.drawable.black_border_winter)
+            binding.bor2.setBackgroundResource(R.drawable.black_border_winter)
+            binding.bor3.setBackgroundResource(R.drawable.black_border_winter)
+
+            binding.bgmRadioDefault.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#2e5984")))
+            binding.clothRadioDefault.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#2e5984")))
+            binding.themeRadioDefault.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#2e5984")))
+            binding.doneButton.backgroundTintList =
+                ColorStateList.valueOf((Color.parseColor("#2e5984")))
+        }
+
         setContentView(binding.root)
+
 
         init()
     }
