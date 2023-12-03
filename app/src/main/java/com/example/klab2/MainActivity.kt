@@ -84,34 +84,62 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val theme = db.getReference("users").child(LoginActivity.username)
-            .child("get_items").addValueEventListener(object: ValueEventListener {
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    if(snapshot.child("exciting_bgm/chose").getValue(Int::class.java) == 1){
-                        bgmIntent =
-                            Intent(this@MainActivity, MediaPlayerService::class.java)
-                        bgmIntent.putExtra("bgmResource", R.raw.bgm1)
-                        startService(bgmIntent)
-                    }
-                    if(snapshot.child("sea_bgm/chose").getValue(Int::class.java) == 1){
-                        bgmIntent =
-                            Intent(this@MainActivity, MediaPlayerService::class.java)
-                        bgmIntent.putExtra("bgmResource", R.raw.bgm2)
-                        startService(bgmIntent)
-                    }
-                    if(snapshot.child("soft_bgm/chose").getValue(Int::class.java) == 1){
-                        bgmIntent =
-                            Intent(this@MainActivity, MediaPlayerService::class.java)
-                        bgmIntent.putExtra("bgmResource", R.raw.bgm3)
-                        startService(bgmIntent)
-                    }
-                    if(snapshot.child("forest_bgm/chose").getValue(Int::class.java) == 1){
-                        bgmIntent =
-                            Intent(this@MainActivity, MediaPlayerService::class.java)
-                        bgmIntent.putExtra("bgmResource", R.raw.bgm)
-                        startService(bgmIntent)
-                    }
-                    if(snapshot.child("spring_theme").child("chose").value.toString() == "1"){
+
+        val a1 = db.getReference("users").child(LoginActivity.username)
+            .child("get_items").child("exciting_bgm/chose").get()
+            .addOnSuccessListener{
+                val value1 = it.value.toString().toInt()
+                if(value1==1){
+                    bgmIntent =
+                        Intent(this@MainActivity, MediaPlayerService::class.java)
+                    bgmIntent.putExtra("bgmResource", R.raw.bgm1)
+                    startService(bgmIntent)
+                }
+            }
+
+        val a2 = db.getReference("users").child(LoginActivity.username)
+            .child("get_items").child("sea_bgm/chose").get()
+            .addOnSuccessListener{
+                val value1 = it.value.toString().toInt()
+                if(value1==1){
+                    bgmIntent =
+                        Intent(this@MainActivity, MediaPlayerService::class.java)
+                    bgmIntent.putExtra("bgmResource", R.raw.bgm2)
+                    startService(bgmIntent)
+                }
+            }
+
+        val a3 = db.getReference("users").child(LoginActivity.username)
+            .child("get_items").child("soft_bgm/chose").get()
+            .addOnSuccessListener{
+                val value1 = it.value.toString().toInt()
+                if(value1==1){
+                    bgmIntent =
+                        Intent(this@MainActivity, MediaPlayerService::class.java)
+                    bgmIntent.putExtra("bgmResource", R.raw.bgm3)
+                    startService(bgmIntent)
+                }
+            }
+
+        val a4 = db.getReference("users").child(LoginActivity.username)
+            .child("get_items").child("forest_bgm/chose").get()
+            .addOnSuccessListener{
+                val value1 = it.value.toString().toInt()
+                if(value1==1){
+                    bgmIntent =
+                        Intent(this@MainActivity, MediaPlayerService::class.java)
+                    bgmIntent.putExtra("bgmResource", R.raw.bgm)
+                    startService(bgmIntent)
+                }
+            }
+
+        val a = db.getReference("users").child(LoginActivity.username)
+            .child("get_items").child("spring_theme").child("chose").get()
+            .addOnSuccessListener {
+                var value = it.value
+                if(value.toString().toInt()==1){
+                    season = "spring"
+                    if(season=="spring"){
                         binding2 = ActivityMainSpringBinding.inflate(layoutInflater)
                         setContentView(binding2.root)
                         season = "spring"
@@ -152,7 +180,19 @@ class MainActivity : AppCompatActivity() {
                             true
                         }
                     }
-                    if(snapshot.child("summer_theme").child("chose").value.toString() == "1"){
+                }
+
+            }
+
+        val b = db.getReference("users").child(LoginActivity.username)
+            .child("get_items").child("summer_theme").child("chose").get()
+            .addOnSuccessListener {
+                var value = it.value
+                if(value.toString().toInt()==1) {
+                    Log.i("들어옴1","1")
+                    season = "summer"
+                    if(season=="summer"){
+                        Log.i("들어옴2","2")
                         binding4 = ActivityMainBeachBinding.inflate(layoutInflater)
                         setContentView(binding4.root)
                         season = "summer"
@@ -172,28 +212,38 @@ class MainActivity : AppCompatActivity() {
                         val bottomNavigationViewZ:BottomNavigationView = findViewById(R.id.navigationView)
                         bottomNavigationViewZ.selectedItemId = R.id.homeFragment
                         Log.d("GOT YOU", "MAIN")
-
-                        if(select==0)
+                        if(select==0){
                             setFragment(TAG_HOME, HomeFragment())
+                        }
                         else if(select==1){
                             setFragment(TAG_POINTSHOP, PointShopFragment())
                             binding4.navigationView.selectedItemId = R.id.pointshopFragment
                         }
                         else if(select==2){
-                            setFragment(TAG_POINTSHOP, CalendarFragment())
+                            setFragment(TAG_CALENDER, CalendarFragment())
                             binding4.navigationView.selectedItemId = R.id.calenderFragment
                         }
 
                         binding4.navigationView.setOnItemSelectedListener { item ->
-                            when(item.itemId) {
+                            when (item.itemId) {
                                 R.id.calenderFragment -> setFragment(TAG_CALENDER, CalendarFragment())
                                 R.id.homeFragment -> setFragment(TAG_HOME, HomeFragment())
-                                R.id.pointshopFragment-> setFragment(TAG_POINTSHOP, PointShopFragment())
+                                R.id.pointshopFragment -> setFragment(TAG_POINTSHOP, PointShopFragment())
                             }
                             true
                         }
+                        Log.i("들어옴3","3")
                     }
-                    if(snapshot.child("autumn_theme").child("chose").value.toString() == "1"){
+                }
+            }
+
+        val c = db.getReference("users").child(LoginActivity.username)
+            .child("get_items").child("autumn_theme").child("chose").get()
+            .addOnSuccessListener {
+                var value = it.value
+                if(value.toString().toInt()==1) {
+                    season = "autumn"
+                    if(season=="autumn"){
                         binding3 = ActivityMainAutumnBinding.inflate(layoutInflater)
                         setContentView(binding3.root)
                         season = "autumn"
@@ -234,7 +284,16 @@ class MainActivity : AppCompatActivity() {
                             true
                         }
                     }
-                    if(snapshot.child("winter_theme").child("chose").value.toString() == "1"){
+                }
+            }
+
+        val d = db.getReference("users").child(LoginActivity.username)
+            .child("get_items").child("winter_theme").child("chose").get()
+            .addOnSuccessListener {
+                var value = it.value
+                if(value.toString().toInt()==1) {
+                    season = "winter"
+                    if(season=="winter"){
                         binding5 = ActivityMainWinterBinding.inflate(layoutInflater)
                         setContentView(binding5.root)
                         season = "winter"
@@ -275,7 +334,16 @@ class MainActivity : AppCompatActivity() {
                             true
                         }
                     }
-                    if(snapshot.child("forest_theme").child("chose").value.toString() == "1"){
+                }
+            }
+
+        val e = db.getReference("users").child(LoginActivity.username)
+            .child("get_items").child("forest_theme").child("chose").get()
+            .addOnSuccessListener {
+                var value = it.value
+                if(value.toString().toInt()==1) {
+                    season = "forest"
+                    if(season=="forest"){
                         binding = ActivityMainBinding.inflate(layoutInflater)
                         setContentView(binding.root)
                         season = "forest"
@@ -308,20 +376,255 @@ class MainActivity : AppCompatActivity() {
                         }
 
                         binding.navigationView.setOnItemSelectedListener { item ->
-                            when(item.itemId) {
+                            when (item.itemId) {
                                 R.id.calenderFragment -> setFragment(TAG_CALENDER, CalendarFragment())
                                 R.id.homeFragment -> setFragment(TAG_HOME, HomeFragment())
-                                R.id.pointshopFragment-> setFragment(TAG_POINTSHOP, PointShopFragment())
+                                R.id.pointshopFragment -> setFragment(TAG_POINTSHOP, PointShopFragment())
                             }
                             true
                         }
                     }
                 }
+            }
 
-                override fun onCancelled(error: DatabaseError) {
-                }
-
-            })
+//        val theme = db.getReference("users").child(LoginActivity.username)
+//            .child("get_items").addValueEventListener(object: ValueEventListener {
+//                override fun onDataChange(snapshot: DataSnapshot) {
+//                    if(snapshot.child("exciting_bgm/chose").getValue(Int::class.java) == 1){
+//                        bgmIntent =
+//                            Intent(this@MainActivity, MediaPlayerService::class.java)
+//                        bgmIntent.putExtra("bgmResource", R.raw.bgm1)
+//                        startService(bgmIntent)
+//                    }
+//                    if(snapshot.child("sea_bgm/chose").getValue(Int::class.java) == 1){
+//                        bgmIntent =
+//                            Intent(this@MainActivity, MediaPlayerService::class.java)
+//                        bgmIntent.putExtra("bgmResource", R.raw.bgm2)
+//                        startService(bgmIntent)
+//                    }
+//                    if(snapshot.child("soft_bgm/chose").getValue(Int::class.java) == 1){
+//                        bgmIntent =
+//                            Intent(this@MainActivity, MediaPlayerService::class.java)
+//                        bgmIntent.putExtra("bgmResource", R.raw.bgm3)
+//                        startService(bgmIntent)
+//                    }
+//                    if(snapshot.child("forest_bgm/chose").getValue(Int::class.java) == 1){
+//                        bgmIntent =
+//                            Intent(this@MainActivity, MediaPlayerService::class.java)
+//                        bgmIntent.putExtra("bgmResource", R.raw.bgm)
+//                        startService(bgmIntent)
+//                    }
+//                    if(snapshot.child("spring_theme").child("chose").value.toString() == "1"){
+//                        binding2 = ActivityMainSpringBinding.inflate(layoutInflater)
+//                        setContentView(binding2.root)
+//                        season = "spring"
+//
+//                        supportActionBar?.setBackgroundDrawable(
+//                            ColorDrawable(
+//                                ContextCompat.getColor(
+//                                    this@MainActivity,
+//                                    R.color.spring_bar
+//                                )
+//                            )
+//                        )
+//                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//                            window.statusBarColor = ContextCompat.getColor(this@MainActivity, R.color.spring_bar)
+//                        }
+//
+//                        val bottomNavigationViewZ:BottomNavigationView = findViewById(R.id.navigationView)
+//                        bottomNavigationViewZ.selectedItemId = R.id.homeFragment
+//                        Log.d("GOT YOU", "MAIN")
+//
+//                        if(select==0)
+//                            setFragment(TAG_HOME, HomeFragment())
+//                        else if(select==1){
+//                            setFragment(TAG_POINTSHOP, PointShopFragment())
+//                            binding2.navigationView.selectedItemId = R.id.pointshopFragment
+//                        }
+//                        else if(select==2){
+//                            setFragment(TAG_POINTSHOP, CalendarFragment())
+//                            binding2.navigationView.selectedItemId = R.id.calenderFragment
+//                        }
+//
+//                        binding2.navigationView.setOnItemSelectedListener { item ->
+//                            when(item.itemId) {
+//                                R.id.calenderFragment -> setFragment(TAG_CALENDER, CalendarFragment())
+//                                R.id.homeFragment -> setFragment(TAG_HOME, HomeFragment())
+//                                R.id.pointshopFragment-> setFragment(TAG_POINTSHOP, PointShopFragment())
+//                            }
+//                            true
+//                        }
+//                    }
+//                    if(snapshot.child("summer_theme").child("chose").value.toString() == "1"){
+//                        binding4 = ActivityMainBeachBinding.inflate(layoutInflater)
+//                        setContentView(binding4.root)
+//                        season = "summer"
+//
+//                        supportActionBar?.setBackgroundDrawable(
+//                            ColorDrawable(
+//                                ContextCompat.getColor(
+//                                    this@MainActivity,
+//                                    R.color.summer_bar
+//                                )
+//                            )
+//                        )
+//                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//                            window.statusBarColor = ContextCompat.getColor(this@MainActivity, R.color.summer_bar )
+//                        }
+//
+//                        val bottomNavigationViewZ:BottomNavigationView = findViewById(R.id.navigationView)
+//                        bottomNavigationViewZ.selectedItemId = R.id.homeFragment
+//                        Log.d("GOT YOU", "MAIN")
+//
+//                        if(select==0)
+//                            setFragment(TAG_HOME, HomeFragment())
+//                        else if(select==1){
+//                            setFragment(TAG_POINTSHOP, PointShopFragment())
+//                            binding4.navigationView.selectedItemId = R.id.pointshopFragment
+//                        }
+//                        else if(select==2){
+//                            setFragment(TAG_POINTSHOP, CalendarFragment())
+//                            binding4.navigationView.selectedItemId = R.id.calenderFragment
+//                        }
+//
+//                        binding4.navigationView.setOnItemSelectedListener { item ->
+//                            when(item.itemId) {
+//                                R.id.calenderFragment -> setFragment(TAG_CALENDER, CalendarFragment())
+//                                R.id.homeFragment -> setFragment(TAG_HOME, HomeFragment())
+//                                R.id.pointshopFragment-> setFragment(TAG_POINTSHOP, PointShopFragment())
+//                            }
+//                            true
+//                        }
+//                    }
+//                    if(snapshot.child("autumn_theme").child("chose").value.toString() == "1"){
+//                        binding3 = ActivityMainAutumnBinding.inflate(layoutInflater)
+//                        setContentView(binding3.root)
+//                        season = "autumn"
+//
+//                        supportActionBar?.setBackgroundDrawable(
+//                            ColorDrawable(
+//                                ContextCompat.getColor(
+//                                    this@MainActivity,
+//                                    R.color.autumn_bar
+//                                )
+//                            )
+//                        )
+//                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//                            window.statusBarColor = ContextCompat.getColor(this@MainActivity, R.color.autumn_bar  )
+//                        }
+//
+//                        val bottomNavigationViewZ:BottomNavigationView = findViewById(R.id.navigationView)
+//                        bottomNavigationViewZ.selectedItemId = R.id.homeFragment
+//                        Log.d("GOT YOU", "MAIN")
+//
+//                        if(select==0)
+//                            setFragment(TAG_HOME, HomeFragment())
+//                        else if(select==1){
+//                            setFragment(TAG_POINTSHOP, PointShopFragment())
+//                            binding3.navigationView.selectedItemId = R.id.pointshopFragment
+//                        }
+//                        else if(select==2){
+//                            setFragment(TAG_POINTSHOP, CalendarFragment())
+//                            binding3.navigationView.selectedItemId = R.id.calenderFragment
+//                        }
+//
+//                        binding3.navigationView.setOnItemSelectedListener { item ->
+//                            when(item.itemId) {
+//                                R.id.calenderFragment -> setFragment(TAG_CALENDER, CalendarFragment())
+//                                R.id.homeFragment -> setFragment(TAG_HOME, HomeFragment())
+//                                R.id.pointshopFragment-> setFragment(TAG_POINTSHOP, PointShopFragment())
+//                            }
+//                            true
+//                        }
+//                    }
+//                    if(snapshot.child("winter_theme").child("chose").value.toString() == "1"){
+//                        binding5 = ActivityMainWinterBinding.inflate(layoutInflater)
+//                        setContentView(binding5.root)
+//                        season = "winter"
+//
+//                        supportActionBar?.setBackgroundDrawable(
+//                            ColorDrawable(
+//                                ContextCompat.getColor(
+//                                    this@MainActivity,
+//                                    R.color.winter_bar
+//                                )
+//                            )
+//                        )
+//                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//                            window.statusBarColor = ContextCompat.getColor(this@MainActivity, R.color.winter_bar  )
+//                        }
+//
+//                        val bottomNavigationViewZ:BottomNavigationView = findViewById(R.id.navigationView)
+//                        bottomNavigationViewZ.selectedItemId = R.id.homeFragment
+//                        Log.d("GOT YOU", "MAIN")
+//
+//                        if(select==0)
+//                            setFragment(TAG_HOME, HomeFragment())
+//                        else if(select==1){
+//                            setFragment(TAG_POINTSHOP, PointShopFragment())
+//                            binding5.navigationView.selectedItemId = R.id.pointshopFragment
+//                        }
+//                        else if(select==2){
+//                            setFragment(TAG_POINTSHOP, CalendarFragment())
+//                            binding5.navigationView.selectedItemId = R.id.calenderFragment
+//                        }
+//
+//                        binding5.navigationView.setOnItemSelectedListener { item ->
+//                            when(item.itemId) {
+//                                R.id.calenderFragment -> setFragment(TAG_CALENDER, CalendarFragment())
+//                                R.id.homeFragment -> setFragment(TAG_HOME, HomeFragment())
+//                                R.id.pointshopFragment-> setFragment(TAG_POINTSHOP, PointShopFragment())
+//                            }
+//                            true
+//                        }
+//                    }
+//                    if(snapshot.child("forest_theme").child("chose").value.toString() == "1"){
+//                        binding = ActivityMainBinding.inflate(layoutInflater)
+//                        setContentView(binding.root)
+//                        season = "forest"
+//
+//                        supportActionBar?.setBackgroundDrawable(
+//                            ColorDrawable(
+//                                ContextCompat.getColor(
+//                                    this@MainActivity,
+//                                    R.color.forest_bar
+//                                )
+//                            )
+//                        )
+//                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//                            window.statusBarColor = ContextCompat.getColor(this@MainActivity, R.color.forest_bar  )
+//                        }
+//
+//                        val bottomNavigationViewZ:BottomNavigationView = findViewById(R.id.navigationView)
+//                        bottomNavigationViewZ.selectedItemId = R.id.homeFragment
+//                        Log.d("GOT YOU", "MAIN")
+//
+//                        if(select==0)
+//                            setFragment(TAG_HOME, HomeFragment())
+//                        else if(select==1){
+//                            setFragment(TAG_POINTSHOP, PointShopFragment())
+//                            binding.navigationView.selectedItemId = R.id.pointshopFragment
+//                        }
+//                        else if(select==2){
+//                            setFragment(TAG_POINTSHOP, CalendarFragment())
+//                            binding.navigationView.selectedItemId = R.id.calenderFragment
+//                        }
+//
+//                        binding.navigationView.setOnItemSelectedListener { item ->
+//                            when(item.itemId) {
+//                                R.id.calenderFragment -> setFragment(TAG_CALENDER, CalendarFragment())
+//                                R.id.homeFragment -> setFragment(TAG_HOME, HomeFragment())
+//                                R.id.pointshopFragment-> setFragment(TAG_POINTSHOP, PointShopFragment())
+//                            }
+//                            true
+//                        }
+//                    }
+//                }
+//
+//                override fun onCancelled(error: DatabaseError) {
+//                }
+//
+//            })
         //binding = ActivityMainBinding.inflate(layoutInflater)
 
     }
