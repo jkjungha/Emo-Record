@@ -28,6 +28,7 @@ import com.google.firebase.ktx.Firebase
 class ChangeThemeActivity : AppCompatActivity() {
     //    internal lateinit var player: MediaPlayer
     lateinit var binding: ChangeThemeBinding
+    lateinit var bgmIntent:Intent
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ChangeThemeBinding.inflate(layoutInflater)
@@ -181,7 +182,7 @@ class ChangeThemeActivity : AppCompatActivity() {
 
     fun init() {
         binding.backButton.setOnClickListener {
-            var intent = Intent(this@ChangeThemeActivity, PointShopFragment::class.java)
+            var intent = Intent(this@ChangeThemeActivity, MainActivity::class.java)
             startActivity(intent)
 //            finish()
         }
@@ -261,20 +262,34 @@ class ChangeThemeActivity : AppCompatActivity() {
             items.child("soft_bgm/chose").setValue(0)
             items.child("forest_bgm/chose").setValue(0)
 
-            when (checkedId) {
+            var resourceId: Int = when (checkedId) {
                 binding.excitingBgmRadioButton.id -> {
                     items.child("exciting_bgm/chose").setValue(1)
+                   R.raw.bgm1
                 }
 
                 binding.seaBgmRadioButton.id -> {
                     items.child("sea_bgm/chose").setValue(1)
+                    R.raw.bgm2
                 }
 
                 binding.softBgmRadioButton.id -> {
                     items.child("soft_bgm/chose").setValue(1)
+                    R.raw.bgm3
+                }
+                else ->{
+                    0
                 }
 
             }
+            if (resourceId != 0) {
+                bgmIntent =
+                    Intent(this@ChangeThemeActivity, MediaPlayerService::class.java)
+                bgmIntent.putExtra("bgmResource", resourceId)
+                startService(bgmIntent)
+            }
+
+
         }
         binding.clothRadioGroup.setOnCheckedChangeListener { buttonView, checkedId ->
             items.child("crown_set/chose").setValue(0)
@@ -379,6 +394,10 @@ class ChangeThemeActivity : AppCompatActivity() {
             binding.summerThemeRadioButton.isChecked = false
             binding.autumnThemeRadioButton.isChecked = false
             binding.winterThemeRadioButton.isChecked = false
+            bgmIntent =
+                Intent(this@ChangeThemeActivity, MediaPlayerService::class.java)
+            bgmIntent.putExtra("bgmResource", R.raw.bgm)
+            startService(bgmIntent)
         }
 
     }
