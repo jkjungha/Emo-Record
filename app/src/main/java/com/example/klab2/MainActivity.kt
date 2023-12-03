@@ -34,7 +34,9 @@ private const val TAG_ADD= "add_fragment"
 private const val TAG_EDIT= "edit_fragment"
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var bgmIntent: Intent
     companion object{
+        var bgm:Int = R.raw.bgm
         var layout:Int = R.layout.activity_main
         var select = 0
         var season = ""
@@ -82,6 +84,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        bgmIntent = Intent(this, MediaPlayerService::class.java)
+        bgmIntent.putExtra("bgmResource", bgm)
+        startService(bgmIntent)
         val theme = db.getReference("users").child(LoginActivity.username)
             .child("get_items").addValueEventListener(object: ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {

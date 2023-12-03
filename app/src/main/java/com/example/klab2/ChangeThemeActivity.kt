@@ -28,7 +28,7 @@ import com.google.firebase.ktx.Firebase
 class ChangeThemeActivity : AppCompatActivity() {
     //    internal lateinit var player: MediaPlayer
     lateinit var binding: ChangeThemeBinding
-    lateinit var bgmIntent:Intent
+    private lateinit var bgmIntent:Intent
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ChangeThemeBinding.inflate(layoutInflater)
@@ -265,16 +265,19 @@ class ChangeThemeActivity : AppCompatActivity() {
             var resourceId: Int = when (checkedId) {
                 binding.excitingBgmRadioButton.id -> {
                     items.child("exciting_bgm/chose").setValue(1)
-                   R.raw.bgm1
+                   MainActivity.bgm = R.raw.bgm1
+                    R.raw.bgm1
                 }
 
                 binding.seaBgmRadioButton.id -> {
                     items.child("sea_bgm/chose").setValue(1)
+                    MainActivity.bgm = R.raw.bgm2
                     R.raw.bgm2
                 }
 
                 binding.softBgmRadioButton.id -> {
                     items.child("soft_bgm/chose").setValue(1)
+                    MainActivity.bgm = R.raw.bgm3
                     R.raw.bgm3
                 }
                 else ->{
