@@ -53,13 +53,13 @@ class ChangeThemeActivity : AppCompatActivity() {
             binding.bor3.setBackgroundResource(R.drawable.black_border)
 
             binding.bgmRadioDefault.backgroundTintList =
-                ColorStateList.valueOf((Color.parseColor("@color/green")))
+                ColorStateList.valueOf((Color.parseColor("#0B6623")))
             binding.clothRadioDefault.backgroundTintList =
-                ColorStateList.valueOf((Color.parseColor("@color/green")))
+                ColorStateList.valueOf((Color.parseColor("#0B6623")))
             binding.themeRadioDefault.backgroundTintList =
-                ColorStateList.valueOf((Color.parseColor("@color/green")))
+                ColorStateList.valueOf((Color.parseColor("#0B6623")))
             binding.doneButton.backgroundTintList =
-                ColorStateList.valueOf((Color.parseColor("@color/green")))
+                ColorStateList.valueOf((Color.parseColor("#0B6623")))
         }
         else if(MainActivity.season == "autumn"){
             supportActionBar?.setBackgroundDrawable(
@@ -81,13 +81,13 @@ class ChangeThemeActivity : AppCompatActivity() {
             binding.bor3.setBackgroundResource(R.drawable.black_border_autumn)
 
             binding.bgmRadioDefault.backgroundTintList =
-                ColorStateList.valueOf((Color.parseColor("@color/orange")))
+                ColorStateList.valueOf((Color.parseColor("#c35817")))
             binding.clothRadioDefault.backgroundTintList =
-                ColorStateList.valueOf((Color.parseColor("@color/orange")))
+                ColorStateList.valueOf((Color.parseColor("#c35817")))
             binding.themeRadioDefault.backgroundTintList =
-                ColorStateList.valueOf((Color.parseColor("@color/orange")))
+                ColorStateList.valueOf((Color.parseColor("#c35817")))
             binding.doneButton.backgroundTintList =
-                ColorStateList.valueOf((Color.parseColor("@color/orange")))
+                ColorStateList.valueOf((Color.parseColor("#c35817")))
 
         }
         else if(MainActivity.season == "summer"){
