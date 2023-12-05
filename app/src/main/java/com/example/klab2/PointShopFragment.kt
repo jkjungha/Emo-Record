@@ -191,8 +191,8 @@ class PointShopFragment : Fragment() {
                                 .getValue(Int::class.java)
 
                         val builder = AlertDialog.Builder(requireContext())
-                        builder.setTitle("구매").setMessage("아이템을 구매하시겠습니까?")
-                            .setPositiveButton("확인") { _, _ ->
+                        builder.setTitle("Purchase").setMessage("Would you like to purchase the item?")
+                            .setPositiveButton("Ok") { _, _ ->
                                 if (total_point!! >= point!!) {
                                     total_point -= point
                                     db.child("users").child(user!!).child("total_point")
@@ -204,14 +204,14 @@ class PointShopFragment : Fragment() {
                                     binding.excitingBgmImg.isEnabled = false
                                     db.child("users").child(user!!)
                                         .child("get_items/exciting_bgm/bought").setValue(1)
-                                    Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT)
+                                    Toast.makeText(requireContext(), "Purchase completed", Toast.LENGTH_SHORT)
                                         .show()
                                 } else {
-                                    Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT)
+                                    Toast.makeText(requireContext(), "Unable to purchase", Toast.LENGTH_SHORT)
                                         .show()
                                 }
                             }
-                            .setNegativeButton("취소") { _, _ ->
+                            .setNegativeButton("Cancel") { _, _ ->
 
                             }
 
@@ -227,8 +227,8 @@ class PointShopFragment : Fragment() {
                                 .getValue(Int::class.java)
 
                         val builder = AlertDialog.Builder(requireContext())
-                        builder.setTitle("구매").setMessage("아이템을 구매하시겠습니까?")
-                            .setPositiveButton("확인") { _, _ ->
+                        builder.setTitle("Purchase").setMessage("Would you like to purchase the item?")
+                            .setPositiveButton("Ok") { _, _ ->
                                 if (total_point!! >= point!!) {
                                     total_point -= point
                                     db.child("users").child(user!!).child("total_point")
@@ -240,14 +240,14 @@ class PointShopFragment : Fragment() {
                                     binding.seaBgmImg.isEnabled = false
                                     db.child("users").child(user!!)
                                         .child("get_items/sea_bgm/bought").setValue(1)
-                                    Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT)
+                                    Toast.makeText(requireContext(), "Purchase completed", Toast.LENGTH_SHORT)
                                         .show()
                                 } else {
-                                    Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT)
+                                    Toast.makeText(requireContext(), "Unable to purchase", Toast.LENGTH_SHORT)
                                         .show()
                                 }
                             }
-                            .setNegativeButton("취소") { _, _ ->
+                            .setNegativeButton("Cancel") { _, _ ->
 
                             }
 
@@ -265,8 +265,8 @@ class PointShopFragment : Fragment() {
                         Log.d("POINT SHOP TOTAL POINT", total_point.toString())
 
                         val builder = AlertDialog.Builder(requireContext())
-                        builder.setTitle("구매").setMessage("아이템을 구매하시겠습니까?")
-                            .setPositiveButton("확인") { _, _ ->
+                        builder.setTitle("Purchase").setMessage("Would you like to purchase the item?")
+                            .setPositiveButton("Ok") { _, _ ->
                                 if (total_point!! >= point!!) {
                                     total_point -= point
                                     db.child("users").child(user!!).child("total_point")
@@ -279,14 +279,14 @@ class PointShopFragment : Fragment() {
                                     binding.softBgmImg.isEnabled = false
                                     db.child("users").child(user!!)
                                         .child("get_items/soft_bgm/bought").setValue(1)
-                                    Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT)
+                                    Toast.makeText(requireContext(), "Purchase completed", Toast.LENGTH_SHORT)
                                         .show()
                                 } else {
-                                    Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT)
+                                    Toast.makeText(requireContext(), "Unable to purchase", Toast.LENGTH_SHORT)
                                         .show()
                                 }
                             }
-                            .setNegativeButton("취소") { _, _ ->
+                            .setNegativeButton("Cancel") { _, _ ->
 
                             }
 
@@ -304,8 +304,8 @@ class PointShopFragment : Fragment() {
                         Log.d("POINT SHOP TOTAL POINT", total_point.toString())
 
                         val builder = AlertDialog.Builder(requireContext())
-                        builder.setTitle("구매").setMessage("아이템을 구매하시겠습니까?")
-                            .setPositiveButton("확인") { _, _ ->
+                        builder.setTitle("Purchase").setMessage("Would you like to purchase the item?")
+                            .setPositiveButton("Ok") { _, _ ->
                                 if (total_point!! >= point!!) {
                                     total_point -= point
                                     db.child("users").child(user!!).child("total_point")
@@ -318,14 +318,14 @@ class PointShopFragment : Fragment() {
                                     binding.crownSetImg.isEnabled = false
                                     db.child("users").child(user!!)
                                         .child("get_items/crown_set/bought").setValue(1)
-                                    Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT)
+                                    Toast.makeText(requireContext(), "Purchase completed", Toast.LENGTH_SHORT)
                                         .show()
                                 } else {
-                                    Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT)
+                                    Toast.makeText(requireContext(), "Unable to purchase", Toast.LENGTH_SHORT)
                                         .show()
                                 }
                             }
-                            .setNegativeButton("취소") { _, _ ->
+                            .setNegativeButton("Cancel") { _, _ ->
 
                             }
 
@@ -343,8 +343,8 @@ class PointShopFragment : Fragment() {
                         Log.d("POINT SHOP TOTAL POINT", total_point.toString())
 
                         val builder = AlertDialog.Builder(requireContext())
-                        builder.setTitle("구매").setMessage("아이템을 구매하시겠습니까?")
-                            .setPositiveButton("확인") { _, _ ->
+                        builder.setTitle("Purchase").setMessage("Would you like to purchase the item?")
+                            .setPositiveButton("Ok") { _, _ ->
                                 if (total_point!! >= point!!) {
                                     total_point -= point
                                     db.child("users").child(user!!).child("total_point")
@@ -357,14 +357,14 @@ class PointShopFragment : Fragment() {
                                     binding.hanbokSetImg.isEnabled = false
                                     db.child("users").child(user!!)
                                         .child("get_items/hanbok_set/bought").setValue(1)
-                                    Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT)
+                                    Toast.makeText(requireContext(), "Purchase completed", Toast.LENGTH_SHORT)
                                         .show()
                                 } else {
-                                    Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT)
+                                    Toast.makeText(requireContext(), "Unable to purchase", Toast.LENGTH_SHORT)
                                         .show()
                                 }
                             }
-                            .setNegativeButton("취소") { _, _ ->
+                            .setNegativeButton("Cancel") { _, _ ->
 
                             }
 
@@ -382,8 +382,8 @@ class PointShopFragment : Fragment() {
                         Log.d("POINT SHOP TOTAL POINT", total_point.toString())
 
                         val builder = AlertDialog.Builder(requireContext())
-                        builder.setTitle("구매").setMessage("아이템을 구매하시겠습니까?")
-                            .setPositiveButton("확인") { _, _ ->
+                        builder.setTitle("Purchase").setMessage("Would you like to purchase the item?")
+                            .setPositiveButton("Ok") { _, _ ->
                                 if (total_point!! >= point!!) {
                                     total_point -= point
                                     db.child("users").child(user!!).child("total_point")
@@ -396,14 +396,14 @@ class PointShopFragment : Fragment() {
                                     binding.swimSetImg.isEnabled = false
                                     db.child("users").child(user!!)
                                         .child("get_items/swim_set/bought").setValue(1)
-                                    Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT)
+                                    Toast.makeText(requireContext(), "Purchase completed", Toast.LENGTH_SHORT)
                                         .show()
                                 } else {
-                                    Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT)
+                                    Toast.makeText(requireContext(), "Unable to purchase", Toast.LENGTH_SHORT)
                                         .show()
                                 }
                             }
-                            .setNegativeButton("취소") { _, _ ->
+                            .setNegativeButton("Cancel") { _, _ ->
 
                             }
 
@@ -421,8 +421,8 @@ class PointShopFragment : Fragment() {
                         Log.d("POINT SHOP TOTAL POINT", total_point.toString())
 
                         val builder = AlertDialog.Builder(requireContext())
-                        builder.setTitle("구매").setMessage("아이템을 구매하시겠습니까?")
-                            .setPositiveButton("확인") { _, _ ->
+                        builder.setTitle("Purchase").setMessage("Would you like to purchase the item?")
+                            .setPositiveButton("Ok") { _, _ ->
                                 if (total_point!! >= point!!) {
                                     total_point -= point
                                     db.child("users").child(user!!).child("total_point")
@@ -435,14 +435,14 @@ class PointShopFragment : Fragment() {
                                     binding.springThemeImg.isEnabled = false
                                     db.child("users").child(user!!)
                                         .child("get_items/spring_theme/bought").setValue(1)
-                                    Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT)
+                                    Toast.makeText(requireContext(), "Purchase completed", Toast.LENGTH_SHORT)
                                         .show()
                                 } else {
-                                    Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT)
+                                    Toast.makeText(requireContext(), "Unable to purchase", Toast.LENGTH_SHORT)
                                         .show()
                                 }
                             }
-                            .setNegativeButton("취소") { _, _ ->
+                            .setNegativeButton("Cancel") { _, _ ->
 
                             }
 
@@ -460,8 +460,8 @@ class PointShopFragment : Fragment() {
                         Log.d("POINT SHOP TOTAL POINT", total_point.toString())
 
                         val builder = AlertDialog.Builder(requireContext())
-                        builder.setTitle("구매").setMessage("아이템을 구매하시겠습니까?")
-                            .setPositiveButton("확인") { _, _ ->
+                        builder.setTitle("Purchase").setMessage("Would you like to purchase the item?")
+                            .setPositiveButton("Ok") { _, _ ->
                                 if (total_point!! >= point!!) {
                                     total_point -= point
                                     db.child("users").child(user!!).child("total_point")
@@ -474,14 +474,14 @@ class PointShopFragment : Fragment() {
                                     binding.summerThemeImg.isEnabled = false
                                     db.child("users").child(user!!)
                                         .child("get_items/summer_theme/bought").setValue(1)
-                                    Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT)
+                                    Toast.makeText(requireContext(), "Purchase completed", Toast.LENGTH_SHORT)
                                         .show()
                                 } else {
-                                    Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT)
+                                    Toast.makeText(requireContext(), "Unable to purchase", Toast.LENGTH_SHORT)
                                         .show()
                                 }
                             }
-                            .setNegativeButton("취소") { _, _ ->
+                            .setNegativeButton("Cancel") { _, _ ->
 
                             }
 
@@ -499,8 +499,8 @@ class PointShopFragment : Fragment() {
                         Log.d("POINT SHOP TOTAL POINT", total_point.toString())
 
                         val builder = AlertDialog.Builder(requireContext())
-                        builder.setTitle("구매").setMessage("아이템을 구매하시겠습니까?")
-                            .setPositiveButton("확인") { _, _ ->
+                        builder.setTitle("Purchase").setMessage("Would you like to purchase the item?")
+                            .setPositiveButton("Ok") { _, _ ->
                                 if (total_point!! >= point!!) {
                                     total_point -= point
                                     db.child("users").child(user!!).child("total_point")
@@ -513,14 +513,14 @@ class PointShopFragment : Fragment() {
                                     binding.autumnThemeImg.isEnabled = false
                                     db.child("users").child(user!!)
                                         .child("get_items/autumn_theme/bought").setValue(1)
-                                    Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT)
+                                    Toast.makeText(requireContext(), "Purchase completed", Toast.LENGTH_SHORT)
                                         .show()
                                 } else {
-                                    Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT)
+                                    Toast.makeText(requireContext(), "Unable to purchase", Toast.LENGTH_SHORT)
                                         .show()
                                 }
                             }
-                            .setNegativeButton("취소") { _, _ ->
+                            .setNegativeButton("Cancel") { _, _ ->
 
                             }
 
@@ -539,8 +539,8 @@ class PointShopFragment : Fragment() {
                         Log.d("POINT SHOP TOTAL POINT", total_point.toString())
 
                         val builder = AlertDialog.Builder(requireContext())
-                        builder.setTitle("구매").setMessage("아이템을 구매하시겠습니까?")
-                            .setPositiveButton("확인") { _, _ ->
+                        builder.setTitle("Purchase").setMessage("Would you like to purchase the item?")
+                            .setPositiveButton("Ok") { _, _ ->
                                 if (total_point!! >= point!!) {
                                     total_point -= point
                                     db.child("users").child(user!!).child("total_point")
@@ -553,14 +553,14 @@ class PointShopFragment : Fragment() {
                                     binding.winterThemeImg.isEnabled = false
                                     db.child("users").child(user!!)
                                         .child("get_items/winter_theme/bought").setValue(1)
-                                    Toast.makeText(requireContext(), "구매 완료", Toast.LENGTH_SHORT)
+                                    Toast.makeText(requireContext(), "Purchase completed", Toast.LENGTH_SHORT)
                                         .show()
                                 } else {
-                                    Toast.makeText(requireContext(), "구매할 수 없음", Toast.LENGTH_SHORT)
+                                    Toast.makeText(requireContext(), "Unable to purchase", Toast.LENGTH_SHORT)
                                         .show()
                                 }
                             }
-                            .setNegativeButton("취소") { _, _ ->
+                            .setNegativeButton("Cancel") { _, _ ->
 
                             }
 

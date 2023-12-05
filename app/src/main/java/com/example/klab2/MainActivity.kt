@@ -167,7 +167,7 @@ class MainActivity : AppCompatActivity() {
                             binding2.navigationView.selectedItemId = R.id.pointshopFragment
                         }
                         else if(select==2){
-                            setFragment(TAG_POINTSHOP, CalendarFragment())
+                            setFragment(TAG_CALENDER, CalendarFragment())
                             binding2.navigationView.selectedItemId = R.id.calenderFragment
                         }
 
@@ -271,7 +271,7 @@ class MainActivity : AppCompatActivity() {
                             binding3.navigationView.selectedItemId = R.id.pointshopFragment
                         }
                         else if(select==2){
-                            setFragment(TAG_POINTSHOP, CalendarFragment())
+                            setFragment(TAG_CALENDER, CalendarFragment())
                             binding3.navigationView.selectedItemId = R.id.calenderFragment
                         }
 
@@ -321,7 +321,7 @@ class MainActivity : AppCompatActivity() {
                             binding5.navigationView.selectedItemId = R.id.pointshopFragment
                         }
                         else if(select==2){
-                            setFragment(TAG_POINTSHOP, CalendarFragment())
+                            setFragment(TAG_CALENDER, CalendarFragment())
                             binding5.navigationView.selectedItemId = R.id.calenderFragment
                         }
 

@@ -130,10 +130,11 @@ class ChangeProfileActivity : AppCompatActivity() {
             val name1 = nameEditText.text.toString()
             val name22 = name2.text.toString()
             // 在这里处理保存密码的逻辑，并在保存前显示加载动画
-            if (name1.equals(name2)) {
+            if (name1.equals(name22)) {
                 showLoading()
-                db.getReference("users").child(LoginActivity.username).setValue(name22)
-                Toast.makeText(this, "비밀번호 수정이 완료되었습니다.", Toast.LENGTH_SHORT)
+                db.getReference("users").child(LoginActivity.username).child("private")
+                    .child("emailorphone").setValue(name22)
+                Toast.makeText(this, "id 수정이 완료되었습니다.", Toast.LENGTH_SHORT)
                 nameEditText.text.clear()
                 name2.text.clear()
                 // 模拟延时，然后隐藏加载动画

@@ -29,7 +29,7 @@
             android:layout_weight="0.7"
             android:ems="10"
             android:inputType="textPersonName"
-            android:hint="액티비티 입력"
+            android:hint="Enter Activity"
             android:textColorHint="#BDBDBD"
             android:translationY="15dp" />
 

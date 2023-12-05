@@ -131,8 +131,8 @@ class CalendarFragment : Fragment() {
 
                 cha_Btn.setOnClickListener {
                     val builder = AlertDialog.Builder(requireContext())
-                    builder.setTitle("수정").setMessage("일기를 수정하시겠습니까?")
-                        .setPositiveButton("확인") { _, _ ->
+                    builder.setTitle("Edit").setMessage("Would you like to edit your diary?")
+                        .setPositiveButton("Ok") { _, _ ->
                             CalendarFragment.year1 = year
                             CalendarFragment.month1 = month
                             CalendarFragment.day1 = dayOfMonth
@@ -140,7 +140,7 @@ class CalendarFragment : Fragment() {
                                 Intent(context, CheckEmojiActivity::class.java)
                             startActivity(Intent)
                         }
-                        .setNegativeButton("취소") { _, _ ->
+                        .setNegativeButton("Cancel") { _, _ ->
 
                         }
 
@@ -150,15 +150,15 @@ class CalendarFragment : Fragment() {
                 del_Btn.setOnClickListener {
                     check = 1
                     val builder = AlertDialog.Builder(requireContext())
-                    builder.setTitle("삭제").setMessage("일기를 삭제하시겠습니까?")
-                        .setPositiveButton("확인") { _, _ ->
+                    builder.setTitle("Delete").setMessage("Do you want to delete your diary?")
+                        .setPositiveButton("Ok") { _, _ ->
                             db.getReference("users").child(LoginActivity.username)
-                                .child("calendar").child(year.toString())
+                                .child("calender").child(year.toString())
                                 .child((month + 1).toString())
                                 .child(dayOfMonth.toString())
                                 .removeValue()
                         }
-                        .setNegativeButton("취소") { _, _ ->
+                        .setNegativeButton("Cancel") { _, _ ->
 
                         }
 
@@ -181,8 +181,8 @@ class CalendarFragment : Fragment() {
                             title.visibility = View.INVISIBLE
 
                             val builder = AlertDialog.Builder(requireContext())
-                            builder.setTitle("일기").setMessage("일기를 작성하시겠습니까?")
-                                .setPositiveButton("확인",
+                            builder.setTitle("Diary").setMessage("Would you like to keep a diary?")
+                                .setPositiveButton("Ok",
                                     DialogInterface.OnClickListener { _, _ ->
                                         activity?.let {
                                             CalendarFragment.year1 = year
@@ -195,7 +195,7 @@ class CalendarFragment : Fragment() {
                                             startActivity(Intent)
                                         }
                                     })
-                                .setNegativeButton("취소",
+                                .setNegativeButton("Cancel",
                                     DialogInterface.OnClickListener { _, _ ->
 
                                     })

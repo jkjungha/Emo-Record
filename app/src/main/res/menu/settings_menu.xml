@@ -3,15 +3,15 @@
 
     <item
         android:id="@+id/change_profile"
-        android:title="개인 정보 수정" />
+        android:title="Edit personal information" />
 
     <item
         android:id="@+id/change_password"
-        android:title="비밀번호 변경" />
+        android:title="Change Password" />
 
     <item
         android:id="@+id/change_theme"
-        android:title="아이템 선택" />
+        android:title="Select item" />
 
 
 

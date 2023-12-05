@@ -6,16 +6,16 @@
         android:layout_height="48dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/bg_text"
-        android:hint="이메일 또는 전화번호"
+        android:hint="email or phone number"
         android:paddingLeft="10dp"/>
-    <androidx.appcompat.widget.AppCompatButton android:id="@+id/verifyButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="확인" android:background="@drawable/bg_button" android:textColor="@color/white" android:layout_marginBottom="16dp"/>
+    <androidx.appcompat.widget.AppCompatButton android:id="@+id/verifyButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Check" android:background="@drawable/bg_button" android:textColor="@color/white" android:layout_marginBottom="16dp"/>
 
     <EditText
         android:id="@+id/usernameEditText"
         android:layout_width="379dp"
         android:layout_height="48dp"
         android:background="@drawable/bg_text"
-        android:hint="사용자 아이디"
+        android:hint="ID"
         android:paddingLeft="10dp"/>
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="6-10 characters, alphabetic or alphanumeric." android:layout_below="@+id/usernameEditText" android:layout_marginStart="8dp" android:layout_marginTop="4dp" android:textColor="#888888" android:layout_marginBottom="16dp"/>
 
@@ -24,11 +24,11 @@
         android:layout_width="379dp"
         android:layout_height="48dp"
         android:background="@drawable/bg_text"
-        android:hint="사용자 비밀번호"
+        android:hint="PASSWORD"
         android:paddingLeft="10dp"
         android:inputType="textPassword" />
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="8-10 characters, alphanumeric with special symbols." android:layout_below="@+id/passwordEditText" android:layout_marginStart="8dp" android:layout_marginTop="4dp" android:textColor="#888888" android:layout_marginBottom="16dp"/>
-    <androidx.appcompat.widget.AppCompatButton android:id="@+id/registerButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_button" android:textColor="@color/white" android:text="가입"/>
+    <androidx.appcompat.widget.AppCompatButton android:id="@+id/registerButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_button" android:textColor="@color/white" android:text="SIGN UP"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/backButton"
